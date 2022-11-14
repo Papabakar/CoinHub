@@ -9,9 +9,9 @@ import USDT from '../../assets/logos/USDT.png'
 import XRP from '../../assets/logos/XRP.png'
 import gsap from 'gsap'
 import './coin-list.style.css'
-import { useLayoutEffect } from 'react'
-import { horizontalLoop } from '../../utils/marquee/marquee'
-import { marquee } from '../../utils/marquee/marquee'
+// import { useLayoutEffect } from 'react'
+// import { horizontalLoop } from '../../utils/marquee/marquee'
+// import { marquee } from '../../utils/marquee/marquee'
 
 const list  = [
     {
