@@ -26,7 +26,6 @@
     bottom: 50%;
     /* outline: red solid 2px; */
     height: 100%;
-    max-width: 100px;
     width: 5%;
     left: 0;
     background: linear-gradient(-90deg, #0A0B16 11.98%, rgba(10, 11, 22, 0.9) 36.46%, rgba(10, 11, 22, 0) 100%);
@@ -40,7 +39,6 @@
     /* outline: red solid 2px; */
     height: 100%;
     width: 5%;
-    max-width: 100px;
     right: 0;
     background: linear-gradient(90deg, #0A0B16 11.98%, rgba(10, 11, 22, 0.9) 36.46%, rgba(10, 11, 22, 0) 100%);
     transform: matrix(-1, 0, 0, 1, 0, 0) translateY(50%);
