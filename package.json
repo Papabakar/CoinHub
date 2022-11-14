@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@gsap/shockingly": "^3.11.3",
+    "dotenv": "^16.0.3",
     "gsap": "npm:@gsap/shockingly",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
