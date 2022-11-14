@@ -7,7 +7,11 @@ import ETH from '../../assets/logos/ETH.png'
 import SOL from '../../assets/logos/SOL.png'
 import USDT from '../../assets/logos/USDT.png'
 import XRP from '../../assets/logos/XRP.png'
+import gsap from 'gsap'
 import './coin-list.style.css'
+import { useLayoutEffect } from 'react'
+import { horizontalLoop } from '../../utils/marquee/marquee'
+import { marquee } from '../../utils/marquee/marquee'
 
 const list  = [
     {
@@ -69,6 +73,17 @@ const list  = [
 ]
 
 const CoinList = () => {
+
+    // useLayoutEffect(() => {
+    //     try{
+    //         marquee()
+    //     }catch(err){
+    //         console.log(err.message)
+    //     }
+    //         return () => ctx.revert();
+    // }, []);
+
+
     return(
         <div className="flex gap-3 my-5 py-5 relative overlay overflow-x-hidden">
             <div className="list-container"></div>
@@ -77,21 +92,23 @@ const CoinList = () => {
             const {coin, imgUrl, marketcap, priceChange, change} = item
 
             return(
-            <div className="rounded-xl flex bg-listBg gap-5 p-3 px-5 items-center">
-                <div className="flex gap-1.5 items-center ">
-                    <div className="">
-                        <img src={imgUrl} className="max-w-[30px]" alt="" />
+            <div className="stb_line_single">
+                <div className="rounded-xl flex bg-listBg gap-5 p-3 px-5 items-center">
+                    <div className="flex gap-1.5 items-center ">
+                        <div className="">
+                            <img src={imgUrl} className="max-w-[30px]" alt="" />
+                        </div>
+                        
+                        <div className="text-xs text-start flex-col items-center justify-center">
+                            <h3 className="text-white font-semibold">{coin}</h3>
+                            <span className='text-gray-200'>{marketcap}</span>
+                        </div>
                     </div>
-                    
-                    <div className="text-xs text-start flex-col items-center justify-center">
-                        <h3 className="text-white font-semibold">{coin}</h3>
-                        <span className='text-gray-200'>{marketcap}</span>
-                    </div>
-                </div>
 
-                <div className={`text-xs ${change === 'up' ? 'text-up' : 'text-down'} flex items-center`}>
-                    <span><i className={`bx bx-chevron-${change}`} ></i></span>
-                    <span>{priceChange}%</span>
+                    <div className={`text-xs ${change === 'up' ? 'text-up' : 'text-down'} flex items-center`}>
+                        <span><i className={`bx bx-chevron-${change}`} ></i></span>
+                        <span>{priceChange}%</span>
+                    </div>
                 </div>
             </div>
             )
