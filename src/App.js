@@ -1,4 +1,4 @@
-import CoinList from './components/Coinlist/coin-list';
+import CoinList from './components/Coinlist/coin-list'
 import Hero from './routes/hero/hero';
 
 function App() {
