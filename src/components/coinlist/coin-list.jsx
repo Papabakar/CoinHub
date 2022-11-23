@@ -1,5 +1,5 @@
 import { LISTDATA } from '../../data/document.data'
-import './coin-list.scss'
+import './coin-list.css'
 import CoinItem from './coinInfo/coin-item';
 
 const CoinList = () => {
