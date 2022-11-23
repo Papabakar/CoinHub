@@ -1,22 +1,26 @@
 import gsap from 'gsap'
 
-export const marquee = () => {
-    let ctx = gsap.context(() => {
-        gsap.utils.toArray('.stb_line_single').forEach((e, i) => {
-            const el = e.querySelectorAll("article"),
-            tl = horizontalLoop(el, {
-                repeat: -1, 
-                speed: 0.25,
-                reversed: i ? true : false,
-                paddingRight: parseFloat(gsap.getProperty(el[0], "marginRight", "7px")), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-                paddingLeft: parseFloat(gsap.getProperty(el[0], "marginLeft", "7px")) // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-            });
-            el.forEach(link => {
-                link.addEventListener("mouseenter", () => gsap.to(tl, {timeScale: 0, overwrite: true}));
-                link.addEventListener("mouseleave", () => gsap.to(tl, {timeScale: i ? -1 : 1, overwrite: true}));
-            });
-        });
-    });
+export const marqueeFunction = (sliderLine, sliderBox, direction) => {
+      gsap.utils.toArray(sliderLine).forEach((e, i) => {
+          const el = e.querySelectorAll(sliderBox),
+          tl = horizontalLoop(el, {
+              repeat: -1, 
+              speed: 0.05,
+              reversed: i ? true : false,
+              paddingRight: parseFloat(gsap.getProperty(el[0], "marginRight", "24px")), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
+              paddingLeft: parseFloat(gsap.getProperty(el[0], "marginLeft", "24px")), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
+              reverse: direction
+          });
+
+          if(direction){
+            tl.reverse(true)
+          }
+
+          // el.forEach(link => {
+          //     link.addEventListener("mouseenter", () => gsap.to(tl, {timeScale: 0, overwrite: true}));
+          //     link.addEventListener("mouseleave", () => gsap.to(tl, {timeScale: i ? -1 : 1, overwrite: true}));
+          // });
+      });
 }
 
 export function horizontalLoop(items, config) {
@@ -39,6 +43,7 @@ export function horizontalLoop(items, config) {
         return xPercents[i];
       }
     });
+
     gsap.set(items, {x: 0});
     totalWidth = items[length-1].offsetLeft + xPercents[length-1] / 100 * widths[length-1] - startX + items[length-1].offsetWidth * gsap.getProperty(items[length-1], "scaleX") + (parseFloat(config.paddingRight) || 0);
     for (i = 0; i < length; i++) {
