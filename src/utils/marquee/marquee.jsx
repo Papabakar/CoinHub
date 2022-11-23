@@ -1,25 +1,25 @@
 import gsap from 'gsap'
 
-export const marqueeFunction = (sliderLine, sliderBox, direction) => {
+export const marqueeFunction = (sliderLine, sliderBox, direction, speed, gap) => {
       gsap.utils.toArray(sliderLine).forEach((e, i) => {
           const el = e.querySelectorAll(sliderBox),
           tl = horizontalLoop(el, {
               repeat: -1, 
-              speed: 0.05,
+              speed: speed,
               reversed: i ? true : false,
-              paddingRight: parseFloat(gsap.getProperty(el[0], "marginRight", "24px")), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-              paddingLeft: parseFloat(gsap.getProperty(el[0], "marginLeft", "24px")), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-              reverse: direction
+              paddingRight: parseFloat(gsap.getProperty(el[0], "marginRight", gap)), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
+              paddingLeft: parseFloat(gsap.getProperty(el[0], "marginLeft", gap)), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
+              reverse: direction ? true : false,
+              timeScale: direction,
           });
 
-          if(direction){
-            tl.reverse(true)
-          }
+          gsap.to(tl, {timeScale: direction, overwrite: true})
 
-          // el.forEach(link => {
-          //     link.addEventListener("mouseenter", () => gsap.to(tl, {timeScale: 0, overwrite: true}));
-          //     link.addEventListener("mouseleave", () => gsap.to(tl, {timeScale: i ? -1 : 1, overwrite: true}));
-          // });
+
+          el.forEach(link => {
+              link.addEventListener("mouseenter", () => gsap.to(tl, {timeScale: 0, overwrite: true}));
+              link.addEventListener("mouseleave", () => gsap.to(tl, {timeScale: direction, overwrite: true}));
+          });
       });
 }
 
