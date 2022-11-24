@@ -3,6 +3,7 @@ import gsap from 'gsap'
 export const marqueeFunction = (sliderLine, sliderBox, direction, speed, gap) => {
       gsap.utils.toArray(sliderLine).forEach((e, i) => {
           const el = e.querySelectorAll(sliderBox),
+
           tl = horizontalLoop(el, {
               repeat: -1, 
               speed: speed,
@@ -14,7 +15,6 @@ export const marqueeFunction = (sliderLine, sliderBox, direction, speed, gap) =>
           });
 
           gsap.to(tl, {timeScale: direction, overwrite: true})
-
 
           el.forEach(link => {
               link.addEventListener("mouseenter", () => gsap.to(tl, {timeScale: 0, overwrite: true}));
