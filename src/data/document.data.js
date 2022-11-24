@@ -3,7 +3,7 @@ import { makeId } from "../utils/document.utils"
 export const LISTDATA  = [
     {
         coin: 'ADA',
-        imgUrl: 'icons/coin-list/TRON.png',
+        imgUrl: 'icons/coin-list/TRON.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'up',
@@ -11,7 +11,7 @@ export const LISTDATA  = [
     },
     {
         coin: 'BNB',
-        imgUrl: 'icons/coin-list/BNB.png',
+        imgUrl: '/icons/coin-list/BNB.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'down',
@@ -19,7 +19,7 @@ export const LISTDATA  = [
     },
     {
         coin: 'BTC',
-        imgUrl: 'icons/coin-list/BTC.png',
+        imgUrl: 'icons/coin-list/BTC.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'up',
@@ -27,7 +27,7 @@ export const LISTDATA  = [
     },
     {
         coin: 'DOGE',
-        imgUrl: 'icons/coin-list/DOGE.png',
+        imgUrl: 'icons/coin-list/DOGE.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'down',
@@ -35,7 +35,7 @@ export const LISTDATA  = [
     },
     {
         coin: 'ETH',
-        imgUrl: 'icons/coin-list/ETH.png',
+        imgUrl: 'icons/coin-list/ETH.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'up',
@@ -43,7 +43,7 @@ export const LISTDATA  = [
     },
     {
         coin: 'SOL',
-        imgUrl: 'icons/coin-list/SOL.png',
+        imgUrl: 'icons/coin-list/SOL.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'down',
@@ -51,7 +51,7 @@ export const LISTDATA  = [
     },
     {
         coin: 'USDT',
-        imgUrl: 'icons/coin-list/USDT.png',
+        imgUrl: 'icons/coin-list/USDT.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'up',
@@ -59,7 +59,7 @@ export const LISTDATA  = [
     },
     {
         coin: 'XRP',
-        imgUrl: 'icons/coin-list/XRP.png',
+        imgUrl: 'icons/coin-list/XRP.svg',
         marketcap: '2,034,201',
         priceChange: 3.7,
         change: 'down',

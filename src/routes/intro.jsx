@@ -1,5 +1,5 @@
-import SectionImage from "../../components/Intro/section-image"
-import SectionText from "../../components/Intro/section-text"
+import SectionImage from "../components/Intro/section-image"
+import SectionText from "../components/Intro/section-text"
 
 const Intro = () => {
     return(

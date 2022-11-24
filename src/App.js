@@ -1,7 +1,8 @@
 import CoinList from './components/Hero/Coinlist/coin-list'
 import Hero from './routes/hero/hero';
 import HeroText from './components/HeroText/hero-text';
-import Intro from './routes/hero/intro';
+import Intro from './routes/intro';
+import NewsSlider from './routes/news-slider';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
         <HeroText />
         <Intro />
+        <NewsSlider />
     </div>
   );
 }
