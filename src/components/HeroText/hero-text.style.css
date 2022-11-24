@@ -1,0 +1,12 @@
+.textGradient{
+    text-align: center;
+    text-transform: uppercase;
+
+    /* Main/Gradient */
+
+    background: linear-gradient(97.05deg, #F29200 1.32%, #F9B234 96.49%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}

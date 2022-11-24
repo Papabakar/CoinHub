@@ -1,0 +1,37 @@
+
+.box{
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 1.04px -1.04px 1.04px rgba(214, 214, 214, 0.4), inset -1.04px 1.04px 1.04px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5.2px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
+    height: 72px;
+}
+
+
+.marquee-cover-left {
+    position: absolute;
+    bottom: 50%;
+    /* outline: red solid 2px; */
+    height: 100%;
+    width: 15%;
+    left: 0;
+    z-index: 100;
+    background: linear-gradient(-90deg, #0A0B16 11.98%, rgba(10, 11, 22, 0.9) 36.46%, rgba(10, 11, 22, 0) 100%);
+    transform: matrix(-1, 0, 0, 1, 0, 0) translateY(50%);
+}
+
+  
+
+.marquee-cover-right {
+    position: absolute;
+    bottom: 50%;
+    /* outline: red solid 2px; */
+    height: 100%;
+    width: 15%;
+    right: 0;
+    z-index: 100;
+    background: linear-gradient(90deg, #0A0B16 11.98%, rgba(10, 11, 22, 0.9) 36.46%, rgba(10, 11, 22, 0) 100%);
+    transform: matrix(-1, 0, 0, 1, 0, 0) translateY(50%);
+}
+
