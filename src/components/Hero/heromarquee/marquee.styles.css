@@ -14,7 +14,7 @@
     bottom: 50%;
     /* outline: red solid 2px; */
     height: 100%;
-    width: 15%;
+    width: 45%;
     left: 0;
     z-index: 100;
     background: linear-gradient(-90deg, #0A0B16 11.98%, rgba(10, 11, 22, 0.9) 36.46%, rgba(10, 11, 22, 0) 100%);
@@ -28,7 +28,7 @@
     bottom: 50%;
     /* outline: red solid 2px; */
     height: 100%;
-    width: 15%;
+    width: 45%;
     right: 0;
     z-index: 100;
     background: linear-gradient(90deg, #0A0B16 11.98%, rgba(10, 11, 22, 0.9) 36.46%, rgba(10, 11, 22, 0) 100%);

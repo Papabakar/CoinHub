@@ -5,10 +5,10 @@ import { marqueeFunction } from "../../../utils/marquee/marquee";
 const IconBox = ({images, lineName, direction, speed, gap}) => {
     useEffect(() => {
       let boxes = ".box";
-      let ctx = gsap.context(() => {
-        marqueeFunction(lineName, boxes, direction, speed, gap)
-      })
-      return () => ctx.revert();
+
+      marqueeFunction(lineName, boxes, direction, speed, gap)
+
+      return () => marqueeFunction;
     }, [lineName, direction, speed, gap]);
 
     return(

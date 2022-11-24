@@ -202,3 +202,36 @@ export const ICONDATA2 = [
         id: makeId()
     },
 ]
+
+export const NEWSSLIDERDATA = [
+    {
+        image: "images/image-1.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        id: makeId()
+    },
+    {
+        image: "images/image-1.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        id: makeId()
+    },
+    {
+        image: "images/image-1.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        id: makeId()
+    },
+    {
+        image: "images/image-1.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        id: makeId()
+    },
+    {
+        image: "images/image-1.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        id: makeId()
+    },
+]

@@ -14,7 +14,7 @@ module.exports = {
         "down": "#FF7A00",
         "primaryTxt": "#FFFFFF",
         "secondaryTxt": "#84858A",
-
+        "lightBorder": "#222222"
       }
     },
   },

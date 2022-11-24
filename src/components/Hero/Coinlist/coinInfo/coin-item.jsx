@@ -8,10 +8,10 @@ import CoinPrice from './coin-price';
 const CoinItem = ({data, lineName, direction, speed, gap}) => {
     useEffect(() => {
         let boxes = ".coin";
-        let ctx = gsap.context(() => {
-          marqueeFunction(lineName, boxes, direction, speed, gap)
-        })
-        return () => ctx.revert();
+
+        marqueeFunction(lineName, boxes, direction, speed, gap)
+        
+        return () => marqueeFunction;
     }, [lineName, direction, speed, gap]);
 
     return(

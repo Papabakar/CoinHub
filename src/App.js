@@ -3,6 +3,7 @@ import Hero from './routes/hero/hero';
 import HeroText from './components/HeroText/hero-text';
 import Intro from './routes/intro';
 import NewsSlider from './routes/news-slider';
+import Main from './routes/main';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <HeroText />
         <Intro />
         <NewsSlider />
+        <Main />
     </div>
   );
 }

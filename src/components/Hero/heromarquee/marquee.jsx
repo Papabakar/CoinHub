@@ -32,7 +32,7 @@ const marqueeData = [
 
 const HeroMarquee = () => {
     return(
-        <div className='relative flex min-h-full flex-col gap-[24px] py-[20px]'>
+        <div className='relative flex min-h-full flex-col gap-[28px] py-[20px]'>
             <div className="marquee-cover-left"></div>
             <div className="marquee-cover-right"></div>
             {
