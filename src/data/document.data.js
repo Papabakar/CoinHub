@@ -1,5 +1,6 @@
 import { makeId } from "../utils/document.utils"
 
+
 export const LISTDATA  = [
     {
         coin: 'ADA',
@@ -211,27 +212,102 @@ export const NEWSSLIDERDATA = [
         id: makeId()
     },
     {
-        image: "images/image-1.png",
+        image: "images/image-2.png",
         date: '09 January, 2022',
         title: "What This Week's Fed Decision, Jobs Report Means",
         id: makeId()
     },
     {
-        image: "images/image-1.png",
+        image: "images/image-3.png",
         date: '09 January, 2022',
         title: "What This Week's Fed Decision, Jobs Report Means",
         id: makeId()
     },
     {
-        image: "images/image-1.png",
+        image: "images/image-4.png",
         date: '09 January, 2022',
         title: "What This Week's Fed Decision, Jobs Report Means",
         id: makeId()
     },
     {
-        image: "images/image-1.png",
+        image: "images/image-5.png",
         date: '09 January, 2022',
         title: "What This Week's Fed Decision, Jobs Report Means",
+        id: makeId()
+    },
+]
+export const BLOGDATA = [
+    {
+        image: "blog/image-1.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        id: makeId()
+    },
+    {
+        image: "blog/image-2.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        id: makeId()
+    },
+    {
+        image: "blog/image-3.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        id: makeId()
+    },
+    {
+        image: "blog/image-4.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        id: makeId()
+    },
+    {
+        image: "blog/image-5.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        id: makeId()
+    },
+    {
+        image: "blog/image-6.png",
+        date: '09 January, 2022',
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        id: makeId()
+    },
+]
+
+export const HOTSTORIES = [
+    {
+        image: "hotStories/image-1.png",
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        time: 2,
+        id: makeId()
+    },
+    {
+        image: "hotStories/image-2.png",
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        time: 2,
+        id: makeId()
+    },
+    {
+        image: "hotStories/image-3.png",
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        time: 2,
+        id: makeId()
+    },
+    {
+        image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80",
+        title: "What This Week's Fed Decision, Jobs Report Means",
+        views: '11,234',
+        time: 2,
         id: makeId()
     },
 ]

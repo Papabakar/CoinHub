@@ -8,8 +8,8 @@ export const marqueeFunction = (sliderLine, sliderBox, direction, speed, gap) =>
               repeat: -1, 
               speed: speed,
               reversed: i ? true : false,
-              paddingRight: parseFloat(gsap.getProperty(el[0], "marginRight", 0)), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
-              paddingLeft: parseFloat(gsap.getProperty(el[0], "marginLeft", 0)), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
+              paddingRight: parseFloat(gsap.getProperty(el[0], "marginRight", gap)), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
+              paddingLeft: parseFloat(gsap.getProperty(el[0], "marginLeft", gap)), // otherwise first element would be right up against the last when it loops. In this layout, the spacing is done with marginRight.
               reverse: direction ? true : false,
               timeScale: direction,
           });

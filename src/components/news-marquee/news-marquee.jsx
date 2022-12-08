@@ -20,7 +20,7 @@ const NewsMarquee = ({data, sliderLine, sliderBox, direction, speed, gap}) => {
                     const {date, image, title} = item
 
                     return(
-                        <div className="snippetBox opacity-70 hover:opacity-100 hover:ease-in-out hover:transition-[600ms] ease-in-out hover:cursor-pointer flex flex-shrink-0 gap-5 w-fit p-3.5 rounded-[35px] px-2">
+                        <div className="snippetBox opacity-70 hover:opacity-100 hover:ease-in-out hover:transition-[600ms] ease-in-out hover:cursor-pointer flex flex-shrink-0 gap-5 w-fit p-3.5 rounded-2xl px-2">
                             <div className="rounded-2xl max-w-[60px] my-auto ml-2">
                                 <img src={image} alt="" />
                             </div>

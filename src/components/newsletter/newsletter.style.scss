@@ -1,0 +1,23 @@
+
+
+.newsletter{
+    background: linear-gradient(180deg,rgba(24, 27, 35, 0) 0%, #181B23 50%, rgba(24, 27, 35, 0) 100%);
+    mix-blend-mode: normal;
+    position: relative;
+}    
+
+@media screen and (min-width: 1440px) {
+    .newsletter{
+        background: linear-gradient(180deg, #181B23 0%, rgba(24, 27, 35, 0) 100%);
+        mix-blend-mode: normal;
+    }
+}
+
+
+
+.primary{
+    background: linear-gradient(97.05deg, #F29200 1.32%, #F9B234 96.49%);
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+}
+

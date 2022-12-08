@@ -1,7 +1,7 @@
 
-import mainImage from '../../assets/marketsvg-2/main.svg'
-import topRight from '../../assets/marketsvg-2/topleft.svg'
-import bottomLeft from '../../assets/marketsvg-2/bottomleft.svg'
+import mainImage from '../../assets/market/marketsvg-2/main.svg'
+import topRight from '../../assets/market/marketsvg-2/topleft.svg'
+import bottomLeft from '../../assets/market/marketsvg-2/bottomleft.svg'
 
 const MainImage = () => {
     return(

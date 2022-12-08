@@ -1,8 +1,8 @@
 
-import mainImage from '../../assets/marketsvg/main.svg'
-import topRight from '../../assets/marketsvg/topright.svg'
-import bottomRight from '../../assets/marketsvg/bottomright.svg'
-import bottomLeft from '../../assets/marketsvg/bottomleft.svg'
+import mainImage from '../../assets/market/marketsvg/main.svg'
+import topRight from '../../assets/market/marketsvg/topright.svg'
+import bottomRight from '../../assets/market/marketsvg/bottomright.svg'
+import bottomLeft from '../../assets/market/marketsvg/bottomleft.svg'
 import './section.style.css'
 
 const SectionImage = () => {
