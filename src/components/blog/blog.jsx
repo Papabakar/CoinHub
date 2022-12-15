@@ -8,6 +8,7 @@ import { makeId } from "../../utils/document.utils";
 import BlogPost from "./blog-post";
 import { useState, useEffect } from "react";
 import getAllBlogs from "../../backend/functions/blogs/getBlogs";
+import BlogLoadingSkeleton from "./blog-loading-skeleton";
 
 //format of blog data coming from DB:
 // {
@@ -86,8 +87,8 @@ const Blog = () => {
       </div>
       <div className="flex justify-center items-center">
         {loadingBlogs ? (
-          <div>
-            <p className="text-white text-xl">LOADING BLOGS</p>
+          <div className="grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 md:grid-rows-2 gap-7 mt-10 mx-auto">
+            <BlogLoadingSkeleton />
           </div>
         ) : (
           <div>

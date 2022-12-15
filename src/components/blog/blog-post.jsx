@@ -1,15 +1,14 @@
+import { format } from 'date-fns'
 
-
-const BlogPost = ({data}) => {
-    console.log(data)
-    return(
-        data.map((item) => {
-            const {image, title, date, views, id} = item
+function BlogPost({data}) {
+    return data.map((item) => {
+        
+        const {imageUrl, title, createdAt, viewCount} = item;
 
             return(
                 <div className="bg-card-bg rounded-2xl w-fit">
                     <div className="">
-                        <img src={image} className="bg-cover w-full" alt="" />
+                        <img src={imageUrl} className="bg-cover w-full" alt="" />
                     </div>
 
                     <div className="flex flex-col gap-3 p-5 w-fit">
@@ -30,7 +29,7 @@ const BlogPost = ({data}) => {
                                 <path d="M10.6667 15.1666H5.33333C2.9 15.1666 1.5 13.7666 1.5 11.3333V5.66659C1.5 3.23325 2.9 1.83325 5.33333 1.83325H10.6667C13.1 1.83325 14.5 3.23325 14.5 5.66659V11.3333C14.5 13.7666 13.1 15.1666 10.6667 15.1666ZM5.33333 2.83325C3.42667 2.83325 2.5 3.75992 2.5 5.66659V11.3333C2.5 13.2399 3.42667 14.1666 5.33333 14.1666H10.6667C12.5733 14.1666 13.5 13.2399 13.5 11.3333V5.66659C13.5 3.75992 12.5733 2.83325 10.6667 2.83325H5.33333Z" fill="#84858A"/>
                                 </svg>
 
-                                {date}
+                                {format(new Date(createdAt), 'yyyy-MM-dd')}
                             </div>
 
                             <div className="flex items-center gap-1">
@@ -39,14 +38,14 @@ const BlogPost = ({data}) => {
                                 <path d="M7.9999 13.5133C10.3532 13.5133 12.5466 12.1266 14.0732 9.72665C14.6732 8.78665 14.6732 7.20665 14.0732 6.26665C12.5466 3.86665 10.3532 2.47998 7.9999 2.47998C5.64656 2.47998 3.45323 3.86665 1.92656 6.26665C1.32656 7.20665 1.32656 8.78665 1.92656 9.72665C3.45323 12.1266 5.64656 13.5133 7.9999 13.5133Z" stroke="#84858A" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
 
-                                {views}
+                                {viewCount}
 
                             </div>
                         </div>
                     </div>
                 </div>
             )
-        })
+        }
     )
 }
 
