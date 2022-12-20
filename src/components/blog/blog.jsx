@@ -1,4 +1,3 @@
-import Options from "./options";
 import Bitcoin from "../../assets/icons/bitcoin.png";
 import Ether from "../../assets/icons/ether.png";
 import Industry from "../../assets/icons/industry.png";
@@ -69,6 +68,24 @@ const Blog = () => {
     fetchBlogs().catch(console.error);
   }, [selectedBlogSection]);
 
+  let optionElements = OptionsData.map((item) => {
+    const { name, Image, id } = item;
+
+    return (
+      <div
+        key={id}
+        onClick={() => setSelectedBlogSection(name.toLowerCase())}
+        className="flex items-center justify-center rounded-xl py-5 bg-card-bg p-3 gap-2 min-w-[150px] hover:cursor-pointer ml-3"
+      >
+        <div className="">
+          <img src={Image} alt="" />
+        </div>
+
+        <div className="text-white uppercase text-sm">{name}</div>
+      </div>
+    );
+  });
+
   return (
     <div className="mt-20">
       <div className="flex flex-col gap-3 mx-auto text-center items-center justify-center">
@@ -86,13 +103,8 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="md:w-full flex mt-10 gap-3 items-center justify-center flex-shrink-0 flex-1 overflow-x-auto">
-        <Options
-          data={OptionsData}
-          changeSection={function (section) {
-            setSelectedBlogSection(section);
-          }}
-        />
+      <div className="min-w-full md:w-full flex items-end md:items-center justify-center ml-[25px] md:pl-0 mt-3 overflow-x-scroll">
+        {optionElements}
       </div>
       <div className="flex justify-center items-center">
         {loadingBlogs ? (

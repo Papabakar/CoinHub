@@ -89,7 +89,7 @@ const Footer = () => {
 
   return (
     <div className="px-10 border-t border-lightBorder border-opacity-30 ">
-      <div className="grid grid-cols-1 grid-rows-5 lg:grid-cols-5 lg:grid-rows-1 my-10">
+      <div className="grid grid-cols-1 grid-rows-4 lg:grid-cols-5 lg:grid-rows-1 my-10">
         <div className="flex flex-col items-start justify-start w-full gap-5 lg:col-span-2">
           <div className="flex flex-col gap-2">
             <span style={bottomNavHeaderStyle}>Get crypto news everyday!</span>
@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-gray-400 flex w-full mt-10 xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
+      <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
         <span>2022 StoicDAO © | All Rights Reserved</span>
 
         <div className="">

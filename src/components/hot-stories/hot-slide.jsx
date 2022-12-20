@@ -2,7 +2,7 @@ import "./hot-slide.style.scss";
 import moment from "moment";
 
 const SlideHot = ({ data }) => {
-  const { imageUrl, title, viewCount, createdAt } = data;
+  const { imageUrl, title, viewCount, createdAt, readTime } = data;
 
   return (
     <div
@@ -33,7 +33,7 @@ const SlideHot = ({ data }) => {
           </svg>
 
           <span className="text-sm">
-            {moment(new Date(createdAt)).fromNow()}
+            {readTime} mins
           </span>
         </div>
 
@@ -59,7 +59,7 @@ const SlideHot = ({ data }) => {
             />
           </svg>
 
-          <span>{viewCount}</span>
+          <span>{viewCount.toLocaleString("en-US")}</span>
         </div>
       </div>
 

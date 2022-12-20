@@ -11,7 +11,7 @@ import HotStories from './components/hot-stories/hot-stories';
 
 function App() {
   return (
-    <div className="App overflow-x-hidden flex flex-col gap-20">
+    <div className="overflow-x-hidden flex flex-col gap-20">
       <div className="">
         <CoinList /> 
         <Hero />
