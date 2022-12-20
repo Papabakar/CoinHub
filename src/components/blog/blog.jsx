@@ -7,7 +7,7 @@ import Trading from "../../assets/icons/trading.png";
 import { makeId } from "../../utils/document.utils";
 import BlogPost from "./blog-post";
 import { useState, useEffect } from "react";
-import getAllBlogs from "../../backend/functions/blogs/getBlogs";
+import { getBlogBySection } from "../../backend/functions/blogs/getBlogs";
 import BlogLoadingSkeleton from "./blog-loading-skeleton";
 
 //format of blog data coming from DB:
@@ -29,7 +29,7 @@ const OptionsData = [
   },
   {
     Image: Ether,
-    name: "Etherium",
+    name: "Ethereum",
     id: makeId(),
   },
   {
@@ -53,17 +53,21 @@ let BlogsData = [];
 
 const Blog = () => {
   const [loadingBlogs, setLoadingBlogs] = useState(true);
+  const [selectedBlogSection, setSelectedBlogSection] = useState("bitcoin"); //defaults to bitcoin
 
   useEffect(() => {
-    //Runs only on the first render
+    //Runs only when the selectedBlogSection changes
 
     const fetchBlogs = async () => {
-      BlogsData = await getAllBlogs();
+      if (!loadingBlogs) {
+        setLoadingBlogs(true);
+      }
+      BlogsData = await getBlogBySection(selectedBlogSection);
       setLoadingBlogs(false);
     };
 
     fetchBlogs().catch(console.error);
-  }, []);
+  }, [selectedBlogSection]);
 
   return (
     <div className="mt-20">
@@ -83,7 +87,12 @@ const Blog = () => {
       </div>
 
       <div className="w-full flex mt-10 gap-3 items-center justify-center flex-shrink-0 flex-1">
-        <Options data={OptionsData} />
+        <Options
+          data={OptionsData}
+          changeSection={function (section) {
+            setSelectedBlogSection(section);
+          }}
+        />
       </div>
       <div className="flex justify-center items-center">
         {loadingBlogs ? (
