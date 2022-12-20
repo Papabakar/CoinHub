@@ -86,7 +86,7 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="w-full flex mt-10 gap-3 items-center justify-center flex-shrink-0 flex-1">
+      <div className="md:w-full flex mt-10 gap-3 items-center justify-center flex-shrink-0 flex-1 overflow-x-auto">
         <Options
           data={OptionsData}
           changeSection={function (section) {
