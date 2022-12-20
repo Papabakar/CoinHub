@@ -19,7 +19,6 @@ const addBlog = async (data) => {
       "https://coinhub-article-api.onrender.com/create-blog",
       data
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);

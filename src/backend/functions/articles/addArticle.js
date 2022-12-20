@@ -16,7 +16,6 @@ const addArticle = async (data) => {
       "https://coinhub-article-api.onrender.com/create-article",
       data
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);

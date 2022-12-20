@@ -9,7 +9,6 @@ const getAllArticles = async () => {
 
     try {
         const response = await axios.get('https://coinhub-article-api.onrender.com/get-all-articles');
-        console.log(response.data);
         return response.data;
       } catch (error) {
         console.error(error);

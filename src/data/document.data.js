@@ -1,70 +1,46 @@
 import { makeId } from "../utils/document.utils"
 
 
-export const LISTDATA  = [
+export const COINLISTDATA  = [
     {
+        id: 'cardano',
         coin: 'ADA',
         imgUrl: 'icons/coin-list/TRON.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'up',
-         id: makeId()
     },
     {
+        id: 'binancecoin',
         coin: 'BNB',
         imgUrl: '/icons/coin-list/BNB.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'down',
-         id: makeId()
     },
     {
+        id: 'bitcoin',
         coin: 'BTC',
         imgUrl: 'icons/coin-list/BTC.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'up',
-         id: makeId()
     },
     {
+        id: 'dogecoin',
         coin: 'DOGE',
         imgUrl: 'icons/coin-list/DOGE.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'down',
-         id: makeId()
     },
     {
+        id: 'ethereum',
         coin: 'ETH',
         imgUrl: 'icons/coin-list/ETH.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'up',
-         id: makeId()
     },
     {
+        id: 'solana',
         coin: 'SOL',
         imgUrl: 'icons/coin-list/SOL.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'down',
-         id: makeId()
     },
     {
+        id: 'tether',
         coin: 'USDT',
         imgUrl: 'icons/coin-list/USDT.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'up',
-         id: makeId()
     },
     {
+        id: 'ripple',
         coin: 'XRP',
         imgUrl: 'icons/coin-list/XRP.svg',
-        marketcap: '2,034,201',
-        priceChange: 3.7,
-        change: 'down',
-         id: makeId()
     },
 ]
 
