@@ -19,10 +19,10 @@ const NavMenu = ({navLinks}) => {
                 <img src={Logo} className="min-w-[200px]" alt="" />
            </div>
 
-           <NavLinks navLinks={navLinks} />
+           {/* <NavLinks navLinks={navLinks} /> */}
 
            <div className="">
-                <SearchBar />
+            
            </div>
         </div>
     )
