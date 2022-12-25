@@ -1,30 +1,21 @@
-import CoinList from './components/Hero/Coinlist/coin-list'
-import Hero from './routes/hero/hero';
-import HeroText from './components/HeroText/hero-text';
-import Footer from './components/footer/footer';
-import Intro from './routes/intro';
-import NewsSlider from './routes/news-slider';
-import Main from './routes/main';
-import Blog from './components/blog/blog';
-import Newsletter from './components/newsletter/newsletter';
-import HotStories from './components/hot-stories/hot-stories';
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./components/home/home-page";
+import Dashboard from "./components/dashboard/dashboard";
+import DashboardLogin from "./components/authentication/login";
+import BlogDisplay from "./components/blog/blog-display";
 
 function App() {
   return (
-    <div className="overflow-x-hidden flex flex-col gap-20">
-      <div className="">
-        <CoinList /> 
-        <Hero />
-      </div>
-
-        <HeroText />
-        <Intro />
-        <NewsSlider />
-        <Main />
-        <Blog />
-        <Newsletter />
-        <HotStories />
-        <Footer />
+    <div>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/login" element={<DashboardLogin />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route path="/blog/:id" element={<BlogDisplay />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

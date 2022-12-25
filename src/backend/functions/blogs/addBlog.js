@@ -11,7 +11,8 @@ const addBlog = async (data) => {
   //      "viewCount": 26476,
   //      "author": "John Doe",
   //      "summaryContent": "",
-  //      "blogContent": ""
+  //      "blogContent": "",
+  //      "section": ""
   // }
 
   try {
