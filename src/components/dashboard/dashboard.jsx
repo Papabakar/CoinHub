@@ -12,6 +12,7 @@ function Dashboard() {
   const [section, setSection] = useState("");
   const [summaryContent, setSummaryContent] = useState("");
   const [blogContent, setBlogContent] = useState("");
+  const navigate = useNavigate();
 
   async function prepareDataAndCreateBlog() {
     try {
@@ -31,68 +32,80 @@ function Dashboard() {
     }
   }
 
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) return navigate("/login");
+  }, [user, loading]);
+
   return (
     <div>
-      <div className="text-lg text-white">THIS IS THE DASHBOARD</div>
-      <div className="flex justify-center items-center">
-        <div className="flex flex-col text-center bg-[#dcdcdc] p-[30px]">
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Blog Title"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            placeholder="Author"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={section}
-            onChange={(e) => setSection(e.target.value)}
-            placeholder="Blog Section"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={imgUrl}
-            onChange={(e) => setImgUrl(e.target.value)}
-            placeholder="Image URL"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={summaryContent}
-            onChange={(e) => setSummaryContent(e.target.value)}
-            placeholder="Blog Summary"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={blogContent}
-            onChange={(e) => setBlogContent(e.target.value)}
-            placeholder="Blog Text"
-          />
-          <button
-            className="p-[10px] text-md mb-2 border-none bg-black text-white"
-            onClick={() => prepareDataAndCreateBlog()}
-          >
-            ADD BLOG
-          </button>
+      {loading ? (
+        <div className="text-lg text-white">VERIFYING AUTHENTICATION</div>
+      ) : (
+        <div>
+          <div className="text-lg text-white">THIS IS THE DASHBOARD</div>
+          <div className="flex justify-center items-center">
+            <div className="flex flex-col text-center bg-[#dcdcdc] p-[30px]">
+              <input
+                type="text"
+                className="p-[10px] text-md mb-2"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Blog Title"
+              />
+              <input
+                type="text"
+                className="p-[10px] text-md mb-2"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                placeholder="Author"
+              />
+              <input
+                type="text"
+                className="p-[10px] text-md mb-2"
+                value={section}
+                onChange={(e) => setSection(e.target.value)}
+                placeholder="Blog Section"
+              />
+              <input
+                type="text"
+                className="p-[10px] text-md mb-2"
+                value={imgUrl}
+                onChange={(e) => setImgUrl(e.target.value)}
+                placeholder="Image URL"
+              />
+              <input
+                type="text"
+                className="p-[10px] text-md mb-2"
+                value={summaryContent}
+                onChange={(e) => setSummaryContent(e.target.value)}
+                placeholder="Blog Summary"
+              />
+              <input
+                type="text"
+                className="p-[10px] text-md mb-2"
+                value={blogContent}
+                onChange={(e) => setBlogContent(e.target.value)}
+                placeholder="Blog Text"
+              />
+              <button
+                className="p-[10px] text-md mb-2 border-none bg-black text-white"
+                onClick={() => prepareDataAndCreateBlog()}
+              >
+                ADD BLOG
+              </button>
 
-          <button
-            className="p-[10px] text-md mb-2 border-none bg-red-500 text-white"
-            onClick={() => logout()}
-          >
-            Logout
-          </button>
+              <button
+                className="p-[10px] text-md mb-2 border-none bg-red-500 text-white"
+                onClick={() => logout()}
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
