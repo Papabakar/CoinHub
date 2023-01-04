@@ -4,6 +4,7 @@ import BlogNewsletter from "../../snippets/article-extras/newsletter"
 import ArticleContent from "../../snippets/article-main/article-content"
 import BlogBottomSideBar from "../../snippets/article-extras/related"
 import BlogRightSideBar from "../../snippets/article-extras/sidebar"
+import Footer from "../footer/footer"
 
 const headingData = 
     {
@@ -26,22 +27,21 @@ const Article = () => {
     return(
         <div className="">
 
-            <ArticleHeader headingData={headingData} />
+                <ArticleHeader headingData={headingData} />
+            
+                <div className="flex flex-col xl:flex-row relative">
 
-                <div className="flex relative z-20 justify-between p-6 -m-36 mx-4 max-w-screen-xl bg-white dark:bg-gray-800 rounded xl:-m-32 xl:p-9 xl:mx-auto">
-                    
-                    <article className="xl:w-[828px] w-full max-w-none format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                    <article className=" w-full max-w-none border-b format xl:border-r border-lightBorder border-opacity-30 p-7">
                         <ArticleInfo articleInfoData={articleInfo}/>
-                       <ArticleContent />
+                        <ArticleContent />
                     </article>
 
-
-                    <BlogRightSideBar />
+                    <div className="block my-8 px-5 xl:px-10 xl:block p-7 sticky top-6">
+                        <BlogRightSideBar />
+                    </div>
                 </div>
 
-                <BlogBottomSideBar />
-
-            <BlogNewsletter />
+                <Footer />
         </div>
     )
 }

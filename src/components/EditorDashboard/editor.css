@@ -64,7 +64,6 @@
 
 .codex-editor-overlay{
     display: flex;
-    outline: red solid 1px;
     justify-content: center;
     align-items: center;
 }
@@ -79,7 +78,7 @@
     background-image: none !important;
     border: 1px solid #5e5e5e !important;
     border-radius: 10px;
-    min-height: 200px;
+    min-height: 250px;
 }
 
 .image-tool__image-preloader {
@@ -152,3 +151,53 @@
         border-radius: 12px;
     }
 }
+
+.image-tool .cdx-button, .image-tool__image {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+@media (min-width: 651px){
+.codex-editor--narrow .codex-editor__redactor {
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+}
+.codex-editor--narrow .ce-block--focused {
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+}
+}
+@media (min-width: 820px){
+    .codex-editor--narrow .ce-toolbar__actions {
+        right: -12.5%;
+    }
+}
+
+@media screen and (max-width: 768px){
+.ce-toolbar__plus, .ce-toolbar__settings-btn {
+    border-radius: 10px;
+}
+}
+
+@media (max-width: 650px){
+    .ce-toolbar__actions {
+        left: auto !important;
+        right: 0;
+    }
+}
+
+
+@media (max-width: 650px){
+.ce-toolbar__plus, .ce-toolbar__settings-btn{
+    padding: 0 !important;
+    width: 28px;
+    height: 28px;
+}
+
+.ce-block__content{
+    padding: 0 0.85rem;
+}
+
+}
+

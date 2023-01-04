@@ -28,8 +28,8 @@ const relatedArticles = [
 const BlogRightSideBar = () => {
     return(
         <>
-        <aside className="hidden xl:block">
-            <div className="xl:w-[336px] sticky top-6">
+        <aside className="">
+            <div className="xl:w-[336px]">
                 <ArticlesRelated relatedArticles={relatedArticles} />
                 <AdBlock />
             </div>

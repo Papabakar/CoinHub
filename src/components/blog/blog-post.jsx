@@ -9,7 +9,7 @@ function BlogPost({ data }) {
 
     return (
       <div
-        className="bg-card-bg rounded-2xl w-fit"
+        className="bg-card-bg rounded-3xl w-fit"
         onClick={() => {
           navigate(`/blog/${_id}`, { state: item });
         }}

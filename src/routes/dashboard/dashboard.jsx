@@ -42,7 +42,7 @@ function Dashboard() {
   }, [user, loading]);
 
   return (
-    <div className="bg-main-bg min-h-screen">
+    <div className="bg-main-bg min-h-screen ">
       {loading ? (
         <div className="text-lg ">VERIFYING AUTHENTICATION</div>
       ) : (

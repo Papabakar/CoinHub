@@ -9,16 +9,16 @@ const SimpleImage = require('@editorjs/simple-image');
 
 const editorConfig = {
         holder: 'editor', 
-        placeholder: 'Enter Text',
-        autofocus: true,
+        placeholder: 'Type something...',
+        // autofocus: true,
         tools: {
             header: {
               class: Header,
               config: {
-                placeholder: 'Enter a header',
-                levels: [2, 3, 4],
+                placeholder: 'Enter Title',
+                levels: [1, 2, 3, 4],
                 shortcut: 'CMD+H',
-                defaultLevel: 3
+                defaultLevel: 3,
               },
               inlineToolbar: true
             },

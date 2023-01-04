@@ -14,11 +14,8 @@ const ArticlesRelated = ({ relatedArticles}) => {
                             <img src={image} className="mr-4 max-w-full w-24 h-24 rounded-lg" alt="Image 3" />
                         </a>
                         <div>
-                            <h5 className="mb-2 text-lg font-bold leading-tight dark:text-white text-gray-900">{title}</h5>
+                            <h5 className="mb-2 text-lg font-bold leading-tight text-white">{title}</h5>
                             <p className="mb-2 font-light text-gray-500 dark:text-gray-400">{intro}</p>
-                            <a href={link} className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-                                Read in {time} minutes
-                            </a>
                         </div>
                     </div>
                 )
