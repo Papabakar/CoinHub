@@ -24,7 +24,7 @@ const Editor = (props) => {
 
    return( 
         <div className='text-white w-full flex mt-10 flex-col justify-center items-center overflow-x-hidden'>
-            <div id='editor' className="pb-20"></div>
+            <div id='editor' className=""></div>
 
             {/* <div className="fixed bottom-5 right-5 w-fit">
                 <button className='text-white primary-setting  text-xl flex'>
