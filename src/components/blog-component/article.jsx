@@ -26,12 +26,11 @@ const articleInfo =
 const Article = () => {
     return(
         <div className="">
-
                 <ArticleHeader headingData={headingData} />
             
                 <div className="flex flex-col xl:flex-row relative">
 
-                    <article className=" w-full max-w-none border-b format xl:border-r border-lightBorder border-opacity-30 p-7">
+                    <article className=" w-full max-w-none format xl:border-r border-lightBorder border-opacity-30 p-7">
                         <ArticleInfo articleInfoData={articleInfo}/>
                         <ArticleContent />
                     </article>
