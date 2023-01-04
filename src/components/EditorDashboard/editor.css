@@ -195,4 +195,10 @@
     width: 28px;
     height: 28px;
 }
+
+.ce-block__content{
+    padding: 0 0.85rem;
 }
+
+}
+
