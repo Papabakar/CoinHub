@@ -1,4 +1,5 @@
 import Lottie from "react-lottie";
+import Refine from '../../assets/lottie/refine.svg'
 import FormInput from "../form-input/form-input";
 import { useState } from "react";
 import {
@@ -89,7 +90,7 @@ const Footer = () => {
 
   return (
     <div className="px-10 border-t border-lightBorder border-opacity-30 ">
-      <div className="grid grid-cols-1 grid-rows-4 lg:grid-cols-5 lg:grid-rows-1 my-10">
+      <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-5 lg:grid-rows-1 my-10">
         <div className="flex flex-col items-start justify-start w-full gap-5 lg:col-span-2">
           <div className="flex flex-col gap-2">
             <span style={bottomNavHeaderStyle}>Get crypto news everyday!</span>
@@ -117,10 +118,6 @@ const Footer = () => {
         <div className="w-[180px] lg:h-[293px] flex flex-col justify-start items-start">
           {bottomNavElements_2}
         </div>
-
-        <div className="w-[180px] lg:h-[293px] flex flex-col justify-start items-start">
-          {bottomNavElements_3}
-        </div>
       </div>
 
       <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
@@ -145,7 +142,9 @@ const Footer = () => {
               target={"_blank"}
             >
               {" "}
-              SukkoStudio
+              <div className="flex justify-center items-center">
+                <img src={Refine} className="max-w-[65px] mt-0.5" alt="Designed & Developed by Refine Studio"/>
+              </div>
             </a>
           </div>
         </div>
