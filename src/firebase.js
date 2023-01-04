@@ -16,6 +16,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyA53nvasaWpNWDJMpRn3-pWhFUsIDoAn9U",
   authDomain: "coinhubcc-2ffab.firebaseapp.com",
@@ -27,6 +28,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
+
+//authentication
 
 const logInWithEmailAndPassword = async (email, password) => {
   try {
@@ -41,4 +45,22 @@ const logout = () => {
   signOut(auth);
 };
 
-export { auth, db, logInWithEmailAndPassword, logout };
+//storage
+const uploadImageToDB = async (file) => {
+  const secondsSinceEpoch = Math.round(Date.now() / 1000);
+
+  const storageRef = ref(storage, `/blogImages/${secondsSinceEpoch}`);
+  const imageUpload = await uploadBytesResumable(storageRef, file);
+  const downloadUrl = await getDownloadURL(imageUpload.ref);
+
+  return downloadUrl;
+};
+
+export {
+  auth,
+  db,
+  storage,
+  logInWithEmailAndPassword,
+  logout,
+  uploadImageToDB,
+};

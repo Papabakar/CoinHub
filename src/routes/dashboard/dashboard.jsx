@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import addBlog from "../../backend/functions/blogs/addBlog";
 import Editor from "../../components/EditorDashboard/editor";
+import { saveEditorData } from "../../components/EditorDashboard/editor.configuration";
 
 import { auth, logout } from "../../firebase";
 
@@ -12,20 +13,19 @@ function Dashboard() {
   const [imgUrl, setImgUrl] = useState("");
   const [author, setAuthor] = useState("");
   const [section, setSection] = useState("");
-  const [summaryContent, setSummaryContent] = useState("");
-  const [blogContent, setBlogContent] = useState("");
   const navigate = useNavigate();
 
-
-  async function prepareDataAndCreateBlog() {
+  async function publishBlog() {
+    const editorData = saveEditorData();
+    const editorDataToString = JSON.stringify(editorData);
     try {
       await addBlog({
         title: title,
         imageUrl: imgUrl,
         viewCount: 0,
         author: author,
-        summaryContent: summaryContent,
-        blogContent: blogContent,
+        summaryContent: "",
+        blogContent: editorDataToString,
         section: section,
       });
 
@@ -34,7 +34,6 @@ function Dashboard() {
       console.log(error);
     }
   }
-
 
   useEffect(() => {
     if (loading) return;
@@ -46,6 +45,43 @@ function Dashboard() {
       {loading ? (
         <div className="text-lg ">VERIFYING AUTHENTICATION</div>
       ) : (
+        <div className="flex flex-col justify-start items-start">
+          <input
+            type="text"
+            className="p-[10px] text-md mb-2"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Blog Title"
+          />
+          <input
+            type="text"
+            className="p-[10px] text-md mb-2"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            placeholder="Author"
+          />
+          <input
+            type="text"
+            className="p-[10px] text-md mb-2"
+            value={imgUrl}
+            onChange={(e) => setImgUrl(e.target.value)}
+            placeholder="Image URL"
+          />
+          <input
+            type="text"
+            className="p-[10px] text-md mb-2"
+            value={section}
+            onChange={(e) => setSection(e.target.value)}
+            placeholder="Blog Section"
+          />
+          <Editor />
+
+          <div className="fixed bottom-5 right-5 w-fit">
+            <button onClick={() => publishBlog()} className="text-white primary-setting  text-xl flex">
+              <i className="bx bxs-send"></i>
+            </button>
+          </div>
+        </div>
         // <div>
         //   <div className="text-lg text-white">THIS IS THE DASHBOARD</div>
         //   <div className="flex justify-center items-center">
@@ -108,7 +144,7 @@ function Dashboard() {
         //     </div>
         //   </div>
         // </div>
-        <Editor />
+
         // <div className=""></div>
       )}
     </div>

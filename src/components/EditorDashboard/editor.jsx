@@ -28,13 +28,13 @@ const Editor = (props) => {
 
             {/* <div className="fixed bottom-5 right-5 w-fit">
                 <button className='text-white primary-setting  text-xl flex'>
-                    <i className='bx bxs-cog'></i>
+                    <i className='bx bxs-send'></i>
                 </button>
                 
                 
                 <div className="absolute -translate-x-1/2 left-0 bottom-0">
                     <button className='text-white primary-setting fixed bottom-5 right-5 text-xl flex'>
-                        <i className='bx bxs-cog'></i>
+                        <i className='bx bxs-save'></i>
                     </button>
                 </div>
 
