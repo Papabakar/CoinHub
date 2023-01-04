@@ -169,3 +169,30 @@
     padding-right: 0px !important;
 }
 }
+@media (min-width: 820px){
+    .codex-editor--narrow .ce-toolbar__actions {
+        right: -12.5%;
+    }
+}
+
+@media screen and (max-width: 768px){
+.ce-toolbar__plus, .ce-toolbar__settings-btn {
+    border-radius: 10px;
+}
+}
+
+@media (max-width: 650px){
+    .ce-toolbar__actions {
+        left: auto !important;
+        right: 0;
+    }
+}
+
+
+@media (max-width: 650px){
+.ce-toolbar__plus, .ce-toolbar__settings-btn{
+    padding: 0 !important;
+    width: 28px;
+    height: 28px;
+}
+}
