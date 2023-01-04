@@ -9,7 +9,6 @@ const SimpleImage = require('@editorjs/simple-image');
 
 const editorConfig = {
         holder: 'editor', 
-        defaultBlock : 'header',
         placeholder: 'Type something...',
         // autofocus: true,
         tools: {
