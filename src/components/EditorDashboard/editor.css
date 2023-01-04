@@ -64,7 +64,6 @@
 
 .codex-editor-overlay{
     display: flex;
-    outline: red solid 1px;
     justify-content: center;
     align-items: center;
 }
