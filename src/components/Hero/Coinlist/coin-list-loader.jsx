@@ -26,7 +26,7 @@ const CoinListLoadingSkeleton =  ({ listData, lineName, direction, speed, gap })
             </div>
             
             <div className="text-xs text-start flex-col items-center justify-center">
-                <h3 className="text-white font-semibold">{coin}</h3>
+                <h3 className="coin-title text-white font-semibold">{coin}</h3>
                 <div className='bg-gray-400 h-4 w-16 rounded-md'></div>
             </div>
         </div>

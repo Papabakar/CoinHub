@@ -22,14 +22,14 @@ const CoinList = () => {
   }, []);
 
   return (
-    <div className="flex gap-5 my-5 py-5 price__marquee relative overlay overflow-x-hidden">
+    <div className="flex gap-6 my-5 py-5 price__marquee relative overlay overflow-x-hidden">
       <div className="list-container"></div>
       
       {loadingCoinData ? (
         <CoinListLoadingSkeleton 
         listData={COINLISTDATA}
-          gap={"20"}
-          speed={0.125}
+          gap={"24px"}
+          speed={0.2}
           lineName={`.price__marquee`}
           direction={1}
           />
@@ -37,8 +37,8 @@ const CoinList = () => {
         <CoinItem
           listData={COINLISTDATA}
           data={CoinData}
-          gap={"20"}
-          speed={0.125}
+          gap={"24px"}
+          speed={0.2}
           lineName={`.price__marquee`}
           direction={1}
         />

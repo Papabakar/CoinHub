@@ -6,7 +6,7 @@ const CoinInfo = ({imgUrl, coin, marketcap}) => {
             </div>
             
             <div className="text-xs text-start flex-col items-center justify-center">
-                <h3 className="text-white font-semibold">{coin}</h3>
+                <h3 className="coin-title text-white font-semibold">{coin}</h3>
                 <span className='text-gray-200'>${marketcap.toLocaleString("en-US")}</span>
             </div>
         </div>

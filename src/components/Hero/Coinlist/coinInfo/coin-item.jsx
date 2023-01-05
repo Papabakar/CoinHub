@@ -23,7 +23,7 @@ const CoinItem = ({ listData, data, lineName, direction, speed, gap }) => {
 
     return (
       <div key={id} className={`coin`}>
-        <div className="rounded-xl flex bg-listBg gap-5 p-3 px-5 items-center">
+        <div className="rounded-xl flex bg-listBg gap-6 p-3 px-5 items-center">
           <CoinInfo imgUrl={imgUrl} coin={coin} marketcap={coinData["usd"]} />
           <CoinPrice change={change} priceChange={priceChange} />
         </div>
