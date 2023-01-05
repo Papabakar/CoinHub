@@ -6,7 +6,7 @@ import './hero.style.css'
 
 const Hero = () => {
     return(
-        <div className="flex gap-10 mt-16 flex-col">
+        <div className="flex gap-10 mt-5 flex-col">
             <NavMenu navLinks={NAVDATA}/>
             <div className=" relative">
 

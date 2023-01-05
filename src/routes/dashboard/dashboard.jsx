@@ -5,6 +5,7 @@ import addBlog from "../../backend/functions/blogs/addBlog";
 import Editor, { saveEditorData } from "../../components/EditorDashboard/editor";
 
 import { auth, logout } from "../../firebase";
+import PublishModal from "./publish-modal";
 
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
@@ -45,38 +46,14 @@ function Dashboard() {
         <div className="text-lg ">VERIFYING AUTHENTICATION</div>
       ) : (
         <div className="flex flex-col justify-start items-start">
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Blog Title"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            placeholder="Author"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={imgUrl}
-            onChange={(e) => setImgUrl(e.target.value)}
-            placeholder="Image URL"
-          />
-          <input
-            type="text"
-            className="p-[10px] text-md mb-2"
-            value={section}
-            onChange={(e) => setSection(e.target.value)}
-            placeholder="Blog Section"
-          />
+          
           <Editor />
+          
+          <PublishModal />
+
 
           <div className="fixed bottom-5 right-5 w-fit">
-            <button onClick={() => publishBlog()} className="text-white primary-setting  text-xl flex">
+            <button className="text-white primary-setting  text-xl flex">
               <i className="bx bxs-send"></i>
             </button>
           </div>

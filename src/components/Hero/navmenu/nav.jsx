@@ -14,15 +14,15 @@ const NavMenu = ({navLinks}) => {
     }, []);
 
     return(
-        <div className="flex justify-around items-center px-5">
-           <div className='' >
-                <img src={Logo} className="min-w-[200px]" alt="" />
+        <div className="px-5 md:px-10 flex items-center justify-between backdrop-blur-2xl sticky top-0 right-0 left-0">
+           <div className='flex items-center gap-5 list-container py-5' >
+                <img src={Logo} className="min-w-[175px]" alt="" />
+                <NavLinks navLinks={navLinks} />
            </div>
 
-           {/* <NavLinks navLinks={navLinks} /> */}
 
-           <div className="">
-            
+           <div className="text-white md:hidden text-4xl">
+              <i class='bx bx-menu'></i>
            </div>
         </div>
     )

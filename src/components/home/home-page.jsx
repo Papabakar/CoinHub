@@ -12,7 +12,7 @@ import HotStories from "../hot-stories/hot-stories";
 
 function HomePage() {
   return (
-    <div className="overflow-x-hidden flex flex-col gap-20">
+    <div className=" flex flex-col gap-20">
       <div className="">
         <CoinList /> 
         <Hero />
