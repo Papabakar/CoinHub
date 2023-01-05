@@ -49,4 +49,16 @@ const Editor = (props) => {
     )
 }
 
+export async function saveEditorData() {
+    const outputData = await editor
+      .save()
+      .catch((error) => {
+        console.log("Saving failed:", error);
+      });
+  
+      console.log(outputData)
+  
+      return outputData;
+  };
+
 export default Editor

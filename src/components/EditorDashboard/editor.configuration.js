@@ -62,16 +62,5 @@ const editorConfig = {
   },
 };
 
-export async function saveEditorData() {
-  const outputData = await editorConfig
-    .save()
-    .catch((error) => {
-      console.log("Saving failed:", error);
-    });
-
-    console.log(outputData)
-
-    return outputData;
-};
 
 export default editorConfig;

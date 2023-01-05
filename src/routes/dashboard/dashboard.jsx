@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import addBlog from "../../backend/functions/blogs/addBlog";
-import Editor from "../../components/EditorDashboard/editor";
-import { saveEditorData } from "../../components/EditorDashboard/editor.configuration";
+import Editor, { saveEditorData } from "../../components/EditorDashboard/editor";
 
 import { auth, logout } from "../../firebase";
 
@@ -16,7 +15,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   async function publishBlog() {
-    const editorData = saveEditorData();
+    const editorData = await saveEditorData();
     const editorDataToString = JSON.stringify(editorData);
     try {
       await addBlog({
