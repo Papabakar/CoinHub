@@ -11,39 +11,50 @@ import HotSlideLoadingSkeleton from "./hot-slide-loading-skeleton";
 SwiperCore.use([Pagination, EffectCoverflow]);
 
 const swiperOptions = {
-  effect: "default",
-  grabCursor: "true",
-  centeredSlides: "true",
-  spaceBetween: 200,
-  slidesPerView: 4,
-  loop: "false",
-  pagination: { clickable: true, dynamicBullets: true },
-  coverflowEffect: {
-    rotate: 20,
-    stretch: 25,
-    depth: 250,
-    modifier: 1,
-    slideShadows: false,
+  slidesPerView: "auto",
+  grabCursor: true,
+  spaceBetween: 15,
+  freeMode: true,
+  loop: true,
+  navigation: {
+      nextEl: "#nextBtn",
+      prevEl: "#prevBtn",
   },
-  breakpoints: {
-    1440: {
-      spaceBetween: 200,
-      slidesPerView: 4,
-    },
-    500: {
-      spaceBetween: 100,
-      slidesPerView: 2,
-    },
-    411: {
-      spaceBetween: 100,
-      slidesPerView: 2,
-    },
-    300: {
-      spaceBetween: 0,
-      slidesPerView: 1,
-    },
-  },
-};
+}
+
+// const swiperOptions = {
+//   effect: "default",
+//   grabCursor: "true",
+//   centeredSlides: "true",
+//   spaceBetween: 10,
+//   loop: "false",
+//   pagination: { clickable: true, dynamicBullets: true },
+//   coverflowEffect: {
+//     rotate: 20,
+//     stretch: 25,
+//     depth: 250,
+//     modifier: 1,
+//     slideShadows: false,
+//   },
+//   breakpoints: {
+//     1440: {
+//       spaceBetween: 20,
+//       slidesPerView: 4,
+//     },
+//     500: {
+//       spaceBetween: 10,
+//       slidesPerView: 2,
+//     },
+//     411: {
+//       spaceBetween: 10,
+//       slidesPerView: 2,
+//     },
+//     300: {
+//       spaceBetween: 0,
+//       slidesPerView: 1,
+//     },
+//   },
+// };
 
 let ArticlesData = [];
 
@@ -76,7 +87,7 @@ const HotStories = () => {
       </div>
 
       {loadingArticles ? (
-        <div className="grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 md:grid-rows-2 gap-7 mt-10 mx-auto">
+        <div className="">
           <HotSlideLoadingSkeleton />
         </div>
       ) : (
@@ -86,17 +97,14 @@ const HotStories = () => {
               FAILED TO RETRIEVE ARTICLE DATA
             </p>
           ) : (
-            <div className="text-white  ml-auto">
               <Swiper {...swiperOptions}>
                 {ArticlesData.map((item, index) => {
                   return (
-                    <SwiperSlide key={index}>
-                      <SlideHot data={item} />
-                    </SwiperSlide>
+                    <SwiperSlide key={index}><SlideHot data={item} /></SwiperSlide>
                   );
                 })}
               </Swiper>
-            </div>
+
           )}
         </div>
       )}

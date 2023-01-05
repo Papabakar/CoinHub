@@ -58,6 +58,13 @@ function Dashboard() {
               <i className="bx bxs-send"></i>
             </button>
           </div>
+
+          <div className="fixed bottom-5 left-5">
+              <button
+                className="primary text-white"
+                onClick={() => logout()}
+                >Logout</button>
+            </div>
         </div>
         // <div>
         //   <div className="text-lg text-white">THIS IS THE DASHBOARD</div>
@@ -112,12 +119,7 @@ function Dashboard() {
         //         ADD BLOG
         //       </button>
 
-        //       <button
-        //         className="p-[10px] text-md mb-2 border-none bg-red-500 text-white"
-        //         onClick={() => logout()}
-        //       >
-        //         Logout
-        //       </button>
+              
         //     </div>
         //   </div>
         // </div>
