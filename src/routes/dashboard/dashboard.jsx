@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import addBlog from "../../backend/functions/blogs/addBlog";
-import Editor, { saveEditorData } from "../../components/EditorDashboard/editor";
+import Editor, {
+  saveEditorData,
+} from "../../components/EditorDashboard/editor";
 
 import { auth, logout } from "../../firebase";
 import PublishModal from "./publish-modal";
 
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
-  const [title, setTitle] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
-  const [author, setAuthor] = useState("");
-  const [section, setSection] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
-  async function publishBlog() {
+  async function publishBlog(title, imgUrl, author, section) {
     const editorData = await saveEditorData();
     const editorDataToString = JSON.stringify(editorData);
     try {
@@ -46,24 +45,34 @@ function Dashboard() {
         <div className="text-lg ">VERIFYING AUTHENTICATION</div>
       ) : (
         <div className="flex flex-col justify-start items-start">
-          
           <Editor />
-          
-          <PublishModal />
 
+          {showModal ? (
+            <PublishModal
+              publishBlog={(title, imgUrl, author, section) =>
+                publishBlog(title, imgUrl, author, section)
+              }
+            />
+          ) : (
+            <div className="hidden"></div>
+          )}
 
           <div className="fixed bottom-5 right-5 w-fit">
-            <button className="text-white primary-setting  text-xl flex">
-              <i className="bx bxs-send"></i>
+            <button
+              onClick={() => {
+                setShowModal((prevShowModal) => !prevShowModal);
+              }}
+              className="text-white primary-setting  text-xl flex"
+            >
+              <i className={showModal ? "bx bx-undo" : "bx bxs-send"}></i>
             </button>
           </div>
 
           <div className="fixed bottom-5 left-5">
-              <button
-                className="primary text-white"
-                onClick={() => logout()}
-                >Logout</button>
-            </div>
+            <button className="primary text-white" onClick={() => logout()}>
+              Logout
+            </button>
+          </div>
         </div>
         // <div>
         //   <div className="text-lg text-white">THIS IS THE DASHBOARD</div>
@@ -118,7 +127,6 @@ function Dashboard() {
         //         ADD BLOG
         //       </button>
 
-              
         //     </div>
         //   </div>
         // </div>
