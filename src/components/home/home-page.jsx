@@ -9,6 +9,7 @@ import Main from "../../routes/main";
 import Blog from "../blog/blog";
 import Newsletter from "../newsletter/newsletter";
 import HotStories from "../hot-stories/hot-stories";
+import BlogNewsletter from '../../snippets/article-extras/newsletter';
 
 function HomePage() {
   return (
@@ -23,8 +24,8 @@ function HomePage() {
         <NewsSlider />
         <Main />
         <Blog />
-        <Newsletter />
         <HotStories />
+        <BlogNewsletter />
         <Footer />
     </div>
   )
