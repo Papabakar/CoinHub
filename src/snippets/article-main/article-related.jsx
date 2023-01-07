@@ -6,16 +6,16 @@ const ArticlesRelated = ({ relatedArticles}) => {
        
         {
             relatedArticles.map((item, index) => {
-                const {title, intro, time, image, link} = item
+                const {imageUrl, title} = item
 
                 return(
                     <div className="mb-6 flex items-center">
-                        <a href={link} className="shrink-0">
-                            <img src={image} className="mr-4 max-w-full w-24 h-24 rounded-lg" alt="Image 3" />
+                        <a href="" className="shrink-0">
+                            <img src={imageUrl} className="mr-4 max-w-full w-24 h-24 rounded-lg" alt="Image 3" />
                         </a>
                         <div>
                             <h5 className="mb-2 text-lg font-bold leading-tight text-white">{title}</h5>
-                            <p className="mb-2 font-light text-gray-500 dark:text-gray-400">{intro}</p>
+                            {/* <p className="mb-2 font-light text-gray-500 dark:text-gray-400">{intro}</p> */}
                         </div>
                     </div>
                 )

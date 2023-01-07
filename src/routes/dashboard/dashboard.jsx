@@ -8,13 +8,21 @@ import Editor, {
 
 import { auth, logout } from "../../firebase";
 import PublishModal from "./publish-modal";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
-  async function publishBlog(title, imgUrl, author, section) {
+  function notify(text) {
+
+    toast(text);
+
+  }
+
+  async function publishBlog(title, imgUrl, author, intro, section) {
     const editorData = await saveEditorData();
     const editorDataToString = JSON.stringify(editorData);
     try {
@@ -23,13 +31,15 @@ function Dashboard() {
         imageUrl: imgUrl,
         viewCount: 0,
         author: author,
-        summaryContent: "",
+        summaryContent: intro,
         blogContent: editorDataToString,
         section: section,
       });
 
-      console.log("Blog Uploaded");
+      notify("Blog Uploaded");
     } catch (error) {
+
+      notify("Blog Could Not Be Uploaded");
       console.log(error);
     }
   }
@@ -45,19 +55,18 @@ function Dashboard() {
         <div className="text-lg ">VERIFYING AUTHENTICATION</div>
       ) : (
         <div className="flex flex-col justify-start items-start">
-          <Editor />
-
+          <ToastContainer />
           {showModal ? (
             <PublishModal
-              publishBlog={(title, imgUrl, author, section) =>
-                publishBlog(title, imgUrl, author, section)
+              publishBlog={(title, imgUrl, author, intro, section) =>
+                publishBlog(title, imgUrl, author, intro, section)
               }
             />
           ) : (
             <div className="hidden"></div>
           )}
 
-          <div className="fixed bottom-5 right-5 w-fit">
+          <div className="fixed top-5 right-5 w-fit">
             <button
               onClick={() => {
                 setShowModal((prevShowModal) => !prevShowModal);
@@ -68,10 +77,14 @@ function Dashboard() {
             </button>
           </div>
 
-          <div className="fixed bottom-5 left-5">
+          <div className="fixed top-5 left-5">
             <button className="primary text-white" onClick={() => logout()}>
               Logout
             </button>
+          </div>
+
+          <div className="mt-5">
+          <Editor />
           </div>
         </div>
         // <div>

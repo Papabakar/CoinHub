@@ -8,7 +8,7 @@ const ArticleHeader = ( { headingData } ) => {
             <div className="absolute top-20 left-1/2 px-4 mx-auto w-full max-w-screen-xl -translate-x-1/2 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
                 <span className="block mb-4 text-gray-300">Published in <a href={subjectLink} className="font-semibold text-white hover:underline">{subject}</a></span>
                 <h1 className="mb-4 max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl">{title}</h1>
-                <p className="text-lg font-normal text-gray-300">{intro}</p>
+                {/* <p className="text-lg font-normal text-gray-300">{intro}</p> */}
             </div>
         </header>
     )

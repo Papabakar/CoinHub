@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import Header from "@editorjs/header";
 import LinkTool from "@editorjs/link";
@@ -18,39 +18,36 @@ function BlogDisplay() {
     blogContent,
   } = state;
 
-  let blogContentToJSON = JSON.parse(blogContent);
+  useEffect(() => {
+    let blogContentToJSON = JSON.parse(blogContent);
 
-  let editor = new EditorJS({
-    holder: "editor2",
-    placeholder: "Type something...",
-    // autofocus: true,
-    tools: {
-      header: {
-        class: Header,
-        config: {
-          placeholder: "Enter Title",
-          levels: [1, 2, 3, 4],
-          shortcut: "CMD+H",
-          defaultLevel: 3,
+    let editor = new EditorJS({
+      holder: "editor2",
+      tools: {
+        header: {
+          class: Header,
+          config: {
+            placeholder: "Enter Title",
+            levels: [1, 2, 3, 4],
+            shortcut: "CMD+H",
+            defaultLevel: 3,
+          },
+          inlineToolbar: true,
         },
-        inlineToolbar: true,
-      },
-      linkTool: {
-        class: LinkTool,
-        config: {
-          endpoint:
-            "https://coinhub-article-api.onrender.com/get-url-data?hm=f", // Your backend endpoint for url data fetching,
+        linkTool: {
+          class: LinkTool,
+          config: {
+            endpoint:
+              "https://coinhub-article-api.onrender.com/get-url-data?hm=f", // Your backend endpoint for url data fetching,
+          },
         },
-      },
 
-      image: SimpleImage,
-    },
-    data: blogContentToJSON,
-    readOnly: true,
-    onReady: () => {
-      console.log("editor ready");
-    },
-  });
+        image: SimpleImage,
+      },
+      data: blogContentToJSON,
+      readOnly: true,
+    });
+  }, []);
 
   return (
     <div className="text-white">
@@ -59,7 +56,7 @@ function BlogDisplay() {
       <p>BLOG VIEW COUNT: {viewCount}</p>
       <p>BLOG AUTHOR: {author}</p>
       <p>BLOG SUMMARY: {summaryContent}</p>
-      <div id='editor2' className=""></div>
+      <div id="editor2" className=""></div>
     </div>
   );
 }
