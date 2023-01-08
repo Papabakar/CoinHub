@@ -22,7 +22,7 @@ let BlogsData = [];
 
 const Blog = () => {
   const [loadingBlogs, setLoadingBlogs] = useState(true);
-  
+
   const { selectedBlogSection } = useContext(BlogContext)
 
   useEffect(() => {
@@ -63,15 +63,15 @@ const Blog = () => {
       
       <div className="flex justify-center items-center">
         {loadingBlogs ? (
-          <div className="grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 md:grid-rows-2 gap-7 mt-5 mx-auto">
+          <div className={`grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 ${ BlogsData.length <= 2 ? `md:grid-rows-1`:`md:grid-rows-1` } gap-7 mt-5 mx-auto`}>
             <BlogLoadingSkeleton />
           </div>
         ) : (
           <div>
             {BlogsData.length === 0 ? (
-              <p className="text-white text-xl">FAILED TO RETRIEVE BLOG DATA</p>
+              <p className="text-white text-xl mt-10">FAILED TO RETRIEVE BLOG DATA</p>
             ) : (
-              <div className="grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 md:grid-rows-2 gap-7 mt-10 mx-auto">
+              <div className={`grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 ${ BlogsData.length <= 2 ? `md:grid-rows-1`:`md:grid-rows-1` } gap-7 mt-5 mx-auto`}>
                 <BlogPost data={BlogsData} />
               </div>
             )}

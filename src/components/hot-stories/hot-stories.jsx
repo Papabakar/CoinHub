@@ -7,19 +7,36 @@ import { ReactComponent as ArrowLeft } from "../../assets/svgs/arrow-left.svg";
 import { useState, useEffect } from "react";
 import getAllArticles from "../../backend/functions/articles/getArticles";
 import HotSlideLoadingSkeleton from "./hot-slide-loading-skeleton";
+import { useRef } from "react";
+import { Navigation } from 'swiper';
 
 SwiperCore.use([Pagination, EffectCoverflow]);
+
 
 const swiperOptions = {
   slidesPerView: "auto",
   grabCursor: true,
-  spaceBetween: 15,
+  spaceBetween: 20,
   freeMode: true,
   loop: true,
   navigation: {
       nextEl: "#nextBtn",
       prevEl: "#prevBtn",
   },
+  breakpoints: {
+        1440: {
+          slidesPerView: 4,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        620: {
+          slidesPerView: 2,
+        },
+        300: {
+          slidesPerView: 1,
+        },
+      },
 }
 
 // const swiperOptions = {
@@ -59,6 +76,10 @@ const swiperOptions = {
 let ArticlesData = [];
 
 const HotStories = () => {
+
+  const swiperRef = useRef();
+
+  
   const [loadingArticles, setLoadingArticles] = useState(true);
 
   useEffect(() => {
@@ -73,14 +94,14 @@ const HotStories = () => {
   }, []);
 
   return (
-    <div className="my-20">
+    <div className="">
       <div className="flex justify-between px-10 my-10">
         <h3 className="text-white text-2xl">Hot Stories</h3>
         <div className="flex gap-2 items-center">
-          <button className="rounded-full bg-[#353447] px-7 py-2">
+          <button onClick={() => swiperRef.current?.slidePrev()} className="rounded-full bg-[#353447] px-7 py-2">
             <ArrowLeft />
           </button>
-          <button className="rounded-full bg-[#353447] px-7 py-2">
+          <button onClick={() => swiperRef.current?.slideNext()} className="rounded-full bg-[#353447] px-7 py-2">
             <ArrowRight />
           </button>
         </div>
@@ -91,13 +112,19 @@ const HotStories = () => {
           <HotSlideLoadingSkeleton />
         </div>
       ) : (
-        <div>
+        <div className="px-5 md:px-10 flex justify-center items-center">
           {ArticlesData.length === 0 ? (
             <p className="text-white text-xl">
               FAILED TO RETRIEVE ARTICLE DATA
             </p>
           ) : (
-              <Swiper {...swiperOptions}>
+              <Swiper 
+              modules={[Navigation]}
+              onBeforeInit={(swiper) => {
+                swiperRef.current = swiper
+              }}
+
+              {...swiperOptions}>
                 {ArticlesData.map((item, index) => {
                   return (
                     <SwiperSlide key={index}><SlideHot data={item} /></SwiperSlide>

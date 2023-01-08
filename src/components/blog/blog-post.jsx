@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Calendar } from '../../assets/icons/calendar.svg'
-import { ReactComponent as Eye } from '../../assets/icons/eye.svg'
+import { ReactComponent as Eye } from '../../assets/svgs/eye.svg'
 
 function BlogPost({ data }) {
   const navigate = useNavigate();
