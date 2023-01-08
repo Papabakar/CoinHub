@@ -36,6 +36,10 @@ const ArticleContent = ({ data }) => {
       data: data,
       readOnly: true,
     });
+
+    return () => {
+      //clean up
+    };
   }, []);
 
   return (

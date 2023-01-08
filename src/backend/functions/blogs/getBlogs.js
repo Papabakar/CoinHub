@@ -31,3 +31,18 @@ export const getBlogBySection = async (section) => {
     }
 
 }
+
+export const getBlogById = async (id) => {
+
+  //will return a JSON object (blog with this id)
+  //or null (on error)
+
+  try {
+      const response = await axios.get(`https://coinhub-article-api.onrender.com/get-blog-by-id?id=${id}`);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+
+}

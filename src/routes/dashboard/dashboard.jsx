@@ -66,7 +66,11 @@ function Dashboard() {
             <div className="hidden"></div>
           )}
 
-          <div className="fixed top-5 right-5 w-fit">
+<div className="mb-12">
+          <Editor />
+          </div>
+
+          <div className="fixed bottom-5 right-5 w-fit">
             <button
               onClick={() => {
                 setShowModal((prevShowModal) => !prevShowModal);
@@ -77,15 +81,13 @@ function Dashboard() {
             </button>
           </div>
 
-          <div className="fixed top-5 left-5">
+          <div className="fixed bottom-5 left-5">
             <button className="primary text-white" onClick={() => logout()}>
               Logout
             </button>
           </div>
 
-          <div className="mt-5">
-          <Editor />
-          </div>
+          
         </div>
         // <div>
         //   <div className="text-lg text-white">THIS IS THE DASHBOARD</div>
