@@ -22,7 +22,7 @@ const NavMenu = ({navLinks}) => {
 
 
            <div className="text-white md:hidden text-4xl">
-              <i class='bx bx-menu'></i>
+              <i className='bx bx-menu'></i>
            </div>
         </div>
     )
