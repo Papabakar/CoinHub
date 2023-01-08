@@ -1,13 +1,10 @@
-import Bitcoin from "../../assets/icons/bitcoin.png";
-import Ether from "../../assets/icons/ether.png";
-import Industry from "../../assets/icons/industry.png";
-import Investing from "../../assets/icons/investing.png";
-import Trading from "../../assets/icons/trading.png";
-import { makeId } from "../../utils/document.utils";
+
 import BlogPost from "./blog-post";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { getBlogBySection } from "../../backend/functions/blogs/getBlogs";
 import BlogLoadingSkeleton from "./blog-loading-skeleton";
+import BlogOptions from "./blog-buttons";
+import { BlogContext } from "../../context/blog.context";
 
 //format of blog data coming from DB:
 // {
@@ -20,39 +17,13 @@ import BlogLoadingSkeleton from "./blog-loading-skeleton";
 //     "__v": 0
 // },
 
-const OptionsData = [
-  {
-    Image: Bitcoin,
-    name: "Bitcoin",
-    id: makeId(),
-  },
-  {
-    Image: Ether,
-    name: "Ethereum",
-    id: makeId(),
-  },
-  {
-    Image: Investing,
-    name: "Investing",
-    id: makeId(),
-  },
-  {
-    Image: Trading,
-    name: "Trading",
-    id: makeId(),
-  },
-  {
-    Image: Industry,
-    name: "Industry",
-    id: makeId(),
-  },
-];
 
 let BlogsData = [];
 
 const Blog = () => {
   const [loadingBlogs, setLoadingBlogs] = useState(true);
-  const [selectedBlogSection, setSelectedBlogSection] = useState("bitcoin"); //defaults to bitcoin
+  
+  const { selectedBlogSection } = useContext(BlogContext)
 
   useEffect(() => {
     //Runs only when the selectedBlogSection changes
@@ -66,25 +37,8 @@ const Blog = () => {
     };
 
     fetchBlogs().catch(console.error);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedBlogSection]);
-
-  let optionElements = OptionsData.map((item) => {
-    const { name, Image, id } = item;
-
-    return (
-      <div
-        key={id}
-        onClick={() => setSelectedBlogSection(name.toLowerCase())}
-        className="flex items-center justify-center rounded-xl py-5 bg-card-bg p-3 gap-2 min-w-[150px] hover:cursor-pointer ml-3"
-      >
-        <div className="">
-          <img src={Image} alt="" />
-        </div>
-
-        <div className="text-white uppercase text-sm">{name}</div>
-      </div>
-    );
-  });
 
   return (
     <div className="mt-20">
@@ -103,12 +57,13 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="min-w-full md:w-full flex items-end md:items-center justify-center ml-[25px] md:pl-0 mt-3 overflow-x-scroll">
-        {optionElements}
+      <div className="min-w-full md:w-full flex items-end md:items-center justify-center overflow-x-scroll">
+        <BlogOptions />
       </div>
+      
       <div className="flex justify-center items-center">
         {loadingBlogs ? (
-          <div className="grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 md:grid-rows-2 gap-7 mt-10 mx-auto">
+          <div className="grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 md:grid-rows-2 gap-7 mt-5 mx-auto">
             <BlogLoadingSkeleton />
           </div>
         ) : (
