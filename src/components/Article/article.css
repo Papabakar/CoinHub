@@ -6,12 +6,12 @@
 #blog .ct__content, 
 #blog .ct {
   all: initial;
-  position: initial;
-  top: initial;
-  right: initial;
+  /* position: initial; */
+  /* top: initial; */
+  /* right: initial; */
   font-style: inherit;
   bottom: initial;
-  left: initial;
+  /* left: initial; */
   padding: initial;
   margin: initial;
   max-width: initial;
@@ -31,12 +31,19 @@
   font-size: unset;
   font-style: inherit;
   color: unset;
-  position: unset;
-  top: unset;
-  right: unset;
-  bottom: unset;
+  /* position: unset; */
+  /* top: unset; */
+  /* right: unset; */
+  /* bottom: unset; */
   left: unset;
   padding: unset;
   margin: unset;
   /* add any other styles that you want to reset here */
+}
+
+
+
+#blog .ce-paragraph{
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity)) !important;
 }

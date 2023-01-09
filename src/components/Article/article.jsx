@@ -104,9 +104,9 @@ const Article = () => {
     <div className="">
       <ArticleHeader headingData={headingData} />
 
-      <div className="xl:flex p-5 md:p-10">
-        <article className="xl:border-r border-lightBorder border-opacity-30">
-          {/* <ArticleInfo articleInfoData={articleInfo} /> */}
+      <div className="md:flex">
+        <article className="xl:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">
+          <ArticleInfo articleInfoData={articleInfo} />
           {content ? (
             <div className="">
               <ArticleContent data={content} /> 
@@ -114,7 +114,7 @@ const Article = () => {
           ): <div className="hidden"></div>}
         </article>
 
-        <div className="hidden my-8 px-5 xl:px-10 xl:block p-7 sticky top-6">
+        <div className="hidden xl:block p-7 top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>
