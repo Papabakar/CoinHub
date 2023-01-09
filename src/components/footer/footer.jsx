@@ -9,7 +9,7 @@ import {
 } from "../../data/bottom-nav-items.data";
 
 import animationData from "../../assets/lottie/127832-heart-vibes.json";
-import BlogNewsletter from "../../snippets/article-extras/newsletter";
+import BlogNewsletter from "../newsletter/newsletter";
 
 const currentYear = new Date().getFullYear();
 

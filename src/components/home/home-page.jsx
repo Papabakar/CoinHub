@@ -9,7 +9,7 @@ import Main from "../../routes/main";
 import Blog from '../Blog/blog';
 import Newsletter from "../newsletter/newsletter";
 import HotStories from "../hot-stories/hot-stories";
-import BlogNewsletter from '../../snippets/article-extras/newsletter';
+import BlogNewsletter from '../newsletter/newsletter';
 
 function HomePage() {
   return (

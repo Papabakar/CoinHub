@@ -1,6 +1,6 @@
 import ArticleHeader from "../../snippets/article-main/article-header";
 import ArticleInfo from "../../snippets/article-main/article-title";
-import BlogNewsletter from "../../snippets/article-extras/newsletter";
+import BlogNewsletter from "../newsletter/newsletter";
 import ArticleContent from "../../snippets/article-main/article-content";
 import BlogBottomSideBar from "../../snippets/article-extras/related";
 import BlogRightSideBar from "../../snippets/article-extras/sidebar";
