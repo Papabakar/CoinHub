@@ -5,7 +5,7 @@ export const COINLISTDATA  = [
     {
         id: 'cardano',
         coin: 'ADA',
-        imgUrl: 'icons/coin-list/TRON.svg',
+        imgUrl: '/icons/coin-list/TRON.svg',
     },
     {
         id: 'binancecoin',
@@ -15,32 +15,32 @@ export const COINLISTDATA  = [
     {
         id: 'bitcoin',
         coin: 'BTC',
-        imgUrl: 'icons/coin-list/BTC.svg',
+        imgUrl: '/icons/coin-list/BTC.svg',
     },
     {
         id: 'dogecoin',
         coin: 'DOGE',
-        imgUrl: 'icons/coin-list/DOGE.svg',
+        imgUrl: '/icons/coin-list/DOGE.svg',
     },
     {
         id: 'ethereum',
         coin: 'ETH',
-        imgUrl: 'icons/coin-list/ETH.svg',
+        imgUrl: '/icons/coin-list/ETH.svg',
     },
     {
         id: 'solana',
         coin: 'SOL',
-        imgUrl: 'icons/coin-list/SOL.svg',
+        imgUrl: '/icons/coin-list/SOL.svg',
     },
     {
         id: 'tether',
         coin: 'USDT',
-        imgUrl: 'icons/coin-list/USDT.svg',
+        imgUrl: '/icons/coin-list/USDT.svg',
     },
     {
         id: 'ripple',
         coin: 'XRP',
-        imgUrl: 'icons/coin-list/XRP.svg',
+        imgUrl: '/icons/coin-list/XRP.svg',
     },
 ]
 

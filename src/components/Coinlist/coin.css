@@ -29,7 +29,7 @@
     /* outline: red solid 2px; */
     height: 100%;
     width: 25%;
-    left: 0;
+    left: -3px;
     background: linear-gradient(-90deg, #0A0B16 11.98%, rgba(10, 11, 22, 0.9) 36.46%, rgba(10, 11, 22, 0) 100%);
     transform: matrix(-1, 0, 0, 1, 0, 0) translateY(50%);
 }

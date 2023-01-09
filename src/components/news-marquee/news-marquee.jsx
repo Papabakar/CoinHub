@@ -6,13 +6,16 @@ import { marqueeFunction } from "../../utils/marquee/marquee"
 
 const NewsMarquee = ({data, sliderLine, sliderBox, direction, speed, gap}) => {
 
+    let newBoxName = `.` + `${sliderBox}`
+    let newLineName = `.` + `${sliderLine}`
+
     useEffect(() => {
-        marqueeFunction(sliderLine, sliderBox, direction, speed, gap)
+        marqueeFunction(newLineName, newBoxName, direction, speed, gap)
         return () => marqueeFunction
-    }, [sliderLine, sliderBox, direction, speed, gap])
+    }, [newLineName, newBoxName, direction, speed, gap])
 
     return(
-        <div className="flex gap-[20px] snippetLine relative overlay min-w-full max-w-none flex-1 flex-shrink-0 items-center justify-center">
+        <div className={`flex gap-[20px] ${sliderLine} relative overlay min-w-full max-w-none flex-1 flex-shrink-0 items-center justify-center`}>
 
             {
                 data.map((item) => {
@@ -20,7 +23,7 @@ const NewsMarquee = ({data, sliderLine, sliderBox, direction, speed, gap}) => {
                     const {date, image, title} = item
 
                     return(
-                        <div className="snippetBox opacity-70 hover:opacity-100 hover:ease-in-out hover:transition-[600ms] ease-in-out hover:cursor-pointer flex flex-shrink-0 gap-5 w-fit p-3.5 rounded-2xl px-2">
+                        <div className={`${sliderBox} opacity-70 hover:opacity-100 hover:ease-in-out hover:transition-[600ms] ease-in-out hover:cursor-pointer flex flex-shrink-0 gap-5 w-fit p-3.5 rounded-2xl px-2`}>
                             <div className="rounded-2xl max-w-[60px] my-auto ml-2">
                                 <img src={image} alt="" />
                             </div>

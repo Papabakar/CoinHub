@@ -2,6 +2,7 @@ import Lottie from "react-lottie";
 import Refine from '../../assets/lottie/refine.svg'
 import FormInput from "../../snippets/form-input/form-input";
 import { useState } from "react";
+import FooterLogo from '../../assets/svgs/logo.svg'
 import {
   NAVIGATION_LIST_ITEMS,
   SUPPORT_LIST_ITEMS,
@@ -9,7 +10,7 @@ import {
 } from "../../data/bottom-nav-items.data";
 
 import animationData from "../../assets/lottie/127832-heart-vibes.json";
-import BlogNewsletter from "../../snippets/article-extras/newsletter";
+import BlogNewsletter from "../newsletter/newsletter";
 
 const currentYear = new Date().getFullYear();
 
@@ -94,12 +95,17 @@ const FooterMenu = () => {
     <div>
     <BlogNewsletter />
     
-    <div className="px-5 md:px-10 border-t border-lightBorder border-opacity-30 ">
-      <div className="flex gap-5 my-10">
-        <div className="w-[180px] flex flex-col justify-start items-start">
+    <div className="px-5 md:px-10 flex flex-col md:flex-row justify-between items-start border-t border-lightBorder border-opacity-30 py-10 gap-10">
+
+      <div>
+        <img src={FooterLogo} alt="footer-logo" className="min-w-[200px] opacity-75" />
+      </div>
+
+      <div className="flex gap-10 ">
+        <div className="flex flex-col justify-start items-start">
           {bottomNavElements_1}
         </div>
-        <div className="w-[180px] flex flex-col justify-start items-start">
+        <div className="flex flex-col justify-start items-start">
           {bottomNavElements_2}
         </div>
       </div>
