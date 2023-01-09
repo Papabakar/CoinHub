@@ -17,7 +17,7 @@
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "firebase": "^9.15.0",
-    "gsap": "^3.11.3",
+    "gsap": "./gsap-bonus.tgz",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
