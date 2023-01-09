@@ -101,11 +101,11 @@ const Article = () => {
   
 
   return (
-    <div className="unset">
+    <div className="">
       <ArticleHeader headingData={headingData} />
 
-      <div className="flex flex-col md:flex-row">
-        <article className="xl:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">
+      <div className="flex flex-col md:flex-row bg-primaryBg">
+        <article className="md:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">
           <ArticleInfo articleInfoData={articleInfo} />
           {content ? (
             <div className="">
