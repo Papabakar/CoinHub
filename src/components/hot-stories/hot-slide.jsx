@@ -6,7 +6,7 @@ const HotStory = ({ data }) => {
   const { imageUrl, title, viewCount, createdAt, readTime } = data;
 
   return (
-    <div style={{ background: `url(${imageUrl})` }} className="xl:opacity-75 hover:transition-[350ms] hover:ease-in-out xl:hover:opacity-100 bg-center background-image bg-no-repeat rounded-[25px] max-w-[400px] min-w-[200px] aspect-[384/500] flex flex-col justify-between p-2.5 xxs:p-3.5 xs:p-5">
+    <div style={{ background: `url(${imageUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }} className="xl:opacity-75 hover:transition-[350ms] hover:ease-in-out xl:hover:opacity-100 bg-center background-image bg-no-repeat rounded-[25px] max-w-[400px] min-w-[200px] aspect-[384/500] flex flex-col justify-between p-2.5 xxs:p-3.5 xs:p-5">
         <div className="flex justify-between items-center">
           <div className="flex time-pill items-center pl-1.5 justify-start gap-1 p-0.5 px-3 rounded-full">
             <Clock />
