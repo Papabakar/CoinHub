@@ -6,7 +6,7 @@ import Footer from "../footer/footer";
 import Intro from "../../routes/intro";
 import NewsSlider from "../../routes/news-slider";
 import Main from "../../routes/main";
-import Blog from "../Blog/blog";
+import Blog from '../Blog/blog';
 import Newsletter from "../newsletter/newsletter";
 import HotStories from "../hot-stories/hot-stories";
 import BlogNewsletter from '../../snippets/article-extras/newsletter';
