@@ -39,6 +39,9 @@ const BlogNewsletter = () => {
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                   </svg>
                 </div>
+                <p className={`ml-2 ${emailState === "Invalid Email" ? "text-red-500" : "text-green-500"} mb-0.5 mx-auto text-xs xl:text-sm max-w-2xl font-light sm:text-lg `}>
+                    *{emailState}
+                  </p>
                 <div className="relative">
                   <input
                     className="block rounded-2xl p-3 w-full text-sm text-white border border-gray-300 focus:ring-primary-500 focus:border-primary-500 bg-card-bg dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -68,9 +71,6 @@ const BlogNewsletter = () => {
                     Subscribe
                   </button>
                 </div>
-                <p className={`ml-3 ${emailState === "Invalid Email" ? "text-red-500" : "text-green-500"} mt-1 mx-auto text-xs max-w-2xl font-light sm:text-lg `}>
-                    *{emailState}
-                  </p>
               </div>
             </div>
             <div className="mx-auto flex justify-center items-center text-center max-w-screen-sm text-sm text-gray-500 newsletter-form-FooterMenu dark:text-gray-300">
