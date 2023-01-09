@@ -114,7 +114,7 @@ const Article = () => {
           ): <div className="hidden"></div>}
         </article>
 
-        <div className="hidden xl:block p-7 top-6">
+        <div className="block my-8 px-5 xl:px-10 xl:block p-7 sticky top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>
