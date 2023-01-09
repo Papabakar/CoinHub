@@ -62,7 +62,7 @@ const BlogNewsletter = () => {
                       if (checkIfEmailIsValid(email)) {
                         setEmailState("Adding Email")
                         await addEmailSubscriber({ email: email });
-                        setEmailState("Email Added")
+                        setEmailState("Congratulations, you are now subscribed!")
                       } else {
                         setEmailState("Invalid Email")
                       }

@@ -6,7 +6,9 @@ import BlogBottomSideBar from "../../snippets/article-extras/related";
 import BlogRightSideBar from "../../snippets/article-extras/sidebar";
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import './article.css'
+import "./article.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, logout } from "../../firebase";
 
 import {
   getBlogById,
@@ -14,11 +16,14 @@ import {
 } from "../../backend/functions/blogs/getBlogs";
 import { useParams } from "react-router-dom";
 import CoinList from "../Coinlist/coin";
-import FooterMenu from "../Footer/footer";
+import FooterMenu from "../footer/footer";
+import deleteBlog from "../../backend/functions/blogs/deleteBlog";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Article = () => {
- 
   const { state } = useLocation();
+  const [user, loading, error] = useAuthState(auth);
 
   const [headingData, setHeadingData] = useState({
     subject: "",
@@ -33,7 +38,7 @@ const Article = () => {
   });
 
   const [content, setContent] = useState(null);
-  
+
   const [relatedBlogs, setRelatedBlogs] = useState([]);
   // Get the blogId param from the URL.
   let { id } = useParams();
@@ -54,56 +59,86 @@ const Article = () => {
       setRelatedBlogs([]);
     }
 
-
     // declare the data fetching function
     const fetchData = async () => {
       let blogData = await getBlogById(id);
-      let relatedBlogsHolder = await getBlogBySection(blogData[0]["section"]);
+      console.log(`Blog Data ${blogData}`);
+      if (blogData === null || blogData === []) {
+        setHeadingData({
+          subject: "",
+          subjectLink: "",
+          title: "This blog does not exist",
+          intro: "...",
+        });
+        setArticleInfo({
+          author: "...",
+          postDate: Date.now(),
+        });
+        setContent(null);
+        setRelatedBlogs([]);
+      } else {
+        let relatedBlogsHolder = await getBlogBySection(blogData[0]["section"]);
 
-      let {
-        imageUrl,
-        title,
-        createdAt,
-        viewCount,
-        author,
-        summaryContent,
-        blogContent,
-        section,
-      } = blogData[0];
+        let {
+          imageUrl,
+          title,
+          createdAt,
+          viewCount,
+          author,
+          summaryContent,
+          blogContent,
+          section,
+        } = blogData[0];
 
-      setRelatedBlogs(relatedBlogsHolder);
-      setContent(JSON.parse(blogContent));
+        setRelatedBlogs(relatedBlogsHolder);
+        setContent(JSON.parse(blogContent));
 
+        console.log(content);
 
-      setHeadingData({
-        subject: section,
-        subjectLink: "",
-        title: title,
-        intro: summaryContent,
-      });
+        setHeadingData({
+          subject: section,
+          subjectLink: "",
+          title: title,
+          intro: summaryContent,
+        });
 
-      setArticleInfo({
-        author: author,
-        postDate: createdAt,
-      });
-    
+        setArticleInfo({
+          author: author,
+          postDate: createdAt,
+        });
+      }
     };
 
-    setBlogDataToDefault()
+    setBlogDataToDefault();
     fetchData().catch(console.error);
-    
+
     return () => {
       // Clean up function
-      setBlogDataToDefault()
+      setBlogDataToDefault();
     };
   }, [id]);
-  
-  console.log('render')
-  
+
+  function notify(text) {
+    toast(text);
+  }
 
   return (
     <div className="">
+      <ToastContainer />
       <CoinList />
+      {!loading && user ? (
+        <div
+          onClick={async () => {
+            await deleteBlog(id);
+            notify("Blog Deleted | Refresh Page");
+          }}
+          className="bg-red-500 text-white h-[50px] w-[150px] p-[10px] cursor-pointer"
+        >
+          Delete Blog
+        </div>
+      ) : (
+        <div className="hidden"></div>
+      )}
       <ArticleHeader headingData={headingData} />
 
       <div className="flex flex-col md:flex-row bg-primaryBg">
@@ -111,16 +146,18 @@ const Article = () => {
           <ArticleInfo articleInfoData={articleInfo} />
           {content ? (
             <div className="">
-              <ArticleContent data={content} /> 
+              <ArticleContent data={content} />
             </div>
-          ): <div className="hidden"></div>}
+          ) : (
+            <div className="hidden"></div>
+          )}
         </article>
 
         <div className="md:block p-7 top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>
-        <FooterMenu />
+      <FooterMenu />
     </div>
   );
 };
