@@ -100,6 +100,7 @@ const Article = () => {
           subjectLink: "",
           title: title,
           intro: summaryContent,
+          imageUrl: imageUrl
         });
 
         setArticleInfo({
