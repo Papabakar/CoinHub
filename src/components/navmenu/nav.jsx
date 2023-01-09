@@ -22,7 +22,7 @@ const NavMenu = ({navLinks}) => {
           </div>
 
           <div className="md:block hidden">
-            <a href="" className='primary'>Blog</a>
+            <a href="" className='nav-primary'>Explore Blogs</a>
           </div>
       </div>
     )
