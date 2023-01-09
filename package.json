@@ -27,7 +27,8 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
     "sass": "^1.56.1",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "scripts": {
     "start": "react-scripts start",

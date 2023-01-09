@@ -57,9 +57,7 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="min-w-full md:w-full flex items-end md:items-center justify-center overflow-x-scroll">
-        <BlogOptions />
-      </div>
+      <BlogOptions />
       
       <div className="flex justify-center items-center">
         {loadingBlogs ? (
