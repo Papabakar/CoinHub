@@ -73,7 +73,7 @@ const BlogNewsletter = () => {
                 </div>
               </div>
             </div>
-            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">
+            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-FooterMenu dark:text-gray-300">
               We care about the protection of your data.{" "}
               <a
                 href="#"

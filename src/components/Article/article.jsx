@@ -14,7 +14,7 @@ import {
 } from "../../backend/functions/blogs/getBlogs";
 import { useParams } from "react-router-dom";
 import CoinList from "../Coinlist/coin";
-import Footer from "../Footer/footer";
+import FooterMenu from "../Footer/footer";
 
 const Article = () => {
  
@@ -120,7 +120,7 @@ const Article = () => {
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>
-        <Footer />
+        <FooterMenu />
     </div>
   );
 };

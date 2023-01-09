@@ -4,7 +4,7 @@ import BlogNewsletter from "../../snippets/article-extras/newsletter";
 import ArticleContent from "../../snippets/article-main/article-content";
 import BlogBottomSideBar from "../../snippets/article-extras/related";
 import BlogRightSideBar from "../../snippets/article-extras/sidebar";
-import Footer from "../Footer/footer";
+import FooterMenu from "../FooterMenu/FooterMenu";
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import {
@@ -98,7 +98,7 @@ const Article = () => {
         </div>
       </div>
 
-      <Footer />
+      <FooterMenu />
     </div>
   );
 };
