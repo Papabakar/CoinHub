@@ -1,6 +1,6 @@
 import Lottie from "react-lottie";
 import Refine from '../../assets/lottie/refine.svg'
-import FormInput from "../form-input/form-input";
+import FormInput from "../../snippets/form-input/form-input";
 import { useState } from "react";
 import {
   NAVIGATION_LIST_ITEMS,
@@ -9,14 +9,16 @@ import {
 } from "../../data/bottom-nav-items.data";
 
 import animationData from "../../assets/lottie/127832-heart-vibes.json";
-import SocialBar from "./social-bar";
+import BlogNewsletter from "../../snippets/article-extras/newsletter";
+
+const currentYear = new Date().getFullYear();
 
 const bottomNavHeaderStyle = {
   color: "#ffff",
-  fontSize: "14px",
+  fontSize: "16px",
   fontWeight: "500",
   lineHeight: "24px",
-  padding: "0px 0px 19px 0px",
+  padding: "0px 0px 10px 0px",
 };
 
 const bottomNavBodyStyle = {
@@ -89,39 +91,23 @@ const Footer = () => {
   });
 
   return (
-    <div className="px-10 border-t border-lightBorder border-opacity-30 ">
-      <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-5 lg:grid-rows-1 my-10">
-        <div className="flex flex-col items-start justify-start w-full gap-5 lg:col-span-2">
-          <div className="flex flex-col gap-2">
-            <span style={bottomNavHeaderStyle}>Get crypto news everyday!</span>
-            <form action="w-full">
-              <FormInput
-                inputOptions={{
-                  name: "email",
-                  type: "text",
-                  value: email,
-                  onChange: handleChange,
-                }}
-              />
-            </form>
-          </div>
-
-          <div className="flex flex-col justify-start items-start">
-            <span className="text-white text-sm mb-4">Follow us</span>
-            <SocialBar />
-          </div>
-        </div>
-
-        <div className="w-[180px] lg:h-[293px] flex flex-col justify-start items-start">
+    <div>
+    <BlogNewsletter />
+    
+    <div className="px-5 md:px-10 border-t border-lightBorder border-opacity-30 ">
+      <div className="flex gap-5 my-10">
+        <div className="w-[180px] flex flex-col justify-start items-start">
           {bottomNavElements_1}
         </div>
-        <div className="w-[180px] lg:h-[293px] flex flex-col justify-start items-start">
+        <div className="w-[180px] flex flex-col justify-start items-start">
           {bottomNavElements_2}
         </div>
       </div>
+    </div>
 
-      <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
-        <span>2022 StoicDAO © | All Rights Reserved</span>
+    <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
+
+        <span> {currentYear} Coinhub © | All Rights Reserved</span>
 
         <div className="">
           <div className="flex">
@@ -132,24 +118,24 @@ const Footer = () => {
                 height={22.5}
                 className=""
                 width={22.5}
-              />
+                />
             </div>
             by
             <a
-              className="ml-1 font-bold text-white text-opacity-70 hover:text-opacity-100 hover:transition-[400ms] hover:ease-in-out hover:scale-[101%] italic"
+              className="ml-1 flex items-center justify-center font-bold text-white text-opacity-70 hover:text-opacity-100 hover:transition-[400ms] hover:ease-in-out hover:scale-[101%] italic"
               href="https://t.me/webdevmiles"
               rel="noreferrer"
               target={"_blank"}
-            >
+              >
               {" "}
               <div className="flex justify-center items-center">
-                <img src={Refine} className="max-w-[65px] mt-0.5" alt="Designed & Developed by Refine Studio"/>
+                <img src={Refine} className="max-w-[50px] ml-1" alt="Designed & Developed by Refine Studio"/>
               </div>
             </a>
           </div>
         </div>
       </div>
-    </div>
+  </div>
   );
 };
 

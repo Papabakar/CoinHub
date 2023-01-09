@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { marqueeFunction } from "../../../../utils/marquee/marquee";
+import { marqueeFunction } from "../../../utils/marquee/marquee";
 import gsap from "gsap";
-import CoinInfo from "./coin-info";
-import CoinPrice from "./coin-price";
+import CoinInfo from "./coinInfo";
+import CoinPrice from "./coinPrice";
 
 const CoinItem = ({ listData, data, lineName, direction, speed, gap }) => {
   useEffect(() => {

@@ -28,7 +28,7 @@ function BlogPost({ data }) {
           navigate(`/blog/${_id}`, { state: [item, data] });
         }}
       >
-        <div className="rounded-t-3xl min-h-[300px] bg-center w-full bg-auto bg-no-repeat" style={{background: `url(${imageUrl})`}}>
+        <div className="rounded-t-3xl min-h-[300px] max-h-[400px] bg-center w-full bg-auto bg-no-repeat" style={{background: `url(${imageUrl})`}}>
           {/* <img src={imageUrl} className="bg-cover w-full" alt="" /> */}
         </div>
 

@@ -10,3 +10,16 @@
     z-index: 10000;
 }
 
+.back-shadow{
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    left: 50%;
+    top: 50%;
+    opacity: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #000000 15.71%, rgba(0, 0, 0, 0) 50%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border-radius: 180px;
+}
+

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { marqueeFunction } from "../../../utils/marquee/marquee";
-import CoinInfo from "./coinInfo/coin-info";
-import CoinPrice from "./coinInfo/coin-price";
+import CoinInfo from "./coinInfo";
+import CoinPrice from "./coinPrice";
 
 const CoinListLoadingSkeleton =  ({ listData, lineName, direction, speed, gap }) => {
   useEffect(() => {

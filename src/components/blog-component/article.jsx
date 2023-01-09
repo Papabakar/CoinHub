@@ -7,33 +7,25 @@ import BlogRightSideBar from "../../snippets/article-extras/sidebar";
 import Footer from "../Footer/footer";
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import './article.css'
-
 import {
   getBlogById,
   getBlogBySection,
 } from "../../backend/functions/blogs/getBlogs";
 import { useParams } from "react-router-dom";
-import CoinList from "../Coinlist/coin";
 
 const Article = () => {
- 
   const { state } = useLocation();
-
   const [headingData, setHeadingData] = useState({
     subject: "",
     subjectLink: "",
     title: "Loading Blog",
     intro: "...",
   });
-
   const [articleInfo, setArticleInfo] = useState({
     author: "...",
     postDate: Date.now(),
   });
-
   const [content, setContent] = useState(null);
-  
   const [relatedBlogs, setRelatedBlogs] = useState([]);
   // Get the blogId param from the URL.
   let { id } = useParams();
@@ -53,8 +45,6 @@ const Article = () => {
       setContent(null);
       setRelatedBlogs([]);
     }
-
-
     // declare the data fetching function
     const fetchData = async () => {
       let blogData = await getBlogById(id);
@@ -74,6 +64,7 @@ const Article = () => {
       setRelatedBlogs(relatedBlogsHolder);
       setContent(JSON.parse(blogContent));
 
+      console.log(content);
 
       setHeadingData({
         subject: section,
@@ -86,37 +77,23 @@ const Article = () => {
         author: author,
         postDate: createdAt,
       });
-    
     };
-
+    
     setBlogDataToDefault()
     fetchData().catch(console.error);
-    
-    return () => {
-      // Clean up function
-      setBlogDataToDefault()
-    };
   }, [id]);
-  
-  console.log('render')
-  
 
   return (
     <div className="">
-      <CoinList />
       <ArticleHeader headingData={headingData} />
 
-      <div className="flex flex-col md:flex-row bg-primaryBg">
-        <article className="md:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">
+      <div className="flex flex-col xl:flex-row relative">
+        <article className=" w-full max-w-none format xl:border-r border-lightBorder border-opacity-30 p-7">
           <ArticleInfo articleInfoData={articleInfo} />
-          {content ? (
-            <div className="">
-              <ArticleContent data={content} /> 
-            </div>
-          ): <div className="hidden"></div>}
+          {content ? <ArticleContent data={content} /> : <div className="hidden"></div>}
         </article>
 
-        <div className="md:block p-7 top-6">
+        <div className="block my-8 px-5 xl:px-10 xl:block p-7 sticky top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>

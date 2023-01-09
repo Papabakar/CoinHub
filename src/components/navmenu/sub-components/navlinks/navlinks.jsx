@@ -5,7 +5,7 @@ const NavLinks = ({navLinks}) => {
             {navLinks.map((item) => {
                 const {name, id, route} = item
                 return(
-                    <a className="text-white" key={id} href={route}>
+                    <a className="text-white text-md" key={id} href={route}>
                         <li>
                             {name}
                         </li>

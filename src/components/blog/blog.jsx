@@ -67,9 +67,9 @@ const Blog = () => {
         ) : (
           <div>
             {BlogsData.length === 0 ? (
-              <p className="text-white text-xl mt-10">This category is empty! We will be adding blogs soon.</p>
+              <p className="text-white  mt-10 px-10 text-md text-center md:text-base">This category is empty! We will be adding blogs soon.</p>
             ) : (
-              <div className={`grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 ${ BlogsData.length <= 2 ? `md:grid-rows-1`:`md:grid-rows-1` } gap-7 mt-5 mx-auto`}>
+              <div className={`grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 base:grid-cols-3 xl:grid-cols-3 ${ BlogsData.length <= 2 ? `md:grid-rows-1`:`md:grid-rows-1` } gap-7 mt-5 mx-auto`}>
                 <BlogPost data={BlogsData} />
               </div>
             )}

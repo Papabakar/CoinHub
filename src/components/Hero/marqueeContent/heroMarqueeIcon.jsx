@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import gsap from "gsap";
 import { marqueeFunction } from "../../../utils/marquee/marquee";
 
 const IconBox = ({images, lineName, direction, speed, gap}) => {

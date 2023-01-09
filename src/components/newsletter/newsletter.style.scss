@@ -16,13 +16,25 @@
 
 
 .primary{
-    background: linear-gradient(97.05deg, #F29200 1.32%, hsl(38, 94%, 59%) 96.49%);
-    border-radius: 12px;
-    padding: 0.5rem 1.5rem;
+    padding: 0.45rem 1.4rem;
+    border-radius: 0.65rem/* 12px */;
+    font-size: 0.85rem/* 12px */;
+    line-height: 1rem/* 16px */;
+    background: linear-gradient(97.05deg, #F29200 1.32%, rgb(249, 178, 52) 96.49%),
+    linear-gradient(92.44deg, rgba(255, 255, 255, 0.8) -14.98%, rgba(249, 178, 52, 0.5) 137.26%);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.19), 0 0 15px 0 rgba(249, 178, 52, 0.37), 0 5px 53px 0 rgba(249, 178, 52, 0.355);
+    color: #fff;
+    cursor: pointer;
 }
 
 .primary-setting{
     background: linear-gradient(97.05deg, #F29200 1.32%, #F9B234 96.49%);
     border-radius: 50%;
     padding: 0.75rem;
+}
+
+
+.primary:hover{
+    transform: scale(1.04);
+    transition: ease-in-out 250ms;
 }

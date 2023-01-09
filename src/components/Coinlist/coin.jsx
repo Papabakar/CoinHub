@@ -1,9 +1,9 @@
-import { COINLISTDATA } from "../../../data/document.data";
-import "./coin-list.css";
-import CoinItem from "./coinInfo/coin-item";
+import { COINLISTDATA } from "../../data/document.data";
+import "./coin.css";
+import CoinItem from "./coinContent/coinItem";
 import { useState, useEffect } from "react";
-import getCoinData from "../../../backend/functions/coins/get-coins-data";
-import CoinListLoadingSkeleton from "./coin-list-loader";
+import getCoinData from "../../backend/functions/coins/get-coins-data";
+import CoinListLoadingSkeleton from "./coinContent/coinSkeleton";
 
 let CoinData;
 
@@ -22,8 +22,8 @@ const CoinList = () => {
   }, []);
 
   return (
-    <div className="flex gap-6 py-5 price__marquee relative overlay overflow-x-hidden">
-      <div className=""></div>
+    <div className="flex gap-6 py-5 price__marquee  relative overlay overflow-x-hidden">
+      <div className="list-container"></div>
       
       {loadingCoinData ? (
         <CoinListLoadingSkeleton 

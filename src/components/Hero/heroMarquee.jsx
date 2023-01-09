@@ -1,7 +1,8 @@
-import'./marquee.styles.css'
-import { ICONDATA1, ICONDATA2 } from '../../../data/document.data'
-import MarqueeBundle from './marquee-bundle'
-import { makeId } from '../../../utils/document.utils'
+
+import { ICONDATA1, ICONDATA2 } from '../../data/document.data'
+import MarqueeBundle from './marqueeContent/heroMarqueeLine'
+import { makeId } from '../../utils/document.utils'
+import './heroMarquee.styles.css'
 
 const marqueeData = [
     {
