@@ -16,7 +16,36 @@ module.exports = {
         "primaryTxt": "#FFFFFF",
         "secondaryTxt": "#84858A",
         "lightBorder": "#5e5e5e",
-      }
+      },
+      screens: {
+        'xxs': '375px',
+        // => @media (min-width: 375x) { ... }
+  
+        'xs':'425px',
+        // => @media (min-width: 478px) { ... }
+  
+        'xsm':'575px',
+        // => @media (min-width: 478px) { ... }
+  
+        'sm': '640px',
+        // => @media (min-width: 640px) { ... }
+  
+        'md': '768px',
+        // => @media (min-width: 768px) { ... }
+  
+        'base': '968px',
+        // => @media (min-width: 968px) { ... }
+  
+        'lg': '1024px',
+        // => @media (min-width: 1024px) { ... }
+  
+        'xl': '1280px',
+        // => @media (min-width: 1280px) { ... }
+        '2xl': '1920px',
+  
+        'horizontal': '16/9',
+  
+      },
     },
   },
   plugins: [],

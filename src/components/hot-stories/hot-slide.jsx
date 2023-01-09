@@ -2,11 +2,11 @@ import "./hot-slide.style.scss";
 import {ReactComponent as Clock} from '../../assets/svgs/clock.svg'
 import {ReactComponent as Eye} from '../../assets/svgs/eye.svg'
 
-const SlideHot = ({ data }) => {
+const HotStory = ({ data }) => {
   const { imageUrl, title, viewCount, createdAt, readTime } = data;
 
   return (
-    <div style={{ background: `url(${imageUrl})` }} className="opacity-75 hover:transition-[350ms] hover:ease-in-out hover:opacity-100 bg-center background-image bg-no-repeat rounded-[25px] max-w-[400px] min-w-[200px] aspect-[384/500] flex flex-col justify-between p-5">
+    <div style={{ background: `url(${imageUrl})` }} className="xl:opacity-75 hover:transition-[350ms] hover:ease-in-out xl:hover:opacity-100 bg-center background-image bg-no-repeat rounded-[25px] max-w-[400px] min-w-[200px] aspect-[384/500] flex flex-col justify-between p-2.5 xxs:p-3.5 xs:p-5">
         <div className="flex justify-between items-center">
           <div className="flex time-pill items-center pl-1.5 justify-start gap-1 p-0.5 px-3 rounded-full">
             <Clock />
@@ -16,20 +16,20 @@ const SlideHot = ({ data }) => {
             </span>
           </div>
 
-          <div className="flex  mt-0.5 text-xs p-1 my-auto rounded-full px-2 view-pill justify-between gap-1.5 items-center bg-opacity-25">
+          <div className="flex  mt-0.5 text-xs p-1 my-auto rounded-full px-2 view-pill justify-between gap-1.5 text-white items-center bg-opacity-25">
             <Eye />
             <span>{viewCount.toLocaleString("en-US")}</span>
           </div>
         </div>
 
-        <div className="p-4 view-pill rounded-2xl font-medium text-lg">
+        <div className="p-4 view-pill text-white rounded-2xl font-medium text-lg">
         {title}
       </div>
     </div>
     );
 };
 
-export default SlideHot;
+export default HotStory;
 
 
     // <div

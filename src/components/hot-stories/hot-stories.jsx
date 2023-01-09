@@ -1,5 +1,5 @@
 import "swiper/swiper-bundle.css";
-import SlideHot from "./hot-slide";
+import HotStory from "./hot-slide";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, EffectCoverflow } from "swiper";
 import { ReactComponent as ArrowRight } from "../../assets/svgs/arrow-right.svg";
@@ -24,6 +24,12 @@ const swiperOptions = {
       prevEl: "#prevBtn",
   },
   breakpoints: {
+        2400: {
+          slidesPerView: 6,
+        },
+        1980: {
+          slidesPerView: 5,
+        },
         1440: {
           slidesPerView: 4,
         },
@@ -127,7 +133,7 @@ const HotStories = () => {
               {...swiperOptions}>
                 {ArticlesData.map((item, index) => {
                   return (
-                    <SwiperSlide key={index}><SlideHot data={item} /></SwiperSlide>
+                    <SwiperSlide key={index} className="flex justify-center sm:max-w-fit items-center"><HotStory data={item} /></SwiperSlide>
                   );
                 })}
               </Swiper>
