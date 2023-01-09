@@ -13,27 +13,29 @@ const ArticlesRelated = ({ relatedArticles }) => {
 
   
   return (
-    <div className="mb-12">
+    <div className="mb-12 min-w-[300px]">
       <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
         Related Articles
       </h2>
 
       {relatedArticles.map((item, index) => {
         const { imageUrl, title, _id } = item;
-        let truncatedTitle = truncate(title, 40)
+        let truncatedTitle = truncate(title, 35)
 
         return (
           <div
             onClick={() => {
               navigate(`/blog/${_id}`);
             }}
-            className="mb-6 flex items-center cursor-pointer"
+            className="mb-6 flex items-start cursor-pointer"
           >
+            <div className="w-24 h-24 aspect-square mr-3">
             <img
               src={imageUrl}
-              className="mr-4 max-w-full w-24 h-24 rounded-lg"
+              className="w-full h-full rounded-lg bg-no-repeat bg-contain"
               alt="Related-3"
-            />
+              />
+              </div>
 
             <div>
               <h5 className="mb-2 text-lg font-bold leading-tight text-white">

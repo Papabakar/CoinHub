@@ -23,7 +23,7 @@ const Editor = (props) => {
     // eslint-disable-next-line no-unused-vars
 
    return( 
-        <div className='text-white flex my-10 flex-col justify-center items-center overflow-x-hidden'>
+        <div className='text-white flex my-10 flex-col justify-center items-center'>
             <div id='editor' className=""></div>
         </div>
     )

@@ -101,10 +101,10 @@ const Article = () => {
   
 
   return (
-    <div className="">
+    <div className="unset">
       <ArticleHeader headingData={headingData} />
 
-      <div className="md:flex">
+      <div className="flex flex-col md:flex-row">
         <article className="xl:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">
           <ArticleInfo articleInfoData={articleInfo} />
           {content ? (
@@ -114,7 +114,7 @@ const Article = () => {
           ): <div className="hidden"></div>}
         </article>
 
-        <div className="block my-8 px-5 xl:px-10 xl:block p-7 sticky top-6">
+        <div className="md:block p-7 top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>

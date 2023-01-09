@@ -7,7 +7,7 @@ import Article from "./components/Article/article";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="">
       <Router>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
