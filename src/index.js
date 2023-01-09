@@ -6,11 +6,9 @@ import { BlogProvider } from './context/blog.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BlogProvider>
       <App />
     </BlogProvider>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
