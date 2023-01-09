@@ -13,7 +13,7 @@ const NavMenu = ({navLinks}) => {
     }, []);
 
     return(
-      <div className="px-5 fixed h-20 top-0 left-0 z-[10000000] right-0 flex items-center md:px-10 justify-between md:justify-center gap-20 backdrop-blur-2xl">
+      <div className="px-5 fixed h-14 top-0 left-0 z-[10000000] right-0 flex items-center md:px-10 justify-between md:justify-center gap-20 backdrop-blur-2xl list-container">
           <img src={Logo} className="min-w-[120px]" alt="" />
           <NavLinks navLinks={navLinks} />
 

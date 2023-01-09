@@ -23,25 +23,25 @@ function BlogPost({ data }) {
 
     return (
       <div
-        className="bg-card-bg rounded-3xl w-fit"
+        className="bg-card-bg rounded-3xl w-fit relative h-[450px]"
         onClick={() => {
           navigate(`/blog/${_id}`, { state: [item, data] });
         }}
       >
-        <div className="rounded-t-3xl min-h-[300px] max-h-[400px] bg-center w-full bg-auto bg-no-repeat" style={{background: `url(${imageUrl})`}}>
+        <div className="rounded-t-3xl min-h-[300px] bg-center w-full bg-auto bg-no-repeat" style={{background: `url(${imageUrl})`}}>
           {/* <img src={imageUrl} className="bg-cover w-full" alt="" /> */}
         </div>
 
         <div className="flex flex-col gap-3 p-5 w-fit">
           <h3 className="font-bold text-white text-xl max-w-[30ch]">{truncatedTitle}</h3>
 
-          <div className="text-gray-500 max-h-[100px] text-sm flex justify-between">
+          <div className="text-gray-500 max-h-[100px] absolute bottom-4 left-5 right-5 text-sm flex justify-between">
             <div className="flex gap-1 items-center">
               <Calendar />
               {format(new Date(createdAt), "yyyy-MM-dd")}
             </div>
 
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 ">
               <Eye />
               {viewCount.toLocaleString("en-US")}
             </div>

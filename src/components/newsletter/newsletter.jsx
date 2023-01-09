@@ -14,7 +14,9 @@ const Newsletter = () => {
                         </div>
 
                         <div className="">
-                            <button className="primary">Subscribe Now</button>
+                            <button className="primary">
+                                <span className=''>Subscribe Now</span>
+                            </button>
                         </div>
                     </div>
 

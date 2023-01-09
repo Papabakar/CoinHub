@@ -4,7 +4,6 @@ import BlogNewsletter from "../../snippets/article-extras/newsletter";
 import ArticleContent from "../../snippets/article-main/article-content";
 import BlogBottomSideBar from "../../snippets/article-extras/related";
 import BlogRightSideBar from "../../snippets/article-extras/sidebar";
-import Footer from "../footer/footer";
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import './article.css'
@@ -15,6 +14,7 @@ import {
 } from "../../backend/functions/blogs/getBlogs";
 import { useParams } from "react-router-dom";
 import CoinList from "../Coinlist/coin";
+import FooterMenu from "../Footer/footer";
 
 const Article = () => {
  
@@ -120,8 +120,7 @@ const Article = () => {
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>
-
-      <Footer />
+        <FooterMenu />
     </div>
   );
 };

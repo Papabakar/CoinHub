@@ -34,7 +34,7 @@ const bottomNavBodyLastStyle = {
   fontWeight: "500",
 };
 
-const Footer = () => {
+const FooterMenu = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -139,4 +139,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterMenu;
