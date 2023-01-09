@@ -7,6 +7,8 @@ import BlogRightSideBar from "../../snippets/article-extras/sidebar";
 import Footer from "../footer/footer";
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import './article.css'
+
 import {
   getBlogById,
   getBlogBySection,
@@ -14,18 +16,23 @@ import {
 import { useParams } from "react-router-dom";
 
 const Article = () => {
+ 
   const { state } = useLocation();
+
   const [headingData, setHeadingData] = useState({
     subject: "",
     subjectLink: "",
     title: "Loading Blog",
     intro: "...",
   });
+
   const [articleInfo, setArticleInfo] = useState({
     author: "...",
     postDate: Date.now(),
   });
+
   const [content, setContent] = useState(null);
+  
   const [relatedBlogs, setRelatedBlogs] = useState([]);
   // Get the blogId param from the URL.
   let { id } = useParams();
@@ -45,6 +52,8 @@ const Article = () => {
       setContent(null);
       setRelatedBlogs([]);
     }
+
+
     // declare the data fetching function
     const fetchData = async () => {
       let blogData = await getBlogById(id);
@@ -64,7 +73,6 @@ const Article = () => {
       setRelatedBlogs(relatedBlogsHolder);
       setContent(JSON.parse(blogContent));
 
-      console.log(content);
 
       setHeadingData({
         subject: section,
@@ -77,23 +85,36 @@ const Article = () => {
         author: author,
         postDate: createdAt,
       });
-    };
     
+    };
+
     setBlogDataToDefault()
     fetchData().catch(console.error);
+    
+    return () => {
+      // Clean up function
+      setBlogDataToDefault()
+    };
   }, [id]);
+  
+  console.log('render')
+  
 
   return (
     <div className="">
       <ArticleHeader headingData={headingData} />
 
-      <div className="flex flex-col xl:flex-row relative">
-        <article className=" w-full max-w-none format xl:border-r border-lightBorder border-opacity-30 p-7">
-          <ArticleInfo articleInfoData={articleInfo} />
-          {content ? <ArticleContent data={content} /> : <div className="hidden"></div>}
+      <div className="xl:flex p-5 md:p-10">
+        <article className="xl:border-r border-lightBorder border-opacity-30">
+          {/* <ArticleInfo articleInfoData={articleInfo} /> */}
+          {content ? (
+            <div className="">
+              <ArticleContent data={content} /> 
+            </div>
+          ): <div className="hidden"></div>}
         </article>
 
-        <div className="block my-8 px-5 xl:px-10 xl:block p-7 sticky top-6">
+        <div className="hidden my-8 px-5 xl:px-10 xl:block p-7 sticky top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
       </div>

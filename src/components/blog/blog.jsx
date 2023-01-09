@@ -1,9 +1,9 @@
 
-import BlogPost from "./blog-post";
+import BlogPost from "./blogBlock";
 import { useState, useEffect, useContext } from "react";
 import { getBlogBySection } from "../../backend/functions/blogs/getBlogs";
-import BlogLoadingSkeleton from "./blog-loading-skeleton";
-import BlogOptions from "./blog-buttons";
+import BlogLoadingSkeleton from "./blogSkeleton/blog-loading-skeleton";
+import BlogOptions from "./blogCategories/blogCategories";
 import { BlogContext } from "../../context/blog.context";
 
 //format of blog data coming from DB:
@@ -67,7 +67,7 @@ const Blog = () => {
         ) : (
           <div>
             {BlogsData.length === 0 ? (
-              <p className="text-white text-xl mt-10">FAILED TO RETRIEVE BLOG DATA</p>
+              <p className="text-white text-xl mt-10">This category is empty! We will be adding blogs soon.</p>
             ) : (
               <div className={`grid grid-rows-1 p-5 md:p-10 justify-center items-center md:grid-cols-2 xl:grid-cols-3 ${ BlogsData.length <= 2 ? `md:grid-rows-1`:`md:grid-rows-1` } gap-7 mt-5 mx-auto`}>
                 <BlogPost data={BlogsData} />

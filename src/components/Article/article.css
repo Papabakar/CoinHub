@@ -1,0 +1,42 @@
+#blog .codex-editor,
+#blog .codex-editor-overlay,
+#blog .codex-editor__redactor,
+#blog .ce-block,
+#blog .ce-block__content, 
+#blog .ct__content, 
+#blog .ct {
+  all: initial;
+  position: initial;
+  top: initial;
+  right: initial;
+  font-style: inherit;
+  bottom: initial;
+  left: initial;
+  padding: initial;
+  margin: initial;
+  max-width: initial;
+  display: initial;
+  width: initial;
+  min-width: initial;
+}
+
+#blog .codex-editor,
+#blog .codex-editor-overlay,
+#blog .codex-editor__redactor,
+#blog .ce-block,
+#blog .ce-block__content,
+#blog .ct__content, 
+#blog .ct {
+  background-color: unset;
+  font-size: unset;
+  font-style: inherit;
+  color: unset;
+  position: unset;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  left: unset;
+  padding: unset;
+  margin: unset;
+  /* add any other styles that you want to reset here */
+}

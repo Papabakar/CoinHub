@@ -2,9 +2,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./components/home/home-page";
 import Dashboard from "./routes/dashboard/dashboard";
-import DashboardLogin from "./components/authentication/login";
-import BlogDisplay from "./components/blog/blog-display";
-import Article from "./components/blog-component/article";
+import DashboardLogin from "./authentication/login";
+import Article from "./components/Article/article";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
           <Route exact path="/login" element={<DashboardLogin />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route path="/blog/:id" element={<Article />} />
-          <Route path="/article" element={<Article />} />
         </Routes>
       </Router>
     </div>

@@ -44,9 +44,9 @@ const ArticleContent = ({ data }) => {
 
   return (
     <>
-      <div className="min-h-[800px] text-white flex justify-start items-center">
+      <div className="text-white">
         {/* {data} */}
-        <div id="blog" className="w-[800px]"></div>
+        <div id="blog" className=""></div>
       </div>
     </>
   );

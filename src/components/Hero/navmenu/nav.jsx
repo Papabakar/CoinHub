@@ -14,7 +14,7 @@ const NavMenu = ({navLinks}) => {
     }, []);
 
     return(
-        <div className="px-5 md:px-10 flex items-center justify-between backdrop-blur-2xl sticky top-0 right-0 left-0">
+        <div className="px-5 z-50 h-fit md:px-10 flex items-center justify-between backdrop-blur-2xl">
            <div className='flex items-center gap-5 list-container py-5' >
                 <img src={Logo} className="min-w-[175px]" alt="" />
                 <NavLinks navLinks={navLinks} />

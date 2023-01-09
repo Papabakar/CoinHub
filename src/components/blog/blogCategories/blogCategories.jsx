@@ -1,36 +1,27 @@
-import Bitcoin from "../../assets/icons/bitcoin.png";
-import Ether from "../../assets/icons/ether.png";
-import Industry from "../../assets/icons/industry.png";
-import Investing from "../../assets/icons/investing.png";
-import Trading from "../../assets/icons/trading.png";
-import { makeId } from "../../utils/document.utils";
+
+import { makeId } from "../../../utils/document.utils";
 import { useContext,  } from "react";
-import { BlogContext } from "../../context/blog.context";
-import './blog-buttons.css'
+import { BlogContext } from "../../../context/blog.context";
+import './blogCategories.css'
 
 const OptionsData = [
     {
-        Image: Bitcoin,
         name: "Bitcoin",
         id: makeId(),
     },
     {
-        Image: Ether,
         name: "Ethereum",
         id: makeId(),
     },
     {
-        Image: Investing,
         name: "Investing",
         id: makeId(),
     },
     {
-        Image: Trading,
         name: "Trading",
         id: makeId(),
     },
     {
-        Image: Industry,
         name: "Industry",
         id: makeId(),
     },
@@ -52,7 +43,7 @@ const BlogOptions = () => {
                             <div
                             key={id}
                             onClick={() => blogSelecter(name.toLowerCase())}
-                            className="bg-card-bg rounded-xl px-8 py-2.5 "
+                            className="bg-card-bg cursor-pointer rounded-xl px-8 py-2.5 "
                             >
                     
                             <div className="text-white  text-base">{name}</div>
