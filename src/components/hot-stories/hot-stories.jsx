@@ -93,6 +93,10 @@ const HotStories = () => {
 
     const fetchArticles = async () => {
       ArticlesData = await getAllArticles();
+
+      //sort in descending order based on view count
+      ArticlesData.sort((a, b) => b.viewCount - a.viewCount);
+
       setLoadingArticles(false);
     };
 
