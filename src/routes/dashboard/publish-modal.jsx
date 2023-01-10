@@ -54,7 +54,7 @@ const PublishModal = ({publishBlog}) => {
                 />
         </div>
 
-        <button onClick={() => publishBlog(title, imgUrl, author, intro, section)} className="primary w-full text-white py-3">
+        <button onClick={() => publishBlog(title, imgUrl, author, intro, section.toLowerCase())} className="primary w-full text-white py-3">
             Publish
         </button>
     </div>

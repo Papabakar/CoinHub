@@ -16,7 +16,7 @@ import {
 } from "../../backend/functions/blogs/getBlogs";
 import { useParams } from "react-router-dom";
 import CoinList from "../Coinlist/coin";
-import FooterMenu from "../Footer/footer";
+import FooterMenu from "../footer/footer";
 import deleteBlog from "../../backend/functions/blogs/deleteBlog";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
