@@ -8,25 +8,14 @@ export const NAVIGATION_LIST_ITEMS  = [
         href: ""
     },
     {
-        text: "Trending",
-        href: ""
-    },
-    {
-        text: "Featured",
-        href: ""
-    },
-    {
-        text: "Discover",
+        text: "About",
         href: ""
     },
     {
         text: "Market",
         href: ""
     },
-    {
-        text: "Hot Stories",
-        href: ""
-    }
+    
 ];
 
 
@@ -36,15 +25,7 @@ export const SUPPORT_LIST_ITEMS  = [
         href: ""
     },
     {
-        text: "Give Us Feedback",
-        href: ""
-    },
-    {
-        text: "Support Center",
-        href: ""
-    },
-    {
-        text: "Submit a request",
+        text: "Newsletter",
         href: ""
     },
     {
@@ -56,9 +37,13 @@ export const SUPPORT_LIST_ITEMS  = [
         href: ""
     },
     {
-        text: "Trading Rules",
+        text: "Discover",
         href: ""
-    }
+    },
+    {
+        text: "Hot Stories",
+        href: ""
+    },
 ];
 
 
