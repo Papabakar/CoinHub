@@ -20,6 +20,7 @@ import FooterMenu from "../footer/footer";
 import deleteBlog from "../../backend/functions/blogs/deleteBlog";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import increaseBlogViewCount from "../../backend/functions/blogs/increaseViewCount";
 
 const Article = () => {
   const { state } = useLocation();
@@ -90,6 +91,8 @@ const Article = () => {
           section,
         } = blogData[0];
 
+        increaseBlogViewCount(id, viewCount); // increasing view count
+
         setRelatedBlogs(relatedBlogsHolder);
         setContent(JSON.parse(blogContent));
 
@@ -100,7 +103,7 @@ const Article = () => {
           subjectLink: "",
           title: title,
           intro: summaryContent,
-          imageUrl: imageUrl
+          imageUrl: imageUrl,
         });
 
         setArticleInfo({
