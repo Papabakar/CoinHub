@@ -7,7 +7,7 @@ import CoinList from "../../components/Coinlist/coin";
 
 const Hero = () => {
     return(
-        <div className="flex gap-10 flex-col" id="home">
+        <div className="flex gap-10 flex-col" id="#home">
 
             <NavMenu navLinks={NAVDATA}/>
 

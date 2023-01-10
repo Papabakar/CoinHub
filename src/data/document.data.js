@@ -53,12 +53,12 @@ export const NAVDATA = [
     },
     {
         name: 'About',
-        route: '#trend',
+        route: '#about',
         id: makeId()
     },
     {
         name: 'Market',
-        route: '#featured',
+        route: '#market',
         id: makeId()
     },
     {
@@ -73,7 +73,7 @@ export const NAVDATA = [
     },
     {
         name: 'Newsletter',
-        route: '#market',
+        route: '#news',
         id: makeId()
     },
 ]
