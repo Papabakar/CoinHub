@@ -10,7 +10,7 @@ const ArticleHeader = ( { headingData } ) => {
     const newLink = uppercaseFirstLetter(subject)
     
     return(
-        <header style={{ background: `url(${imageUrl})` }} className="w-full h-[460px] xl:h-[337px] bg-no-repeat bg-cover bg-center bg-blend-darken relative">
+        <header style={{ background: `url(${imageUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }} className="w-full  h-[460px] xl:h-[337px] bg-no-repeat bg-cover bg-center bg-blend-darken relative">
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
             <div className="absolute top-20 left-1/2 px-4 mx-auto w-full max-w-screen-xl -translate-x-1/2 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
                 <span className="block mb-4 text-gray-300">Published in <a href={subjectLink} className="first-letter:uppercase font-semibold text-white hover:underline">{newLink}</a></span>

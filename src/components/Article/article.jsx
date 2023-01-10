@@ -127,13 +127,14 @@ const Article = () => {
     <div className="">
       <ToastContainer />
       <CoinList />
+      <div className="relative">
       {!loading && user ? (
         <div
           onClick={async () => {
             await deleteBlog(id);
             notify("Blog Deleted | Refresh Page");
           }}
-          className="bg-red-500 text-white h-[50px] w-[150px] p-[10px] cursor-pointer"
+          className="fixed bottom-5 hover:scale-105 hover:ease-in-out hover:transition hover:bg-red-700 right-5 bg-red-500 z-[10000] w-fit px-5 py-2 rounded-2xl text-white  cursor-pointer"
         >
           Delete Blog
         </div>
@@ -141,6 +142,7 @@ const Article = () => {
         <div className="hidden"></div>
       )}
       <ArticleHeader headingData={headingData} />
+      </div>
 
       <div className="flex flex-col md:flex-row bg-primaryBg">
         <article className="md:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">

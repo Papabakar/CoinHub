@@ -133,7 +133,7 @@ const Article = () => {
             await deleteBlog(id);
             notify("Blog Deleted | Refresh Page");
           }}
-          className="bg-red-500 text-white h-[50px] w-[150px] p-[10px] cursor-pointer"
+          className="fixed bottom-5 hover:scale-105 hover:ease-in-out hover:transition hover:bg-red-700 right-5 bg-red-500 z-[10000] w-fit px-5 py-2 rounded-2xl text-white  cursor-pointer"
         >
           Delete Blog
         </div>
