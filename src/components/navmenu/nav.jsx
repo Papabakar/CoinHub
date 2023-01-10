@@ -13,15 +13,17 @@ const NavMenu = ({navLinks}) => {
     }, []);
 
     return(
-      <div className="px-5 fixed h-14 top-0 left-0 z-[10000000] right-0 flex items-center md:px-10 justify-between md:justify-center gap-20 backdrop-blur-2xl list-container">
+      <div className="px-5 fixed h-14 top-0 left-0 z-[10] right-0 flex items-center base:px-10 justify-between base:justify-center gap-20 backdrop-blur-2xl list-container">
           <img src={Logo} className="min-w-[120px]" alt="" />
+          <div className="hidden base:flex">
           <NavLinks navLinks={navLinks} />
+          </div>
 
-          <div className="text-white md:hidden text-4xl">
+          <div className="text-white base:hidden text-4xl">
             <i className='bx bx-menu'></i>
           </div>
 
-          <div className="md:block hidden">
+          <div className="base:block hidden">
             <a href="" className='nav-primary'>Explore Blogs</a>
           </div>
       </div>
