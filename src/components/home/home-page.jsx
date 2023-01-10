@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CoinList from "../Coinlist/coin";
 import Hero from "../../routes/hero/hero";
 import HeroText from "../HeroText/hero-text";
@@ -12,9 +12,20 @@ import NewsMarquee from "../news-marquee/news-marquee";
 import FooterMenu from "../footer/footer";
 import Blog from "../blog/blog";
 import { NEWSSLIDERDATA } from "../../data/document.data";
-import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 function HomePage() {
+  const { state } = useLocation();
+
+  useEffect(() => {
+    if (state !== null) {
+      const element = document.getElementById(state);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
   return (
     <div className="overflow-x-hidden flex flex-col gap-20">
       <Hero />
@@ -25,7 +36,7 @@ function HomePage() {
         sliderLine={"snippetLine"}
         sliderBox={"snippetBox"}
         direction={1}
-      speed={0.1}
+        speed={0.1}
         gap={20}
       />
       <Main />

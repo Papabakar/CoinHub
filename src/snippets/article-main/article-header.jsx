@@ -1,24 +1,51 @@
+import { useNavigate } from "react-router-dom";
+import { BlogContext } from "../../context/blog.context";
+import { useContext } from "react";
 
-const ArticleHeader = ( { headingData } ) => {
-    // const articleHeader = 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/background.png'
-    const { subject, intro, title, subjectLink, imageUrl } = headingData
+const ArticleHeader = ({ headingData }) => {
+  const navigate = useNavigate();
+  const { blogSelecter } = useContext(BlogContext);
 
-    function uppercaseFirstLetter(word) {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    }
+  // const articleHeader = 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/background.png'
+  const { subject, intro, title, subjectLink, imageUrl } = headingData;
 
-    const newLink = uppercaseFirstLetter(subject)
-    
-    return(
-        <header style={{ background: `url(${imageUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }} className="w-full  h-[460px] xl:h-[337px] bg-no-repeat bg-cover bg-center bg-blend-darken relative">
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
-            <div className="absolute top-20 left-1/2 px-4 mx-auto w-full max-w-screen-xl -translate-x-1/2 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
-                <span className="block mb-4 text-gray-300">Published in <a href={subjectLink} className="first-letter:uppercase font-semibold text-white hover:underline">{newLink}</a></span>
-                <h1 className="mb-4 max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl">{title}</h1>
-                {/* <p className="text-lg font-normal text-gray-300">{intro}</p> */}
-            </div>
-        </header>
-    )
-}
+  function uppercaseFirstLetter(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
 
-export default ArticleHeader
+  const newLink = uppercaseFirstLetter(subject);
+
+  return (
+    <header
+      style={{
+        background: `url(${imageUrl})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+      className="w-full  h-[460px] xl:h-[337px] bg-no-repeat bg-cover bg-center bg-blend-darken relative"
+    >
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+      <div className="absolute top-20 left-1/2 px-4 mx-auto w-full max-w-screen-xl -translate-x-1/2 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
+        <span className="block mb-4 text-gray-300">
+          Published in{" "}
+          <span
+            onClick={() => {
+              blogSelecter(subject.toLowerCase());
+              navigate("/", { state: "#discover" });
+            }}
+            className="first-letter:uppercase font-semibold text-white hover:underline cursor-pointer"
+          >
+            {newLink}
+          </span>
+        </span>
+        <h1 className="mb-4 max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl">
+          {title}
+        </h1>
+        {/* <p className="text-lg font-normal text-gray-300">{intro}</p> */}
+      </div>
+    </header>
+  );
+};
+
+export default ArticleHeader;
