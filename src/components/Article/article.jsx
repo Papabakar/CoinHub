@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import "./article.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, logout } from "../../firebase";
+import FooterMenu from "../Footer/footer";
 
 import {
   getBlogById,
@@ -16,7 +17,6 @@ import {
 } from "../../backend/functions/blogs/getBlogs";
 import { useParams } from "react-router-dom";
 import CoinList from "../Coinlist/coin";
-import FooterMenu from "../footer/footer";
 import deleteBlog from "../../backend/functions/blogs/deleteBlog";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
