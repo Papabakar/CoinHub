@@ -1,7 +1,11 @@
 
 import React, { useEffect, useState } from "react";
 
-const PublishModal = ({publishBlog}) => {
+const PublishModal = ({publishBlog, setShowModal}) => {
+
+    const handleClose = () => {
+        setShowModal(false)
+    }
 
     const [title, setTitle] = useState("");
     const [imgUrl, setImgUrl] = useState("");
@@ -10,7 +14,11 @@ const PublishModal = ({publishBlog}) => {
     const [intro, setIntro] = useState("");
 
     return(
-    <div className="p-7 sm:min-w-[400px] border border-lightBorder fixed min-w-[320px] xs:min-w-[375px] top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 z-[100] rounded-2xl backdrop-blur-3xl border-opacity-30 flex flex-col gap-5">
+    <div className="p-7 sm:max-w-[700px] w-[95%] border border-lightBorder fixed min-w-[320px] xs:min-w-[375px] top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 z-[100] rounded-2xl backdrop-blur-3xl border-opacity-30 flex flex-col gap-5">
+        <button id="closeBtnGame" onClick={handleClose} type="button" className="btn-social text-lightBorder border rounded-xl border-lightBorder text-sm p-2 ml-auto inline-flex items-center" data-modal-toggle="extralarge-modal">
+            <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+            <span className="sr-only">Close modal</span>
+        </button>
         <div className="text-gray-400 flex flex-col gap-1">
             <span className="text-white font-bold text-2xl">Confirm Details</span>
             <span>Please confirm the blog title, author, header image, short intro and section.</span> 

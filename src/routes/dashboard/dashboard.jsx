@@ -58,12 +58,13 @@ function Dashboard() {
           <ToastContainer />
           {showModal ? (
             <PublishModal
+              setShowModal={setShowModal}
               publishBlog={(title, imgUrl, author, intro, section) =>
                 publishBlog(title, imgUrl, author, intro, section)
               }
             />
           ) : (
-            <div className="hidden"></div>
+            ""
           )}
 
 <div className="mb-12">
