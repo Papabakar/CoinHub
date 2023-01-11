@@ -5,10 +5,10 @@ import SwiperCore, { Pagination, EffectCoverflow } from "swiper";
 import { ReactComponent as ArrowRight } from "../../assets/svgs/arrow-right.svg";
 import { ReactComponent as ArrowLeft } from "../../assets/svgs/arrow-left.svg";
 import { useState, useEffect } from "react";
-import getAllArticles from "../../backend/functions/articles/getArticles";
 import HotSlideLoadingSkeleton from "./hot-slide-loading-skeleton";
 import { useRef } from "react";
 import { Navigation } from 'swiper';
+import { getAllBlogs } from "../../backend/functions/blogs/getBlogs";
 
 SwiperCore.use([Pagination, EffectCoverflow]);
 
@@ -92,11 +92,14 @@ const HotStories = () => {
     //Runs only on the first render
 
     const fetchArticles = async () => {
-      ArticlesData = await getAllArticles();
+      const allArticlesData = await getAllBlogs();
 
       //sort in descending order based on view count
-      ArticlesData.sort((a, b) => b.viewCount - a.viewCount);
+      allArticlesData.sort((a, b) => b.viewCount - a.viewCount);
 
+      //only top 10
+      ArticlesData = allArticlesData.slice(0, 10);
+      
       setLoadingArticles(false);
     };
 
