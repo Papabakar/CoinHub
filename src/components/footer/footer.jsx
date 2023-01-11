@@ -1,8 +1,8 @@
 import Lottie from "react-lottie";
-import Refine from '../../assets/lottie/refine.svg'
+import Refine from "../../assets/lottie/refine.svg";
 import FormInput from "../../snippets/form-input/form-input";
 import { useState } from "react";
-import FooterLogo from '../../assets/svgs/logo.svg'
+import FooterLogo from "../../assets/svgs/logo.svg";
 import {
   NAVIGATION_LIST_ITEMS,
   SUPPORT_LIST_ITEMS,
@@ -53,6 +53,13 @@ const FooterMenu = () => {
     setFormfield({ ...formfield, [name]: value });
   };
 
+  function scrollToSection(route) {
+    const element = document.getElementById(route);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   const { email } = formfield;
 
   let bottomNavElements_1 = NAVIGATION_LIST_ITEMS.map((listData, index) => {
@@ -61,9 +68,9 @@ const FooterMenu = () => {
       return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
     } else if (index === NAVIGATION_LIST_ITEMS.length) {
       //last list item
-      return <p style={bottomNavBodyLastStyle}>{listData.text}</p>;
+      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyLastStyle}>{listData.text}</p>;
     } else {
-      return <p style={bottomNavBodyStyle}>{listData.text}</p>;
+      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyStyle}>{listData.text}</p>;
     }
   });
 
@@ -73,9 +80,9 @@ const FooterMenu = () => {
       return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
     } else if (index === SUPPORT_LIST_ITEMS.length) {
       //last list item
-      return <p style={bottomNavBodyLastStyle}>{listData.text}</p>;
+      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyLastStyle}>{listData.text}</p>;
     } else {
-      return <p style={bottomNavBodyStyle}>{listData.text}</p>;
+      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyStyle}>{listData.text}</p>;
     }
   });
 
@@ -93,26 +100,28 @@ const FooterMenu = () => {
 
   return (
     <div>
-    <BlogNewsletter />
-    
-    <div className="px-5 md:px-10 flex flex-col md:flex-row justify-between items-start border-t border-lightBorder border-opacity-30 py-10 gap-10">
+      <BlogNewsletter />
 
-      <div>
-        <img src={FooterLogo} alt="footer-logo" className="min-w-[200px] opacity-75" />
+      <div className="px-5 md:px-10 flex flex-col md:flex-row justify-between items-start border-t border-lightBorder border-opacity-30 py-10 gap-10">
+        <div>
+          <img
+            src={FooterLogo}
+            alt="footer-logo"
+            className="min-w-[200px] opacity-75"
+          />
+        </div>
+
+        <div className="flex gap-10 ">
+          <div className="flex flex-col justify-start items-start">
+            {bottomNavElements_1}
+          </div>
+          <div className="flex flex-col justify-start items-start">
+            {bottomNavElements_2}
+          </div>
+        </div>
       </div>
 
-      <div className="flex gap-10 ">
-        <div className="flex flex-col justify-start items-start">
-          {bottomNavElements_1}
-        </div>
-        <div className="flex flex-col justify-start items-start">
-          {bottomNavElements_2}
-        </div>
-      </div>
-    </div>
-
-    <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
-
+      <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
         <span> {currentYear} Coinhub © | All Rights Reserved</span>
 
         <div className="">
@@ -124,7 +133,7 @@ const FooterMenu = () => {
                 height={22.5}
                 className=""
                 width={22.5}
-                />
+              />
             </div>
             by
             <a
@@ -132,16 +141,20 @@ const FooterMenu = () => {
               href="https://t.me/webdevmiles"
               rel="noreferrer"
               target={"_blank"}
-              >
+            >
               {" "}
               <div className="flex justify-center items-center">
-                <img src={Refine} className="max-w-[50px] ml-1" alt="Designed & Developed by Refine Studio"/>
+                <img
+                  src={Refine}
+                  className="max-w-[50px] ml-1"
+                  alt="Designed & Developed by Refine Studio"
+                />
               </div>
             </a>
           </div>
         </div>
       </div>
-  </div>
+    </div>
   );
 };
 

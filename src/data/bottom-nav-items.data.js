@@ -5,14 +5,17 @@ export const NAVIGATION_LIST_ITEMS  = [
     },
     {
         text: "Home",
+        route: '#home',
         href: ""
     },
     {
         text: "About",
+        route: '#about',
         href: ""
     },
     {
         text: "Market",
+        route: '#market',
         href: ""
     },
     
@@ -26,6 +29,7 @@ export const SUPPORT_LIST_ITEMS  = [
     },
     {
         text: "Newsletter",
+        route: '#news',
         href: ""
     },
     {
@@ -38,10 +42,12 @@ export const SUPPORT_LIST_ITEMS  = [
     },
     {
         text: "Discover",
+        route: '#discover',
         href: ""
     },
     {
         text: "Hot Stories",
+        route: '#hot',
         href: ""
     },
 ];
