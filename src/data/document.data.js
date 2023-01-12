@@ -48,32 +48,32 @@ export const COINLISTDATA  = [
 export const NAVDATA = [
     {
         name: 'Home',
-        route: '#home',
+        route: 'home',
         id: makeId()
     },
     {
         name: 'About',
-        route: '#about',
+        route: 'about',
         id: makeId()
     },
     {
         name: 'Market',
-        route: '#market',
+        route: 'market',
         id: makeId()
     },
     {
         name: 'Discover',
-        route: '#discover',
+        route: 'discover',
         id: makeId()
     },
     {
         name: 'Hot Stories',
-        route: '#hot',
+        route: 'hot',
         id: makeId()
     },
     {
         name: 'Newsletter',
-        route: '#news',
+        route: 'news',
         id: makeId()
     },
 ]

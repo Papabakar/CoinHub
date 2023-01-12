@@ -41,7 +41,7 @@ const Blog = () => {
   }, [selectedBlogSection]);
 
   return (
-    <div className="mt-20" id="#discover">
+    <div className="mt-20" id="discover">
       <div className="flex flex-col gap-3 mx-auto text-center items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <span className="textGradient text-xs">

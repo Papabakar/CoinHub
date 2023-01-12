@@ -11,6 +11,7 @@ import {
 
 import animationData from "../../assets/lottie/127832-heart-vibes.json";
 import BlogNewsletter from "../newsletter/newsletter";
+import { HashLink } from "react-router-hash-link";
 
 const currentYear = new Date().getFullYear();
 
@@ -53,13 +54,6 @@ const FooterMenu = () => {
     setFormfield({ ...formfield, [name]: value });
   };
 
-  function scrollToSection(route) {
-    const element = document.getElementById(route);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-
   const { email } = formfield;
 
   let bottomNavElements_1 = NAVIGATION_LIST_ITEMS.map((listData, index) => {
@@ -68,9 +62,21 @@ const FooterMenu = () => {
       return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
     } else if (index === NAVIGATION_LIST_ITEMS.length) {
       //last list item
-      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyLastStyle}>{listData.text}</p>;
+      return (
+        <HashLink smooth to={`/#${listData.route}`}>
+          <p className="cursor-pointer" style={bottomNavBodyLastStyle}>
+            {listData.text}
+          </p>
+        </HashLink>
+      );
     } else {
-      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyStyle}>{listData.text}</p>;
+      return (
+        <HashLink smooth to={`/#${listData.route}`}>
+          <p className="cursor-pointer" style={bottomNavBodyStyle}>
+            {listData.text}
+          </p>
+        </HashLink>
+      );
     }
   });
 
@@ -80,9 +86,21 @@ const FooterMenu = () => {
       return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
     } else if (index === SUPPORT_LIST_ITEMS.length) {
       //last list item
-      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyLastStyle}>{listData.text}</p>;
+      return (
+        <HashLink smooth to={`/#${listData.route}`}>
+          <p className="cursor-pointer" style={bottomNavBodyLastStyle}>
+            {listData.text}
+          </p>
+        </HashLink>
+      );
     } else {
-      return <p className="cursor-pointer" onClick={() => scrollToSection(listData.route)} style={bottomNavBodyStyle}>{listData.text}</p>;
+      return (
+        <HashLink smooth to={`/#${listData.route}`}>
+          <p className="cursor-pointer" style={bottomNavBodyStyle}>
+            {listData.text}
+          </p>
+        </HashLink>
+      );
     }
   });
 

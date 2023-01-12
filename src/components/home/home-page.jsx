@@ -17,15 +17,6 @@ import { useLocation } from "react-router-dom";
 function HomePage() {
   const { state } = useLocation();
 
-  useEffect(() => {
-    if (state !== null) {
-      const element = document.getElementById(state);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, []);
-
   return (
     <div className="overflow-x-hidden flex flex-col gap-20">
       <Hero />

@@ -9,7 +9,7 @@ const BlogNewsletter = () => {
 
 
   return (
-    <section className="bg-orangeBg" id="#news">
+    <section className="bg-orangeBg" id="news">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
         <div className="mx-auto max-w-screen-md sm:text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">

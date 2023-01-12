@@ -104,7 +104,7 @@ const HotStories = () => {
   }, []);
 
   return (
-    <div className="" id="#hot">
+    <div className="" id="hot">
       <div className="flex justify-between px-10 my-10">
         <h3 className="text-white text-2xl">Hot Stories</h3>
         <div className="flex gap-2 items-center">

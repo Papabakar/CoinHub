@@ -32,7 +32,7 @@ const ArticleHeader = ({ headingData }) => {
           <span
             onClick={() => {
               blogSelecter(subject.toLowerCase());
-              navigate("/", { state: "#discover" });
+              navigate("/#discover",);
             }}
             className="first-letter:uppercase font-semibold text-white hover:underline cursor-pointer"
           >

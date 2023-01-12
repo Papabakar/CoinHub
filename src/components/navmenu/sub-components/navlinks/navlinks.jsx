@@ -1,3 +1,5 @@
+import { HashLink } from "react-router-hash-link";
+
 const NavLinks = ({ navLinks }) => {
   return (
     <ul className="md:flex hidden gap-3.5">
@@ -5,18 +7,11 @@ const NavLinks = ({ navLinks }) => {
         const { name, id, route } = item;
 
         return (
-          <a
-            className="text-white text-md"
-            key={id}
-            onClick={() => {
-              const element = document.getElementById(route);
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
-            <li>{name}</li>
-          </a>
+          <span className="text-white text-md cursor-pointer" key={id}>
+            <HashLink smooth to={`/#${route}`}>
+              <li className="cursor-pointer">{name}</li>
+            </HashLink>
+          </span>
         );
       })}
     </ul>
