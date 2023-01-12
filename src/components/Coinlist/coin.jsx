@@ -19,6 +19,10 @@ const CoinList = () => {
     };
 
     fetchCoinData().catch(console.error);
+
+    return () => {
+      CoinData = null;
+    }
   }, []);
 
   return (

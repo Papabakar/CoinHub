@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CoinList from "../Coinlist/coin";
 import Hero from "../../routes/hero/hero";
 import HeroText from "../HeroText/hero-text";

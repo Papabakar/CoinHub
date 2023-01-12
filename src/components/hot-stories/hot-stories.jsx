@@ -101,6 +101,10 @@ const HotStories = () => {
     };
 
     fetchArticles().catch(console.error);
+
+    return () => {
+      ArticlesData = null;
+    }
   }, []);
 
   return (

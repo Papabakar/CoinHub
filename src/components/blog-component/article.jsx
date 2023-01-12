@@ -44,21 +44,22 @@ const Article = () => {
   // Get the blogId param from the URL.
   let { id } = useParams();
 
+  function setBlogDataToDefault() {
+    setHeadingData({
+      subject: "",
+      subjectLink: "",
+      title: "Loading Blog",
+      intro: "...",
+    });
+    setArticleInfo({
+      author: "...",
+      postDate: Date.now(),
+    });
+    setContent(null);
+    setRelatedBlogs([]);
+  }
+
   useEffect(() => {
-    function setBlogDataToDefault() {
-      setHeadingData({
-        subject: "",
-        subjectLink: "",
-        title: "Loading Blog",
-        intro: "...",
-      });
-      setArticleInfo({
-        author: "...",
-        postDate: Date.now(),
-      });
-      setContent(null);
-      setRelatedBlogs([]);
-    }
 
     // declare the data fetching function
     const fetchData = async () => {

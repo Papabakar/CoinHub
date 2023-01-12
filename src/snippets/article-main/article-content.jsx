@@ -45,6 +45,7 @@ let subscribe = false
 
     return () => {
       subscribe = false
+      editor = null;
     };
   }, [subscribe]);
 

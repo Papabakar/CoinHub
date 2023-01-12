@@ -7,7 +7,7 @@ import gsap from 'gsap'
 import ScrollSmoother from 'gsap/ScrollSmoother'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import './section.style.css'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 const SectionImage = () => {
 

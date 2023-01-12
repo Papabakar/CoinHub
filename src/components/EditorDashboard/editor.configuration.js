@@ -1,11 +1,6 @@
 import Header from "@editorjs/header";
 import LinkTool from "@editorjs/link";
-import ImageTool from "@editorjs/image";
 import SimpleImage from "@editorjs/simple-image";
-import EditorJS from "@editorjs/editorjs";
-import { useEffect } from "react";
-import { uploadImageToDB } from "../../firebase";
-import addBlog from "../../backend/functions/blogs/addBlog";
 
 const editorConfig = {
   holder: "editor",
