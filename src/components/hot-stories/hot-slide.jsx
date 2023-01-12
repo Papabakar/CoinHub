@@ -7,6 +7,16 @@ const HotStory = ({ data }) => {
   const { imageUrl, title, viewCount, createdAt, readTime, _id } = data;
   const navigate = useNavigate();
 
+  function truncate( str, n, useWordBoundary ){
+    if (str.length <= n) { return str; }
+    const subString = str.slice(0, n-1); // the original check
+    return (useWordBoundary 
+      ? subString.slice(0, subString.lastIndexOf(" ")) 
+      : subString) + "..";
+  };
+
+  let truncatedTitle = truncate(title, 60)
+
   return (
     <div
       onClick={() => {
@@ -34,7 +44,7 @@ const HotStory = ({ data }) => {
       </div>
 
       <div className="p-4 view-pill text-white rounded-2xl font-medium text-lg">
-        {title}
+        {truncatedTitle}
       </div>
     </div>
   );

@@ -9,10 +9,10 @@ import Newsletter from "../newsletter/newsletter";
 import HotStories from "../hot-stories/hot-stories";
 import BlogNewsletter from "../newsletter/newsletter";
 import NewsMarquee from "../news-marquee/news-marquee";
-import FooterMenu from "../footer/footer";
-import Blog from "../blog/blog";
 import { NEWSSLIDERDATA } from "../../data/document.data";
 import { useLocation } from "react-router-dom";
+import FooterMenu from "../Footer/footer";
+import Blog from "../Blog/blog";
 
 function HomePage() {
   const { state } = useLocation();
