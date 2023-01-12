@@ -12,7 +12,7 @@ import NewsMarquee from "../news-marquee/news-marquee";
 import { NEWSSLIDERDATA } from "../../data/document.data";
 import { useLocation } from "react-router-dom";
 import FooterMenu from "../Footer/footer";
-import Blog from "../Blog/blog";
+import Blog from "../blog/blog";
 
 function HomePage() {
   const { state } = useLocation();
