@@ -1,4 +1,5 @@
 import ArticlesRelated from "../article-main/article-related"
+import ArticlesRelatedLoadingSkeleton from "../article-main/article-related-skeleton"
 import AdBlock from "./adblock"
 
 // const relatedArticles = [
@@ -26,14 +27,24 @@ import AdBlock from "./adblock"
 // ]
 
 const BlogRightSideBar = ({relatedArticles}) => {
+    console.log(relatedArticles);
     return(
         <>
         <aside className="">
             <div className="xl:w-[336px]">
-                <ArticlesRelated relatedArticles={relatedArticles} />
+                {
+                    !relatedArticles?
+
+                    <ArticlesRelatedLoadingSkeleton relatedArticles={["", ""]} />
+
+                    :
+
+                    <ArticlesRelated relatedArticles={relatedArticles} />
+
+                }
                 <AdBlock />
             </div>
-        </aside>
+        </aside> 
         </>
     )
 }

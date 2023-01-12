@@ -9,12 +9,13 @@ import EditorJS from "@editorjs/editorjs";
 let editor;
 
 const ArticleContent = ({ data }) => {
+  const [isEditorReady, setIsEditorReady] = useState(false);
 
-let subscribe = false
+  let subscribe = false;
 
   useEffect(() => {
-    subscribe = true
-    if(subscribe){
+    subscribe = true;
+    if (subscribe) {
       editor = new EditorJS({
         holder: "blog",
         tools: {
@@ -32,29 +33,33 @@ let subscribe = false
             class: LinkTool,
             config: {
               endpoint:
-              "https://coinhub-article-api.onrender.com/get-url-data?hm=f", // Your backend endpoint for url data fetching,
+                "https://coinhub-article-api.onrender.com/get-url-data?hm=f", // Your backend endpoint for url data fetching,
             },
           },
-          
+
           image: SimpleImage,
         },
         data: data,
         readOnly: true,
+        onReady: () => {
+          setIsEditorReady(true);
+        },
       });
     }
 
     return () => {
-      subscribe = false
+      subscribe = false;
       editor = null;
     };
   }, [subscribe]);
 
   return (
     <>
-      <div className="text-white">
-        {/* {data} */}
-        <div id="blog" className=""></div>
-      </div>
+      {isEditorReady ? (
+        <div id="blog" className="text-white"></div>
+      ) : (
+        <div className="h-full min-w-[80%] animate-pulse bg-gray-500 rounded-md"></div>
+      )}
     </>
   );
 };

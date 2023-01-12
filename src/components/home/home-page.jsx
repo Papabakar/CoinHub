@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CoinList from "../Coinlist/coin";
 import Hero from "../../routes/hero/hero";
 import HeroText from "../HeroText/hero-text";
@@ -10,12 +10,25 @@ import HotStories from "../hot-stories/hot-stories";
 import BlogNewsletter from "../newsletter/newsletter";
 import NewsMarquee from "../news-marquee/news-marquee";
 import { NEWSSLIDERDATA } from "../../data/document.data";
-import { useLocation } from "react-router-dom";
 import FooterMenu from "../Footer/footer";
 import Blog from "../blog/blog";
+import { useLocation } from "react-router-dom";
 
 function HomePage() {
-  const { state } = useLocation();
+  const hash = useLocation().hash;
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(`${hash.substring(1)}`);
+      if (element) {
+        // 👇 Will scroll smoothly to the top of the next section
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    return () => {
+      hash = null
+    }
+  }, [hash]);
 
   return (
     <div className="overflow-x-hidden flex flex-col gap-20">

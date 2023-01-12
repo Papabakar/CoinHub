@@ -36,7 +36,12 @@ const Blog = () => {
 
     fetchBlogs().catch(console.error);
 
-    BlogsData = null;
+    return () => {
+      BlogsData = [];
+    }
+
+    
+    
   }, [selectedBlogSection]);
 
   return (

@@ -40,7 +40,7 @@ const Article = () => {
 
   const [content, setContent] = useState(null);
 
-  const [relatedBlogs, setRelatedBlogs] = useState([]);
+  const [relatedBlogs, setRelatedBlogs] = useState(null);
   // Get the blogId param from the URL.
   let { id } = useParams();
 
@@ -56,7 +56,7 @@ const Article = () => {
       postDate: Date.now(),
     });
     setContent(null);
-    setRelatedBlogs([]);
+    setRelatedBlogs(null);
   }
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const Article = () => {
           postDate: Date.now(),
         });
         setContent(null);
-        setRelatedBlogs([]);
+        setRelatedBlogs(null);
       } else {
         let relatedBlogsHolder = await getBlogBySection(blogData[0]["section"]);
 
@@ -132,7 +132,7 @@ const Article = () => {
     <div className="">
       <ToastContainer />
       <CoinList />
-      <div className="relative">
+      <div className="relative w-full">
       {!loading && user ? (
         <div
           onClick={async () => {
@@ -149,15 +149,15 @@ const Article = () => {
       <ArticleHeader headingData={headingData} />
       </div>
 
-      <div className="flex flex-col md:flex-row bg-primaryBg">
+      <div className="w-full flex flex-col md:flex-row bg-primaryBg">
         <article className="md:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">
           <ArticleInfo articleInfoData={articleInfo} />
           {content ? (
-            <div className="">
+            <div className="h-full w-full">
               <ArticleContent data={content} />
             </div>
           ) : (
-            <div className="hidden"></div>
+            <div className="h-full w-full animate-pulse bg-gray-500 rounded-md"></div>
           )}
         </article>
 

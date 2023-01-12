@@ -22,7 +22,7 @@ function Dashboard() {
 
   }
 
-  async function publishBlog(title, imgUrl, author, intro, section) {
+  async function publishBlog(title, imgUrl, author, intro, section, readTime) {
     const editorData = await saveEditorData();
     const editorDataToString = JSON.stringify(editorData);
     try {
@@ -34,6 +34,7 @@ function Dashboard() {
         summaryContent: intro,
         blogContent: editorDataToString,
         section: section,
+        readTime: readTime,
       });
 
       notify("Blog Uploaded");
@@ -59,8 +60,8 @@ function Dashboard() {
           {showModal ? (
             <PublishModal
               setShowModal={setShowModal}
-              publishBlog={(title, imgUrl, author, intro, section) =>
-                publishBlog(title, imgUrl, author, intro, section)
+              publishBlog={(title, imgUrl, author, intro, section, readTime) =>
+                publishBlog(title, imgUrl, author, intro, section, readTime)
               }
             />
           ) : (

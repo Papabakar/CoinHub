@@ -34,7 +34,7 @@ const HotStory = ({ data }) => {
         <div className="flex time-pill items-center pl-1.5 justify-start gap-1 p-0.5 px-3 rounded-full">
           <Clock />
 
-          <span className="text-sm text-white">5 mins</span>
+          <span className="text-sm text-white">{readTime} mins</span>
         </div>
 
         <div className="flex  mt-0.5 text-xs p-1 my-auto rounded-full px-2 view-pill justify-between gap-1.5 text-white items-center bg-opacity-25">
