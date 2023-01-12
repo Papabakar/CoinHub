@@ -15,7 +15,7 @@ import Blog from "../blog/blog";
 import { useLocation } from "react-router-dom";
 
 function HomePage() {
-  const hash = useLocation().hash;
+  let hash = useLocation().hash;
 
   useEffect(() => {
     if (hash) {

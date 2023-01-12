@@ -41,9 +41,9 @@ const ArticleContent = ({ data }) => {
         },
         data: data,
         readOnly: true,
-        onReady: () => {
-          setIsEditorReady(true);
-        },
+        // onReady: () => {
+        //   setIsEditorReady(true);
+        // },
       });
     }
 
@@ -55,11 +55,7 @@ const ArticleContent = ({ data }) => {
 
   return (
     <>
-      {isEditorReady ? (
-        <div id="blog" className="text-white"></div>
-      ) : (
-        <div className="h-full min-w-[80%] animate-pulse bg-gray-500 rounded-md"></div>
-      )}
+      <div id="blog" className="text-white"></div>
     </>
   );
 };
