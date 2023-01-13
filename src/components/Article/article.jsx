@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import "./article.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, logout } from "../../firebase";
-import FooterMenu from "../Footer/footer";
+import FooterMenu from "../footer/footer";
 
 import {
   getBlogById,
@@ -150,14 +150,14 @@ const Article = () => {
       </div>
 
       <div className="w-full flex flex-col md:flex-row bg-primaryBg">
-        <article className="md:border-r flex flex-col p-5 md:p-10  gap-5 border-lightBorder border-opacity-30">
+        <article className="md:border-r flex flex-col p-5 md:p-10 w-full gap-5 border-lightBorder border-opacity-30">
           <ArticleInfo articleInfoData={articleInfo} />
           {content ? (
             <div className="h-full w-full">
               <ArticleContent data={content} />
             </div>
           ) : (
-            <div className="h-full w-full animate-pulse bg-gray-500 rounded-md"></div>
+            <div className="h-full w-full animate-pulse min-h-[800px] bg-gray-500 rounded-md"></div>
           )}
         </article>
 
