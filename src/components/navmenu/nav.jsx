@@ -4,7 +4,7 @@ import NavLinks from './sub-components/navlinks/navlinks'
 import './nav.css'
 import { marqueeFunction } from '../../utils/marquee/marquee'
 import { useEffect } from 'react'
-const NavMenu = ({navLinks}) => {
+const NavMenu = ({navLinks, setNavFun, navState}) => {
 
     useEffect(() => {
       marqueeFunction()
@@ -19,7 +19,7 @@ const NavMenu = ({navLinks}) => {
           <NavLinks navLinks={navLinks} />
           </div>
 
-          <div className="text-white base:hidden text-4xl">
+          <div  onClick={() => setNavFun(!navState)} className="text-white base:hidden text-4xl">
             <i className='bx bx-menu'></i>
           </div>
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CoinList from "../Coinlist/coin";
 import Hero from "../../routes/hero/hero";
 import HeroText from "../HeroText/hero-text";
@@ -13,9 +13,13 @@ import { NEWSSLIDERDATA } from "../../data/document.data";
 import FooterMenu from "../Footer/footer";
 import Blog from "../blog/blog";
 import { useLocation } from "react-router-dom";
+import NavBarOptions from "../navmenu/mobile-nav";
+import NavMenu from "../../components/navmenu/nav";
+import { NAVDATA } from "../../data/document.data";
 
 function HomePage() {
   let hash = useLocation().hash;
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     if (hash) {
@@ -26,35 +30,50 @@ function HomePage() {
       }
     }
     return () => {
-      hash = null
-    }
+      hash = null;
+    };
   }, [hash]);
 
   return (
     <div className="overflow-x-hidden flex flex-col gap-20">
-      <Hero />
-      <HeroText />
-      <Intro />
-      <NewsMarquee
-        data={NEWSSLIDERDATA}
-        sliderLine={"snippetLine"}
-        sliderBox={"snippetBox"}
-        direction={1}
-        speed={0.1}
-        gap={20}
+      <NavMenu
+        navLinks={NAVDATA}
+        setNavFun={() => setShowNav((previousState) => !previousState)}
+        navState={showNav}
       />
-      <Main />
-      <NewsMarquee
-        data={NEWSSLIDERDATA}
-        sliderLine={"snippetLine_2"}
-        sliderBox={"snippetBox_2"}
-        direction={-1}
-        speed={0.1}
-        gap={20}
-      />
-      <Blog />
-      <HotStories />
-      <FooterMenu />
+
+      {showNav ? (
+        <NavBarOptions
+          setNavFun={() => setShowNav((previousState) => !previousState)}
+          navState={showNav}
+        />
+      ) : (
+        <>
+          <Hero />
+          <HeroText />
+          <Intro />
+          <NewsMarquee
+            data={NEWSSLIDERDATA}
+            sliderLine={"snippetLine"}
+            sliderBox={"snippetBox"}
+            direction={1}
+            speed={0.1}
+            gap={20}
+          />
+          <Main />
+          <NewsMarquee
+            data={NEWSSLIDERDATA}
+            sliderLine={"snippetLine_2"}
+            sliderBox={"snippetBox_2"}
+            direction={-1}
+            speed={0.1}
+            gap={20}
+          />
+          <Blog />
+          <HotStories />
+          <FooterMenu />
+        </>
+      )}
     </div>
   );
 }
