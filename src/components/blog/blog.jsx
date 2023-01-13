@@ -26,6 +26,8 @@ const Blog = () => {
   useEffect(() => {
     //Runs only when the selectedBlogSection changes
 
+    
+
     const fetchBlogs = async () => {
       if (!loadingBlogs) {
         setLoadingBlogs(true);

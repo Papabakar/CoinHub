@@ -24,6 +24,7 @@ const ArticlesRelated = ({ relatedArticles }) => {
 
         return (
           <div
+          key={index}
             onClick={() => {
               navigate(`/blog/${_id}`);
             }}

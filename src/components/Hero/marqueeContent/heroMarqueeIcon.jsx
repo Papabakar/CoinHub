@@ -1,7 +1,9 @@
 import { useEffect } from "react"
 import { marqueeFunction } from "../../../utils/marquee/marquee";
+import React from 'react'
+import { makeId } from "../../../utils/document.utils";
 
-const IconBox = ({images, lineName, direction, speed, gap}) => {
+const IconBox = ({images, lineName, direction, speed, gap, index}) => {
     useEffect(() => {
       let boxes = ".box";
 
@@ -10,10 +12,12 @@ const IconBox = ({images, lineName, direction, speed, gap}) => {
       return () => marqueeFunction;
     }, [lineName, direction, speed, gap]);
 
+    let id = makeId();
+    
     return(
-        <>
-            {images.map((item) => {
-                const {image, id} = item
+        <React.Fragment key={id}>
+            {images.map((item, index) => {
+                const {image} = item
 
                 return(
                     <> 
@@ -23,7 +27,7 @@ const IconBox = ({images, lineName, direction, speed, gap}) => {
                     </>
                 )
             })}
-        </>
+        </React.Fragment>
     )
 }
 

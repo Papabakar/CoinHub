@@ -7,7 +7,7 @@ const ArticleHeader = ({ headingData }) => {
   const { blogSelecter } = useContext(BlogContext);
 
   // const articleHeader = 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/background.png'
-  const { subject, intro, title, subjectLink, imageUrl } = headingData;
+  const { subject, title, imageUrl } = headingData;
 
   function uppercaseFirstLetter(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
@@ -19,9 +19,6 @@ const ArticleHeader = ({ headingData }) => {
     <header
       style={{
         background: `url(${imageUrl})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
       }}
       className="w-full  h-[460px] xl:h-[337px] bg-no-repeat bg-cover bg-center bg-blend-darken relative"
     >
@@ -32,7 +29,7 @@ const ArticleHeader = ({ headingData }) => {
           <span
             onClick={() => {
               blogSelecter(subject.toLowerCase());
-              navigate("/#discover",);
+              navigate("/",);
             }}
             className="first-letter:uppercase font-semibold text-white hover:underline cursor-pointer"
           >

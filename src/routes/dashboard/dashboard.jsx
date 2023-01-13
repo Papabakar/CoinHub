@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import addBlog from "../../backend/functions/blogs/addBlog";
 import Editor, {
   saveEditorData,
@@ -14,7 +14,6 @@ import 'react-toastify/dist/ReactToastify.css';
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
   const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
 
   function notify(text) {
 
@@ -47,7 +46,7 @@ function Dashboard() {
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate("/login");
+    if (!user) return redirect("/login");
   }, [user, loading]);
 
   return (

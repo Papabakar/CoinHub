@@ -37,10 +37,11 @@ const HeroMarquee = () => {
             <div className="marquee-cover-left"></div>
             <div className="marquee-cover-right"></div>
             {
-                marqueeData.map((item) => {
-                    const {lineName, images, direction, id} = item
+                marqueeData.map((item, index) => {
+                    const {lineName, images, direction} = item
+                    let id = makeId();
                     return(
-                        <MarqueeBundle key={id} lineName={lineName} direction={direction} data={images} />
+                        <MarqueeBundle key={index} id={id} lineName={lineName} direction={direction} data={images} />
                     )
                 })
             }

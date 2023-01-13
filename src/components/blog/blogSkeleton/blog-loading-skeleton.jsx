@@ -2,9 +2,9 @@ import { ReactComponent as Calendar } from "../../../assets/icons/calendar.svg";
 import { ReactComponent as Eye } from "../../../assets/svgs/eye.svg";
 
 const BlogLoadingSkeleton = () => {
-  return ["", "", ""].map((item) => {
+  return ["", "", ""].map((item, index) => {
     return (
-      <div className="bg-card-bg rounded-3xl w-fit relative h-[450px]">
+      <div key={index} className="bg-card-bg rounded-3xl w-fit relative h-[450px]">
         <div className="rounded-t-3xl min-h-[300px] bg-center w-full bg-auto bg-no-repeat animate-pulse bg-gray-700"></div>
 
         <div className="flex flex-col gap-3 p-5 w-fit">

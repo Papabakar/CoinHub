@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { marqueeFunction } from "../../../utils/marquee/marquee";
-import gsap from "gsap";
 import CoinInfo from "./coinInfo";
 import CoinPrice from "./coinPrice";
 
@@ -13,7 +12,7 @@ const CoinItem = ({ listData, data, lineName, direction, speed, gap }) => {
     return () => marqueeFunction;
   }, [lineName, direction, speed, gap]);
 
-  return listData.map((item) => {
+  return listData.map((item, index) => {
     const { id, coin, imgUrl } = item;
 
     let coinData = data[`${id}`];
@@ -22,7 +21,7 @@ const CoinItem = ({ listData, data, lineName, direction, speed, gap }) => {
     
 
     return (
-      <div key={id} className={`coin`}>
+      <div key={index} className={`coin`}>
         <div className="rounded-xl flex bg-listBg gap-6 p-3 px-5 items-center">
           <CoinInfo imgUrl={imgUrl} coin={coin} marketcap={coinData["usd"]} />
           <CoinPrice change={change} priceChange={priceChange} />

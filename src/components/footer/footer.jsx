@@ -1,12 +1,9 @@
 import Lottie from "react-lottie";
 import Refine from "../../assets/lottie/refine.svg";
-import FormInput from "../../snippets/form-input/form-input";
-import { useState } from "react";
 import FooterLogo from "../../assets/svgs/logo.svg";
 import {
   NAVIGATION_LIST_ITEMS,
   SUPPORT_LIST_ITEMS,
-  LEARN_LIST_ITEMS,
 } from "../../data/bottom-nav-items.data";
 
 import animationData from "../../assets/lottie/127832-heart-vibes.json";
@@ -43,27 +40,27 @@ const FooterMenu = () => {
     animationData: animationData,
   };
 
-  const defaultFormField = {
-    email: "",
-  };
+  // const defaultFormField = {
+  //   email: "",
+  // };
 
-  const [formfield, setFormfield] = useState(defaultFormField);
+  // const [formfield, setFormfield] = useState(defaultFormField);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormfield({ ...formfield, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormfield({ ...formfield, [name]: value });
+  // };
 
-  const { email } = formfield;
+  // const { email } = formfield;
 
   let bottomNavElements_1 = NAVIGATION_LIST_ITEMS.map((listData, index) => {
     if (index === 0) {
       //first list item
-      return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
+      return <h3 key={index} style={bottomNavHeaderStyle}>{listData.text}</h3>;
     } else if (index === NAVIGATION_LIST_ITEMS.length) {
       //last list item
       return (
-        <HashLink smooth to={`/#${listData.route}`}>
+        <HashLink smooth to={`/#${listData.route}`} key={index}>
           <p className="cursor-pointer" style={bottomNavBodyLastStyle}>
             {listData.text}
           </p>
@@ -71,7 +68,7 @@ const FooterMenu = () => {
       );
     } else {
       return (
-        <HashLink smooth to={`/#${listData.route}`}>
+        <HashLink smooth to={`/#${listData.route}`} key={index}>
           <p className="cursor-pointer" style={bottomNavBodyStyle}>
             {listData.text}
           </p>
@@ -83,11 +80,11 @@ const FooterMenu = () => {
   let bottomNavElements_2 = SUPPORT_LIST_ITEMS.map((listData, index) => {
     if (index === 0) {
       //first list item
-      return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
+      return <h3 key={index} style={bottomNavHeaderStyle}>{listData.text}</h3>;
     } else if (index === SUPPORT_LIST_ITEMS.length) {
       //last list item
       return (
-        <HashLink smooth to={`/#${listData.route}`}>
+        <HashLink smooth to={`/#${listData.route}`} key={index}>
           <p className="cursor-pointer" style={bottomNavBodyLastStyle}>
             {listData.text}
           </p>
@@ -95,7 +92,7 @@ const FooterMenu = () => {
       );
     } else {
       return (
-        <HashLink smooth to={`/#${listData.route}`}>
+        <HashLink smooth to={`/#${listData.route}`} key={index}>
           <p className="cursor-pointer" style={bottomNavBodyStyle}>
             {listData.text}
           </p>
@@ -104,17 +101,17 @@ const FooterMenu = () => {
     }
   });
 
-  let bottomNavElements_3 = LEARN_LIST_ITEMS.map((listData, index) => {
-    if (index === 0) {
-      //first list item
-      return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
-    } else if (index === LEARN_LIST_ITEMS.length) {
-      //last list item
-      return <p style={bottomNavBodyLastStyle}>{listData.text}</p>;
-    } else {
-      return <p style={bottomNavBodyStyle}>{listData.text}</p>;
-    }
-  });
+  // let bottomNavElements_3 = LEARN_LIST_ITEMS.map((listData, index) => {
+  //   if (index === 0) {
+  //     //first list item
+  //     return <h3 style={bottomNavHeaderStyle}>{listData.text}</h3>;
+  //   } else if (index === LEARN_LIST_ITEMS.length) {
+  //     //last list item
+  //     return <p style={bottomNavBodyLastStyle}>{listData.text}</p>;
+  //   } else {
+  //     return <p style={bottomNavBodyStyle}>{listData.text}</p>;
+  //   }
+  // });
 
   return (
     <div>

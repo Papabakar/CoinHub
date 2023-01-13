@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import "./article.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, logout } from "../../firebase";
-import FooterMenu from "../footer/footer";
+import FooterMenu from "../Footer/footer";
 
 import {
   getBlogById,
@@ -61,6 +61,7 @@ const Article = () => {
 
   useEffect(() => {
     
+    window.scrollTo({top: 0, left: 0, behavior: 'auto'});
 
     // declare the data fetching function
     const fetchData = async () => {

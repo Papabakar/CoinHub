@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import { marqueeFunction } from "../../../utils/marquee/marquee";
-import CoinInfo from "./coinInfo";
-import CoinPrice from "./coinPrice";
 
 const CoinListLoadingSkeleton =  ({ listData, lineName, direction, speed, gap }) => {
   useEffect(() => {
@@ -12,13 +10,13 @@ const CoinListLoadingSkeleton =  ({ listData, lineName, direction, speed, gap })
     return () => marqueeFunction;
   }, [lineName, direction, speed, gap]);
 
-  return listData.map((item) => {
-    const { id, coin, imgUrl } = item;
+  return listData.map((item, index) => {
+    const { coin, imgUrl } = item;
 
     
 
     return (
-      <div key={id} className={`coin`}>
+      <div key={index} className={`coin`}>
         <div className="rounded-xl flex bg-listBg gap-5 p-3 px-5 items-center animate-pulse">
         <div className="flex gap-3 items-center ">
             <div className="">

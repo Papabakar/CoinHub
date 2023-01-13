@@ -37,11 +37,11 @@ const BlogOptions = () => {
             <div className="overlay-buttons"></div>
             <div className="flex justify-start md:justify-center items-center gap-2 mt-6 px-4 overflow-x-scroll scrollbar-hide mx-3">
                 {
-                    OptionsData.map((item) => {
-                        const { name, id } = item;
+                    OptionsData.map((item, index) => {
+                        const { name } = item;
                         return (
                             <div
-                            key={id}
+                            key={index}
                             onClick={() => blogSelecter(name.toLowerCase())}
                             className="bg-card-bg cursor-pointer rounded-xl px-8 py-2.5 "
                             >

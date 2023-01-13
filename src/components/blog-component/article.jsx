@@ -61,6 +61,8 @@ const Article = () => {
 
   useEffect(() => {
 
+    window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+
     // declare the data fetching function
     const fetchData = async () => {
       let blogData = await getBlogById(id);
