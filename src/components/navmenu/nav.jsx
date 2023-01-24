@@ -7,27 +7,26 @@ import { useEffect } from 'react'
 const NavMenu = ({navLinks, setNavFun, navState}) => {
 
     useEffect(() => {
-      marqueeFunction()
-
-      return () => marqueeFunction
+        marqueeFunction()
+        return () => marqueeFunction
     }, []);
-
+    
     return(
-      <div className="px-5 fixed h-14 top-0 left-0 z-[10] right-0 flex items-center base:px-10 justify-between base:justify-center gap-20 backdrop-blur-2xl list-container">
-          <img src={Logo} className="min-w-[120px]" alt="" />
-          <div className="hidden base:flex">
-          <NavLinks navLinks={navLinks} />
-          </div>
+          <div className="px-5 fixed h-14 top-0 left-0 z-[10] right-0 flex items-center base:px-10 justify-between base:justify-center gap-20 backdrop-blur-2xl list-container">
+              <img src={Logo} className="min-w-[120px]" alt="" />
+              <div className="hidden base:flex">
+              <NavLinks navLinks={navLinks} />
+              </div>
 
-          <div  onClick={() => setNavFun(!navState)} className="text-white base:hidden text-4xl">
-            <i className='bx bx-menu'></i>
-          </div>
+              <div  onClick={() => setNavFun(!navState)} className="text-white base:hidden text-4xl">
+                <i className='bx bx-menu'></i>
+              </div>
 
-          <div className="base:block hidden">
-            <a href="" className='nav-primary'>Explore Blogs</a>
+              <div className="base:block hidden">
+                <a href="" className='nav-primary'>Explore Blogs</a>
+              </div>
           </div>
-      </div>
-    )
-}
+        )
+    }
 
 export default NavMenu   
