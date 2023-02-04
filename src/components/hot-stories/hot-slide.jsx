@@ -38,8 +38,8 @@ const HotStory = ({ data }) => {
         </div>
 
         <div className="flex  mt-0.5 text-xs p-1 my-auto rounded-full px-2 view-pill justify-between gap-1.5 text-white items-center bg-opacity-25">
-          <Eye />
-          <span>{viewCount.toLocaleString("en-US")}</span>
+          {/* <Eye /> */}
+          {/* <span>{viewCount.toLocaleString("en-US")}</span> */}
         </div>
       </div>
 

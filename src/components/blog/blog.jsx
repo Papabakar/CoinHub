@@ -51,15 +51,13 @@ const Blog = () => {
       <div className="flex flex-col gap-3 mx-auto text-center items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <span className="textGradient text-xs">
-            incididunt ut labore et dolore
+            Latest News
           </span>
           <h2 className="text-5xl text-white font-bold">Discover Blog</h2>
         </div>
 
         <p className="text-gray-500 max-w-[70ch]">
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.{" "}
+          Discover the undiscovered, with CryptoHub being your #1 real-time crypto news. Get accurate knowledge of what is happening across the crypto and blockchain arena.{" "}
         </p>
       </div>
 
