@@ -21,7 +21,7 @@ const BlogLoadingSkeleton = () => {
             </div>
 
             <div className="flex items-center gap-1 ">
-              <Eye />?
+              {/* <Eye />? */}
             </div>
           </div>
         </div>

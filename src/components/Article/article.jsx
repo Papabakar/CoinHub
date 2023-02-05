@@ -1,3 +1,5 @@
+import  Logo from '../../assets/svgs/logo.svg'
+import { Link } from 'react-router-dom'
 import ArticleHeader from "../../snippets/article-main/article-header";
 import ArticleInfo from "../../snippets/article-main/article-title";
 import BlogNewsletter from "../newsletter/newsletter";
@@ -131,6 +133,11 @@ const Article = () => {
 
   return (
     <div className="">
+      <div className="my-5 mx-auto w-fit logo">
+        <Link to="/#home">
+          <img src={Logo} className="min-w-[150px]" alt="" />
+        </Link >
+      </div>
       <ToastContainer />
       <CoinList />
       <div className="relative w-full">
@@ -158,7 +165,7 @@ const Article = () => {
               <ArticleContent data={content} />
             </div>
           ) : (
-            <div className="h-full w-full animate-pulse min-h-[800px] bg-gray-500 rounded-md"></div>
+            <div className="h-full w-full animate-pulse min-h-[800px] bg-gray-500 rounded-md text-gray-300"></div>
           )}
         </article>
 
