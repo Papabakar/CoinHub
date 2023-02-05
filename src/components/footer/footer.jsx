@@ -1,6 +1,7 @@
 import Lottie from "react-lottie";
 import Refine from "../../assets/lottie/refine.svg";
 import FooterLogo from "../../assets/svgs/logo.svg";
+import { Link } from 'react-router-dom';
 import {
   NAVIGATION_LIST_ITEMS,
   SUPPORT_LIST_ITEMS,
@@ -119,11 +120,13 @@ const FooterMenu = () => {
 
       <div className="px-5 md:px-10 flex flex-col md:flex-row justify-between items-start border-t border-lightBorder border-opacity-30 py-10 gap-10">
         <div>
+        <Link to="/#home">
           <img
             src={FooterLogo}
             alt="footer-logo"
             className="min-w-[200px] opacity-75"
           />
+        </Link >
         </div>
 
         <div className="flex gap-10 ">
@@ -153,7 +156,7 @@ const FooterMenu = () => {
             by
             <a
               className="ml-1 flex items-center justify-center font-bold text-white text-opacity-70 hover:text-opacity-100 hover:transition-[400ms] hover:ease-in-out hover:scale-[101%] italic"
-              href="https://t.me/webdevmiles"
+              href="/refinestudio"
               rel="noreferrer"
               target={"_blank"}
             >
