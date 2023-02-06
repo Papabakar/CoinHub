@@ -10,8 +10,7 @@ const MainText = () => {
         Are you tired of constantly monitoring the market for the right time to
         make a trade? Look no further! 'Market Spotter' offers advanced
         algorithms and real-time data analysis for informed trades. Say goodbye
-        to chart analysis, hello to profits. Try it today! (Learn More) referral
-        link
+        to chart analysis, hello to profits. Try it today!
       </p>
 
       <div className="">
