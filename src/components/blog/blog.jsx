@@ -53,11 +53,11 @@ const Blog = () => {
           <span className="textGradient text-xs">
             Latest News
           </span>
-          <h2 className="text-5xl text-white font-bold">Discover Blog</h2>
+          <h2 className="md:text-5xl text-3xl text-white font-bold">Discover Blog</h2>
         </div>
 
-        <p className="text-gray-500 max-w-[70ch]">
-          Discover the undiscovered, with CryptoHub being your #1 real-time crypto news. Get accurate knowledge of what is happening across the crypto and blockchain arena.{" "}
+        <p className="text-gray-500 max-w-[70ch] px-2">
+          Get accurate knowledge of what is happening across the crypto and blockchain arena.{" "}
         </p>
       </div>
 

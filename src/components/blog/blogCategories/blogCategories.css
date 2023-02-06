@@ -2,6 +2,7 @@
 .overlay-buttons::before{
     content: '';
     position: absolute;
+    pointer-events: none;
     bottom: 50%;
     z-index: 100;
     /* outline: red solid 2px; */
@@ -15,6 +16,7 @@
 .overlay-buttons::after{
     content: '';
     position: absolute;
+    pointer-events: none;
     bottom: 50%;
     /* outline: red solid 2px; */
     height: 100%;
