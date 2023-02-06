@@ -45,7 +45,8 @@
 
 #blog .ce-paragraph{
     --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity)) !important;
+    font-weight: 400 !important;
+    color: #eee !important;
 }
 #blog .ce-paragraph a{
     --tw-text-opacity: 1;

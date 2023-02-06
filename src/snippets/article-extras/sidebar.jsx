@@ -31,7 +31,7 @@ const BlogRightSideBar = ({relatedArticles}) => {
     return(
         <>
         <aside className="">
-            <div className="xl:w-[336px]">
+            <div className="xl:w-[336px] text-white">
                 {
                     !relatedArticles?
 
@@ -42,7 +42,7 @@ const BlogRightSideBar = ({relatedArticles}) => {
                     <ArticlesRelated relatedArticles={relatedArticles} />
 
                 }
-                <AdBlock />
+                {/* <AdBlock /> */}
             </div>
         </aside> 
         </>

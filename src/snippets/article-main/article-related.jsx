@@ -14,7 +14,7 @@ const ArticlesRelated = ({ relatedArticles }) => {
   
   return (
     <div className="mb-12 min-w-[300px]">
-      <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white border-t-[0.1px] border-slate-500 opacity-20 pt-4">
+      <h2 className="mb-4 text-xl font-bold text-white border-t-[0.1px] border-slate-500 border-opacity-20 pt-4">
         Related Articles
       </h2>
 
