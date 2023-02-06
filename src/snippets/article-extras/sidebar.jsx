@@ -27,7 +27,7 @@ import AdBlock from "./adblock"
 // ]
 
 const BlogRightSideBar = ({relatedArticles}) => {
-    console.log(relatedArticles);
+    // console.log(relatedArticles);
     return(
         <>
         <aside className="">
