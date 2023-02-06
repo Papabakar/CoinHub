@@ -153,7 +153,7 @@ const FooterMenu = () => {
             by
             <a
               className="ml-1 flex items-center justify-center font-bold text-white text-opacity-70 hover:text-opacity-100 hover:transition-[400ms] hover:ease-in-out hover:scale-[101%] italic"
-              href="https://t.me/webdevmiles"
+              href="https://t.me/refinestudio"
               rel="noreferrer"
               target={"_blank"}
             >
