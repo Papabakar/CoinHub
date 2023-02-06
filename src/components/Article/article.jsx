@@ -172,6 +172,7 @@ const Article = () => {
         <div className="md:block p-7 top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
+
       </div>
       <FooterMenu />
     </div>
