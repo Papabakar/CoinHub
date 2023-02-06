@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import "./article.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, logout } from "../../firebase";
-import FooterMenu from "../Footer/footer";
+import FooterMenu from "../footer/footer";
 
 import {
   getBlogById,
@@ -172,6 +172,7 @@ const Article = () => {
         <div className="md:block p-7 top-6">
           <BlogRightSideBar relatedArticles={relatedBlogs} />
         </div>
+
       </div>
       <FooterMenu />
     </div>

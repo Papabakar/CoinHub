@@ -10,7 +10,7 @@ import HotStories from "../hot-stories/hot-stories";
 import BlogNewsletter from "../newsletter/newsletter";
 import NewsMarquee from "../news-marquee/news-marquee";
 import { NEWSSLIDERDATA } from "../../data/document.data";
-import FooterMenu from "../Footer/footer";
+import FooterMenu from "../footer/footer";
 import Blog from "../blog/blog";
 import { useLocation } from "react-router-dom";
 import NavBarOptions from "../navmenu/mobile-nav";
