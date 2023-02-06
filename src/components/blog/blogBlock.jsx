@@ -56,10 +56,10 @@ function BlogPost({ data }) {
               {format(new Date(createdAt), "yyyy-MM-dd")}
             </div>
 
-            <div className="flex items-center gap-1 ">
+            {/* <div className="flex items-center gap-1 ">
               <Eye />
               {viewCount.toLocaleString("en-US")}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

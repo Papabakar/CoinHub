@@ -133,10 +133,12 @@ const Article = () => {
 
   return (
     <div className="">
-      <div className="my-5 mx-auto w-fit logo">
-        <Link to="/#home">
-          <img src={Logo} className="min-w-[150px]" alt="" />
-        </Link >
+      <div className="my-5 mx-auto w-full py-3 logo sticky top-0 z-10 bg-[#0a0b16]">
+        <div className='w-fit mx-auto'>
+          <Link to="/#home">
+            <img src={Logo} className="min-w-[150px]" alt="" />
+          </Link >
+        </div>
       </div>
       <ToastContainer />
       <CoinList />
