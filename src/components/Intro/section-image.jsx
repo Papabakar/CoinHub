@@ -45,7 +45,7 @@ const SectionImage = () => {
 
     return(
         <div ref={app} id="images" className="mx-auto">
-                <div className=" w-[90%] md:w-[95%] mx-auto relative">
+                <div className="w-[90%] md:w-[95%] mx-auto relative">
                     <MainImage className="w-full" />
                     <TopRight id="topRight" className="w-[200px] xxs:w-[250px] xxs:-top-5 mx-auto absolute top-0 -right-5"  />
                     <BottomRight className="w-[100px] xxs:w-[125px] xxs:-right-10 mx-auto absolute -bottom-10 -right-5"  />

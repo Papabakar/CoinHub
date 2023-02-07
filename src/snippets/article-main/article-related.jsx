@@ -30,10 +30,10 @@ const ArticlesRelated = ({ relatedArticles }) => {
             }}
             className="mb-6 flex items-start cursor-pointer"
           >
-            <div className="w-24 h-24 aspect-square mr-3">
+            <div className="w-24 h-16 aspect-square mr-3">
             <img
               src={imageUrl}
-              className="w-full h-full rounded-lg bg-no-repeat bg-contain"
+              className="w-full h-full rounded-lg bg-no-repeat bg-contain bg-center"
               alt="Related-3"
               />
               </div>
