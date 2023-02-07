@@ -1,29 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    h2{
-        @apply md:text-5xl text-4xl font-bold
-    }
-    h3{
-        @apply md:text-4xl text-3xl font-bold
-    }
-    h4{
-        @apply md:text-3xl text-2xl font-bold
-    }
+@layer base {
+  h2 {
+    @apply md:text-5xl text-4xl font-bold;
+  }
+  h3 {
+    @apply md:text-4xl text-3xl font-bold;
+  }
+  h4 {
+    @apply md:text-3xl text-2xl font-bold;
+  }
 
-    .coin-title{
-        @apply text-base
-    }
+  .coin-title {
+    @apply text-base;
+  }
 
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
-*{
-    /* outline: solid red 1px; */
-    font-family: sans-serif !important;
+* {
+  /* outline: solid red 1px; */
+  font-family: "Inter", sans-serif !important;
+  scroll-behavior: smooth;
 }

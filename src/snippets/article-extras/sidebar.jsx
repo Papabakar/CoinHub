@@ -30,7 +30,7 @@ const BlogRightSideBar = ({relatedArticles}) => {
     // console.log(relatedArticles);
     return(
         <>
-        <aside className="">
+        <aside className=" sticky top-0 pt-[3rem] ">
             <div className="xl:w-[336px] text-white">
                 {
                     !relatedArticles?
