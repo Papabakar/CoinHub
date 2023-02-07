@@ -28,7 +28,7 @@ function BlogPost({ data }) {
     return (
       <div
         key={index}
-        className="bg-card-bg rounded-3xl w-fit relative h-[450px]"
+        className="bg-card-bg rounded-3xl w-fit relative h-[450px] cursor-pointer"
         onClick={() => {
           navigate(`/blog/${_id}`);
         }}
