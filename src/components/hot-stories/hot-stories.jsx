@@ -148,7 +148,7 @@ const HotStories = () => {
           })}
         </Swiper>
       ) : (
-        <div className="px-5 md:px-10 flex justify-center items-center">
+        <div className=" flex justify-center items-center">
           {ArticlesData.length === 0 ? (
             <p className="text-white text-xl">
               FAILED TO RETRIEVE ARTICLE DATA

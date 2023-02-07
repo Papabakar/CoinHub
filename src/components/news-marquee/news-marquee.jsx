@@ -15,7 +15,7 @@ const NewsMarquee = ({data, sliderLine, sliderBox, direction, speed, gap}) => {
     }, [newLineName, newBoxName, direction, speed, gap])
 
     return(
-        <div className="md:my-16 my-10 flex flex-col gap-[20px] items-center justify-center">
+        <div className="md:my-16 flex flex-col gap-[20px] items-center justify-center">
         <div className={`flex gap-[20px] ${sliderLine} relative overlay min-w-full max-w-none flex-1 flex-shrink-0 items-center justify-center`}>
 
             {

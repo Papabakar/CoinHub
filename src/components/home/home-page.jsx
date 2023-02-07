@@ -35,7 +35,7 @@ function HomePage() {
   }, [hash]);
 
   return (
-    <div className="overflow-x-hidden flex flex-col gap-20">
+    <div className="overflow-x-hidden flex flex-col gap-10">
       <NavMenu
         navLinks={NAVDATA}
         setNavFun={() => setShowNav((previousState) => !previousState)}
