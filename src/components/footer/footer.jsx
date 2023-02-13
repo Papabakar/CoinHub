@@ -1,6 +1,9 @@
 import Lottie from "react-lottie";
 import Refine from "../../assets/lottie/refine.svg";
 import FooterLogo from "../../assets/svgs/logo.svg";
+import Twitter from "../../assets/svgs/twitter.svg";
+import Instagram from "../../assets/svgs/instagram.svg";
+import Telegram from "../../assets/svgs/telegram.svg";
 import { Link } from 'react-router-dom';
 import {
   NAVIGATION_LIST_ITEMS,
@@ -118,7 +121,7 @@ const FooterMenu = () => {
     <div>
       <BlogNewsletter />
 
-      <div className="px-5 md:px-10 flex flex-col md:flex-row justify-between items-start border-t border-lightBorder border-opacity-30 py-10 gap-10">
+      <div className="px-5 md:px-10 flex flex-col justify-center items-center border-t border-lightBorder border-opacity-30 py-10 gap-7">
         <div>
         <Link to="/#home">
           <img
@@ -129,20 +132,26 @@ const FooterMenu = () => {
         </Link >
         </div>
 
-        <div className="flex gap-10 ">
+        <div className="flex align-center space-x-5">
+          <a href="https://twitter.com/CoinHubCC" rel="noreferrer" target={"_blank"}><img src={Twitter} alt="Twitter" /></a>
+          <a href="https://www.instagram.com/coinhubcc/" rel="noreferrer" target={"_blank"}><img src={Instagram} alt="Instagram" /></a>
+          <a href="https://t.me/CoinHubCC" rel="noreferrer" target={"_blank"}><img src={Telegram} alt="Telegram" /></a>
+        </div>
+
+        {/* <div className="flex gap-10 ">
           <div className="flex flex-col justify-start items-start">
             {bottomNavElements_1}
           </div>
           <div className="flex flex-col justify-start items-start">
             {bottomNavElements_2}
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-between border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
+      <div className="text-gray-400 flex w-full xl:mt-0 items-center flex-col md:flex-row md:justify-center text-center border-t border-lightBorder border-opacity-30 px-5 p-4 pb-3 text-sm md:text-md 2xl:text-base text-darkgray bg-main-bg gap-1.5">
         <span> {currentYear} Coinhub © | All Rights Reserved</span>
 
-        <div className="">
+        {/* <div className="">
           <div className="flex">
             Created with
             <div className="flex justify-center mt-auto 2xl:pt-0.5">
@@ -170,7 +179,7 @@ const FooterMenu = () => {
               </div>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
