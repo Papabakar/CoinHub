@@ -21,7 +21,7 @@ const HotStory = ({ data }) => {
   return (
     <div
       onClick={() => {
-        navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent}});
+        navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent, url:`https://coinhub.cc/blog/${_id}`}});
       }}
       style={{
         background: `url(${imageUrl})`,

@@ -137,6 +137,7 @@ const Article = () => {
       <SEO 
           title={state?.title}
           desc={state?.desc}
+          url={state?.url}
           img={state?.img}
         />
       <div className="my-5 mx-auto w-full py-3 logo sticky top-0 z-10 bg-[#0a0b16]">

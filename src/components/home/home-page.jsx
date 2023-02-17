@@ -41,6 +41,7 @@ function HomePage() {
       <SEO 
       title={"CoinHub | Fastest real-time crypto news source."}
       img={Logohero}
+      url={'https://coinhub.cc/'}
       desc={"CoinHub is the fastest real-time crypto news source covering cryptocurrency, Bitcoin, Ethereum, Defi and more."}
       />
       <NavMenu

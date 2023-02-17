@@ -31,7 +31,7 @@ function BlogPost({ data }) {
         key={index}
         className="bg-card-bg rounded-3xl w-fit relative h-[450px]"
         onClick={() => {
-          navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent}});
+          navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent, url:`https://coinhub.cc/blog/${_id}`}});
         }}
       >
         {/* <SEO 

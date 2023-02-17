@@ -35,6 +35,11 @@ class SEO extends React.Component {
             <meta name="twitter:title" content={this.props.title ? this.props.title : 'CoinHub | Fastest real-time crypto news source.'} />
             <meta name="twitter:description" content={this.props.desc ? this.props.desc : 'CoinHub is the fastest real-time crypto news source covering cryptocurrency, Bitcoin, Ethereum, Defi and more.'} />
             <meta name="twitter:image" content={this.props.img ? this.props.img : Logohero} />
+
+
+            <meta property="og:url" content={this.props.url} />
+            <meta property="og:image:width" content="1920" />
+            <meta property="og:image:height" content="1080" />
         </Helmet>
     );
   }

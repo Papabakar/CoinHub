@@ -26,7 +26,7 @@ const ArticlesRelated = ({ relatedArticles }) => {
           <div
           key={index}
             onClick={() => {
-              navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent}});
+              navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent, url:`https://coinhub.cc/blog/${_id}`}});
             }}
             className="mb-6 flex items-start cursor-pointer"
           >
