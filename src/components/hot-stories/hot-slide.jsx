@@ -4,7 +4,8 @@ import { ReactComponent as Eye } from "../../assets/svgs/eye.svg";
 import { useNavigate } from "react-router-dom";
 
 const HotStory = ({ data }) => {
-  const { imageUrl, title, viewCount, createdAt, readTime, _id } = data;
+  const { imageUrl, title, viewCount, createdAt, readTime, _id, summaryContent } = data;
+  // console.log(data)
   const navigate = useNavigate();
 
   function truncate( str, n, useWordBoundary ){
@@ -20,7 +21,7 @@ const HotStory = ({ data }) => {
   return (
     <div
       onClick={() => {
-        navigate(`/blog/${_id}`);
+        navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent}});
       }}
       style={{
         background: `url(${imageUrl})`,

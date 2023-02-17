@@ -8,8 +8,8 @@ function BlogPost({ data }) {
   const navigate = useNavigate();
 
   return data.map((item, index) => {
-    const { imageUrl, title, createdAt, viewCount, _id } = item;
-
+    const { imageUrl, title, createdAt, viewCount, _id, summaryContent } = item;
+    // console.log(item);
     function truncate(str, n, useWordBoundary) {
       if (str.length <= n) {
         return str;
@@ -31,7 +31,7 @@ function BlogPost({ data }) {
         key={index}
         className="bg-card-bg rounded-3xl w-fit relative h-[450px]"
         onClick={() => {
-          navigate(`/blog/${_id}`, {state:{title:truncatedTitle,img:imageUrl}});
+          navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent}});
         }}
       >
         {/* <SEO 

@@ -19,14 +19,14 @@ const ArticlesRelated = ({ relatedArticles }) => {
       </h2>
 
       {relatedArticles.map((item, index) => {
-        const { imageUrl, title, _id } = item;
+        const { imageUrl, title, _id, summaryContent } = item;
         let truncatedTitle = truncate(title, 35)
 
         return (
           <div
           key={index}
             onClick={() => {
-              navigate(`/blog/${_id}`);
+              navigate(`/blog/${_id}`, {state:{title:title,img:imageUrl, desc: summaryContent}});
             }}
             className="mb-6 flex items-start cursor-pointer"
           >
