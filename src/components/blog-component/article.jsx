@@ -4,7 +4,7 @@ import BlogNewsletter from "../newsletter/newsletter";
 import ArticleContent from "../../snippets/article-main/article-content";
 import BlogBottomSideBar from "../../snippets/article-extras/related";
 import BlogRightSideBar from "../../snippets/article-extras/sidebar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams  } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "./article.css";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -21,9 +21,12 @@ import deleteBlog from "../../backend/functions/blogs/deleteBlog";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import increaseBlogViewCount from "../../backend/functions/blogs/increaseViewCount";
+// import SEO from "../SEO/seo";
 
 const Article = () => {
   const { state } = useLocation();
+  let { title } = useParams();
+  console.log(title)
   const [user, loading, error] = useAuthState(auth);
 
   const [headingData, setHeadingData] = useState({

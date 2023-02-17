@@ -23,6 +23,7 @@ import deleteBlog from "../../backend/functions/blogs/deleteBlog";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import increaseBlogViewCount from "../../backend/functions/blogs/increaseViewCount";
+import SEO from '../SEO/seo';
 
 const Article = () => {
   const { state } = useLocation();
@@ -44,8 +45,8 @@ const Article = () => {
 
   const [relatedBlogs, setRelatedBlogs] = useState(null);
   // Get the blogId param from the URL.
-  let { id } = useParams();
-
+  let { id, state:any } = useParams();
+  // console.log(state);
   function setBlogDataToDefault() {
     setHeadingData({
       subject: "",
@@ -68,7 +69,7 @@ const Article = () => {
     // declare the data fetching function
     const fetchData = async () => {
       let blogData = await getBlogById(id);
-      console.log(`Blog Data ${blogData}`);
+      // console.log(`Blog Data ${blogData}`);
       if (blogData === null || blogData === []) {
         setHeadingData({
           subject: "",
@@ -133,6 +134,11 @@ const Article = () => {
 
   return (
     <div className="">
+      <SEO 
+          title={state?.title}
+          // desc={data?.blocks[0].data.text}
+          img={state?.imageUrl}
+        />
       <div className="my-5 mx-auto w-full py-3 logo sticky top-0 z-10 bg-[#0a0b16]">
         <div className='w-fit mx-auto'>
           <Link to="/#home">
