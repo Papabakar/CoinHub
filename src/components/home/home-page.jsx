@@ -16,6 +16,8 @@ import { useLocation } from "react-router-dom";
 import NavBarOptions from "../navmenu/mobile-nav";
 import NavMenu from "../../components/navmenu/nav";
 import { NAVDATA } from "../../data/document.data";
+import SEO from "../SEO/seo";
+import Logohero from "../../assets/svgs/hero-logo.svg";
 
 function HomePage() {
   let hash = useLocation().hash;
@@ -36,6 +38,11 @@ function HomePage() {
 
   return (
     <div className="overflow-x-hidden flex flex-col gap-20">
+      <SEO 
+      title={"CoinHub | Fastest real-time crypto news source."}
+      img={Logohero}
+      desc={"CoinHub is the fastest real-time crypto news source covering cryptocurrency, Bitcoin, Ethereum, Defi and more."}
+      />
       <NavMenu
         navLinks={NAVDATA}
         setNavFun={() => setShowNav((previousState) => !previousState)}

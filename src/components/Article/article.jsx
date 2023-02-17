@@ -156,7 +156,7 @@ const Article = () => {
       ) : (
         <div className="hidden"></div>
       )}
-      <ArticleHeader headingData={headingData} />
+      <ArticleHeader headingData={headingData} data={content && content} />
       </div>
 
       <div className="w-full flex flex-col md:flex-row bg-primaryBg">

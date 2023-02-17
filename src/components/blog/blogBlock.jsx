@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Calendar } from "../../assets/icons/calendar.svg";
 import { ReactComponent as Eye } from "../../assets/svgs/eye.svg";
+// import SEO from "../SEO/seo";
 
 function BlogPost({ data }) {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function BlogPost({ data }) {
 
     let truncatedTitle = truncate(title, 60);
 
-    console.log(title);
+    // console.log(title);
 
     return (
       <div
@@ -33,6 +34,11 @@ function BlogPost({ data }) {
           navigate(`/blog/${_id}`);
         }}
       >
+        {/* <SEO 
+          title={truncatedTitle}
+          desc={truncatedTitle}
+          img={imageUrl}
+        /> */}
         <div
           className="rounded-t-3xl min-h-[300px] bg-center w-full bg-auto bg-no-repeat"
           style={{
