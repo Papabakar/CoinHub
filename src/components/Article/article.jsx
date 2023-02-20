@@ -132,7 +132,7 @@ const Article = () => {
     toast(text);
   }
 
-  console.log(headingData)
+  console.log(headingData?.imageUrl)
 
   return (
     <div className="">
