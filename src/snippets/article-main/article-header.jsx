@@ -3,7 +3,7 @@ import { BlogContext } from "../../context/blog.context";
 import { useContext } from "react";
 // import SEO from "../../components/SEO/seo";
 
-const ArticleHeader = ({ headingData, data }) => {
+const ArticleHeader = ({ headingData }) => {
   const navigate = useNavigate();
   const { blogSelecter } = useContext(BlogContext);
 

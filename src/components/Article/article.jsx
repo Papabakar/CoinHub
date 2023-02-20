@@ -46,7 +46,7 @@ const Article = () => {
   const [relatedBlogs, setRelatedBlogs] = useState(null);
   // Get the blogId param from the URL.
   let { id, state:any } = useParams();
-  // console.log(state);
+  // console.log(content);
   function setBlogDataToDefault() {
     setHeadingData({
       subject: "",
@@ -132,13 +132,15 @@ const Article = () => {
     toast(text);
   }
 
+  console.log(headingData)
+
   return (
     <div className="">
       <SEO 
-          title={state?.title}
-          desc={state?.desc}
-          url={state?.url}
-          img={state?.img}
+          title={state?.title ? state?.title : headingData?.title}
+          desc={state?.desc ? state?.desc : headingData?.intro}
+          url={state?.url ? state?.url : "https://coinhub.cc/"}
+          img={state?.img ? state?.img : headingData?.imageUrl}
         />
       <div className="my-5 mx-auto w-full py-3 logo sticky top-0 z-10 bg-[#0a0b16]">
         <div className='w-fit mx-auto'>
