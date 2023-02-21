@@ -40,6 +40,12 @@ class SEO extends React.Component {
             <meta property="og:type" content={this.props.title} />
             <meta property="og:title" content={this.props.title} />
             <meta property="og:description" content={this.props.desc} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@CoinHubCC" />
+            <meta name="twitter:creator" content="@CoinHubCC" />
+            <meta name="twitter:title" content={this.props.title} />
+            <meta name="twitter:description" content={this.props.desc} />
+            <meta property="og:image" content={this.props.img} />
             <meta name="twitter:image" content={this.props.img} />
         </Helmet>
     );
